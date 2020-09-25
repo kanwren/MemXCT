@@ -7,11 +7,6 @@
 
 using namespace std;
 
-struct matrix {
-  int ind;
-  float len;
-};
-
 void findnumpix(float, float, float *, int *);
 void findpixind(float, float, float *, int *, int, int *);
 void findlength(float, float, float *, float *);
@@ -22,8 +17,6 @@ void backprojection(float *, float *);
 int encode(unsigned short, unsigned short);
 int xy2d(int n, int x, int y);
 void d2xy(int n, int d, int *x, int *y);
-
-void setup_gpu(float **, float **, float **, float **, float **, float **);
 float norm_kernel(float *, int);
 float dot_kernel(float *, float *, int);
 void copy_kernel(float *, float *, int);

@@ -48,6 +48,13 @@ int raynumout;
 int mynumray;
 int mynumpix;
 
+long *raypixstart;
+long *pixraystart;
+int *raypixind;
+int *pixrayind;
+float *raypixlen;
+float *pixraylen;
+
 int *raysendstart;
 int *rayrecvstart;
 int *raysendcount;
@@ -58,41 +65,39 @@ int *rayrayind;
 
 int *rayrecvlist;
 
-int proj_rownztot;
+long proj_rownztot;
 long proj_rownzall;
-int *proj_rowdispl;
+long *proj_rowdispl;
 int *proj_rowindex;
-float *proj_rowvalue;
 int proj_blocksize;
 int proj_numblocks;
 int proj_blocknztot;
-long proj_blocknzall;
 int *proj_blockdispl;
-int *proj_blockindex;
-float *proj_blockvalue;
 int proj_buffsize;
-int *proj_buffdispl;
-int proj_buffnztot;
-long proj_buffnzall;
+long proj_buffnztot;
+long *proj_buffdispl;
 int *proj_buffmap;
-short *proj_buffindex;
+int *proj_buffmapnz;
+long proj_buffmapnztot;
+long proj_buffmapnzall;
+long *proj_buffmapdispl;
+unsigned short *proj_buffindex;
 float *proj_buffvalue;
-int *back_rowdispl;
+long *back_rowdispl;
 int *back_rowindex;
-float *back_rowvalue;
 int back_blocksize;
 int back_numblocks;
 int back_blocknztot;
-long back_blocknzall;
 int *back_blockdispl;
-int *back_blockindex;
-float *back_blockvalue;
 int back_buffsize;
-int *back_buffdispl;
-int back_buffnztot;
-long back_buffnzall;
+long back_buffnztot;
+long *back_buffdispl;
 int *back_buffmap;
-short *back_buffindex;
+int *back_buffmapnz;
+long back_buffmapnztot;
+long back_buffmapnzall;
+long *back_buffmapdispl;
+unsigned short *back_buffindex;
 float *back_buffvalue;
 
 int numproj;
@@ -123,7 +128,7 @@ int main(int argc, char **argv) {
   // chartemp = getenv("NUMX");
   numx = numrho; // atoi(chartemp);
   // chartemp = getenv("NUMY");
-  numy = numrho; // atoi(chartemp);
+  numy = numx; // atoi(chartemp);
 
   // chartemp = getenv("XSTART");
   float xstart = -numrho / 2.0; // atof(chartemp);
@@ -237,7 +242,7 @@ int main(int argc, char **argv) {
     printf("SPATIAL INDEXING       : %d\n", spatindexing);
     printf("SPECTRAL INDEXING      : %d\n", specindexing);
     printf(" 1: CARTESIAN, NATURAL\n 2: CARTESIAN, TRANSPOSED\n 3: MORTON, NATURAL\n 4: "
-           "MORTON, TRANSPOSED\n");
+           "MORTON, TRANSPOSED\n 5: HILBERT\n");
     printf("PROJECTION BLOCK SIZE      : %d\n", proj_blocksize);
     printf("BACKPROJECTION BLOCK SIZE  : %d\n", back_blocksize);
     printf("PROJECTION BUFFER SIZE      : %d KB\n", proj_buffsize);
@@ -351,11 +356,11 @@ int main(int argc, char **argv) {
   int *pixstart  = new int[numproc];
   int *raystart  = new int[numproc];
   int myspattile = numspattile / numproc;
-  if (myid < numspattile - myspattile * numproc) {
+  if (myid < (((float)numspattile) / numproc - myspattile) * numproc) {
     myspattile++;
   }
   int myspectile = numspectile / numproc;
-  if (myid < numspectile - myspectile * numproc) {
+  if (myid < (((float)numspectile) / numproc - myspectile) * numproc) {
     myspectile++;
   }
   MPI_Allgather(&myspattile, 1, MPI_INTEGER, numspats, 1, MPI_INTEGER, MPI_COMM_WORLD);
@@ -436,9 +441,11 @@ int main(int argc, char **argv) {
   }
 
   /*float *mestheta = new float[numthe];
+  for(int n = 0; n < numthe; n++)
+    mestheta[n] = n*M_PI/numthe;
   if(myid==0)printf("INPUT THETA DATA\n");
-  FILE *thetaf = fopen("brain-2x-5000-5001.1s.theta.4501.data","rb");
-  fread(mestheta,sizeof(float),numthe,thetaf);
+  FILE *thetaf = fopen(thefile,"wb");
+  fwrite(mestheta,sizeof(float),numthe,thetaf);
   fclose(thetaf);*/
 
   float *mestheta = new float[numthe];
@@ -493,7 +500,7 @@ int main(int argc, char **argv) {
       raymesind[ind] = -1;
     }
   }
-  // delete[] mestheta;
+  delete[] mestheta;
   delete[] specll;
   if (myid == 0) {
     printf("DOMAIN PARTITIONING\n");
@@ -557,9 +564,8 @@ int main(int argc, char **argv) {
   long raynumoutall = raynumout;
   MPI_Allreduce(MPI_IN_PLACE, &raynumincall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
   MPI_Allreduce(MPI_IN_PLACE, &raynumoutall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
-  printf(
-      "myid %d raynuminc %d/%li raynumout %d/%li\n", myid, raynuminc, raynumincall,
-      raynumout, raynumoutall);
+  // printf("myid %d raynuminc %d/%li raynumout
+  // %d/%li\n",myid,raynuminc,raynumincall,raynumout,raynumoutall);
   int *raysendlist = new int[raynumout];
   rayrecvlist      = new int[raynuminc];
   for (int p = 0; p < numproc; p++) {
@@ -619,13 +625,13 @@ int main(int argc, char **argv) {
         rownzmax = rownz[k];
       }
     }
-    int *rowdispl = new int[raynumout + 1];
-    rowdispl[0]   = 0;
+    long *rowdispl = new long[raynumout + 1];
+    rowdispl[0]    = 0;
     for (int k = 1; k < raynumout + 1; k++) {
       rowdispl[k] = rowdispl[k - 1] + rownz[k - 1];
     }
     delete[] rownz;
-    int rownztot  = rowdispl[raynumout];
+    long rownztot = rowdispl[raynumout];
     long rownzall = rownztot;
     MPI_Allreduce(MPI_IN_PLACE, &rownzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
@@ -638,7 +644,7 @@ int main(int argc, char **argv) {
     for (int k = 0; k < raynumout; k++) {
       float rho   = raycoorout[k].real();
       float theta = raycoorout[k].imag();
-      int start   = rowdispl[k];
+      long start  = rowdispl[k];
       for (int tile = spatstart[myid]; tile < spatstart[myid] + myspattile; tile++) {
         float domain[4];
         domain[0] = spatll[tile].real();
@@ -663,7 +669,6 @@ int main(int argc, char **argv) {
     proj_rowdispl = rowdispl;
     proj_rowindex = rowindex;
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("RAY-TRACING TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -678,7 +683,7 @@ int main(int argc, char **argv) {
     int *intra = new int[proj_rownztot];
 #pragma omp parallel for
     for (int k = 0; k < raynumout; k++) {
-      for (int n = proj_rowdispl[k]; n < proj_rowdispl[k + 1]; n++) {
+      for (long n = proj_rowdispl[k]; n < proj_rowdispl[k + 1]; n++) {
         csrRowInd[n] = k;
       }
     }
@@ -687,7 +692,7 @@ int main(int argc, char **argv) {
       inter[n] = 0;
     }
 #pragma omp parallel for
-    for (int n = 0; n < proj_rownztot; n++) {
+    for (long n = 0; n < proj_rownztot; n++) {
       intra[n] = inter[(omp_get_thread_num() + 1) * mynumpix + proj_rowindex[n]];
       inter[(omp_get_thread_num() + 1) * mynumpix + proj_rowindex[n]]++;
     }
@@ -697,8 +702,8 @@ int main(int argc, char **argv) {
         inter[t * mynumpix + m] = inter[t * mynumpix + m] + inter[(t - 1) * mynumpix + m];
       }
     }
-    int *rowdispl = new int[mynumpix + 1];
-    rowdispl[0]   = 0;
+    long *rowdispl = new long[mynumpix + 1];
+    rowdispl[0]    = 0;
     for (int m = 1; m < mynumpix + 1; m++) {
       rowdispl[m] = rowdispl[m - 1] + inter[numthreads * mynumpix + m - 1];
     }
@@ -709,7 +714,7 @@ int main(int argc, char **argv) {
         rownzmax = rownz;
       }
     }
-    int rownztot  = rowdispl[mynumpix];
+    long rownztot = rowdispl[mynumpix];
     long rownzall = rownztot;
     MPI_Allreduce(MPI_IN_PLACE, &rownzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
@@ -719,7 +724,7 @@ int main(int argc, char **argv) {
     }
     int *rowindex = new int[rownztot];
 #pragma omp parallel for
-    for (int n = 0; n < rownztot; n++) {
+    for (long n = 0; n < rownztot; n++) {
       rowindex
           [rowdispl[proj_rowindex[n]]
            + inter[omp_get_thread_num() * mynumpix + proj_rowindex[n]] + intra[n]]
@@ -731,7 +736,6 @@ int main(int argc, char **argv) {
     back_rowdispl = rowdispl;
     back_rowindex = rowindex;
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("TRANSPOSITION TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -740,18 +744,16 @@ int main(int argc, char **argv) {
     printf("\nBLOCKING PROJECTION MATRIX\n");
   }
   {
-    int *rowindex = proj_rowindex;
-    int *rowdispl = proj_rowdispl;
-    int blocksize = proj_blocksize;
-    int buffsize  = proj_buffsize;
-    int numblocks = raynumout / blocksize;
+    int *rowindex  = proj_rowindex;
+    long *rowdispl = proj_rowdispl;
+    int blocksize  = proj_blocksize;
+    int buffsize   = proj_buffsize;
+    int numblocks  = raynumout / blocksize;
     if (raynumout % blocksize) {
       numblocks++;
     }
-    int numblocksall = numblocks;
-    MPI_Allreduce(MPI_IN_PLACE, &numblocksall, 1, MPI_INTEGER, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
-      printf("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocksall, buffsize);
+      printf("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocks, buffsize);
     }
     int *blocknz = new int[numblocks];
 #pragma omp parallel
@@ -764,7 +766,7 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < raynumout;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
@@ -786,6 +788,7 @@ int main(int argc, char **argv) {
     for (int block = 1; block < numblocks + 1; block++) {
       blockdispl[block] = blockdispl[block - 1] + blocknz[block - 1];
     }
+    int blocknztot = blockdispl[numblocks];
     int blocknzmax = 0;
     for (int block = 0; block < numblocks; block++) {
       if (blocknz[block] > blocknzmax) {
@@ -793,32 +796,23 @@ int main(int argc, char **argv) {
       }
     }
     delete[] blocknz;
-    int blocknztot  = blockdispl[numblocks];
-    long blocknzall = blocknztot;
-    MPI_Allreduce(MPI_IN_PLACE, &blocknzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
       printf(
-          "NUMBER OF BUFFERS: %li AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n",
-          blocknzall, blocknzall / (float)numblocksall, blocknzmax);
+          "NUMBER OF BUFFERS: %d AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n", blocknztot,
+          blocknztot / (float)numblocks, blocknzmax);
     }
-    if (myid == 0) {
-      printf(
-          "BUFF MAP: %li (%f GB)\n", blocknzall * buffsize,
-          blocknzall * buffsize / 1024.0 / 1024.0 / 1024.0 * sizeof(float));
-    }
-    int *buffmap   = new int[blocknztot * buffsize];
-    int *buffnz    = new int[blocknztot];
-    long footprint = 0;
+    int *buffmapnz = new int[blocknztot];
+    int *buffnz    = new int[blocknztot * blocksize];
+    int footprint  = 0;
 #pragma omp parallel
     {
       int *numint = new int[mynumpix];
-      int buffnztemp[blocknzmax];
-#pragma omp for
-      for (int n = 0; n < blocknztot * buffsize; n++) {
-        buffmap[n] = 0;
-      }
 #pragma omp for
       for (int n = 0; n < blocknztot; n++) {
+        buffmapnz[n] = 0;
+      }
+#pragma omp for
+      for (int n = 0; n < blocknztot * blocksize; n++) {
         buffnz[n] = 0;
       }
 #pragma omp for schedule(dynamic)
@@ -828,17 +822,16 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < raynumout;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
         int count = 0;
         for (int n = 0; n < mynumpix; n++) {
           if (numint[n]) {
-            int buffloc     = count / buffsize;
-            int mapind      = (blockdispl[block] + buffloc) * buffsize + count % buffsize;
-            buffmap[mapind] = n;
-            numint[n]       = buffloc;
+            int buff = blockdispl[block] + count / buffsize;
+            buffmapnz[buff]++;
+            numint[n] = buff;
             count++;
           }
         }
@@ -846,56 +839,61 @@ int main(int argc, char **argv) {
         footprint += count;
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < raynumout;
              m++) {
-          for (int n = 0; n < blocknzmax; n++) {
-            buffnztemp[n] = 0;
-          }
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
-            buffnztemp[numint[rowindex[n]]]++;
-          }
-          for (int buff = blockdispl[block]; buff < blockdispl[block + 1]; buff++) {
-            int buffloc = buff - blockdispl[block];
-            if (buffnztemp[buffloc] > buffnz[buff]) {
-              buffnz[buff] = buffnztemp[buffloc];
-            }
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+            buffnz[numint[rowindex[n]] * blocksize + m % blocksize]++;
           }
         }
       }
       delete[] numint;
     }
-    int *buffdispl = new int[blocknztot + 1];
-    buffdispl[0]   = 0;
-    for (int buff = 1; buff < blocknztot + 1; buff++) {
-      buffdispl[buff] = buffdispl[buff - 1] + buffnz[buff - 1];
+    long *buffmapdispl = new long[blocknztot + 1];
+    buffmapdispl[0]    = 0;
+    for (int n = 1; n < blocknztot + 1; n++) {
+      buffmapdispl[n] = buffmapdispl[n - 1] + buffmapnz[n - 1];
     }
-    int buffnzmax = 0;
-    for (int buff = 0; buff < blocknztot; buff++) {
-      if (buffnzmax < buffnz[buff]) {
-        buffnzmax = buffnz[buff];
-      }
-    }
-    delete[] buffnz;
-    int buffnztot  = buffdispl[blocknztot];
-    long buffnzall = buffnztot;
-    MPI_Allreduce(MPI_IN_PLACE, &buffnzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
-    MPI_Allreduce(MPI_IN_PLACE, &footprint, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
+    long buffmapnztot = buffmapdispl[blocknztot];
+    long buffmapnzall = buffmapnztot;
+    MPI_Allreduce(MPI_IN_PLACE, &buffmapnzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
       printf(
-          "ELLPACK STORAGE: %li (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: "
-          "%f\n",
-          buffnzall * (long)blocksize,
-          buffnzall * (float)blocksize * sizeof(float) * 1.5 / 1024.0 / 1024.0 / 1024.0,
-          buffnzmax, proj_rownzall / (float)buffnzall / blocksize * 1.5,
-          proj_rownzall / (float)footprint);
+          "BUFFER MAP: %lu (%f GB)\n", buffmapnzall,
+          buffmapnzall / 1024.0 / 1024.0 / 1024.0 * sizeof(int));
     }
-    short *buffindex = new short[buffnztot * blocksize];
+    long *buffdispl = new long[blocknztot * blocksize + 1];
+    buffdispl[0]    = 0;
+    for (int n = 1; n < blocknztot * blocksize + 1; n++) {
+      buffdispl[n] = buffdispl[n - 1] + buffnz[n - 1];
+    }
+    long buffnztot = buffdispl[blocknztot * blocksize];
+    int buffnzmax  = 0;
+    for (int n = 0; n < blocknztot * blocksize; n++) {
+      if (buffnzmax < buffnz[n]) {
+        buffnzmax = buffnz[n];
+      }
+    }
+    long buffnzall = buffnztot;
+    MPI_Allreduce(MPI_IN_PLACE, &buffnzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
+    if (myid == 0) {
+      printf(
+          "CSR STORAGE: %lu (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: "
+          "%f\n",
+          buffnzall, buffnzall * sizeof(float) * 1.5 / 1024.0 / 1024.0 / 1024.0,
+          buffnzmax, proj_rownztot / (float)buffnzall * 1.5,
+          proj_rownztot / (float)footprint);
+    }
+    int *buffmap              = new int[buffmapnztot];
+    unsigned short *buffindex = new unsigned short[buffnztot];
 #pragma omp parallel
     {
       int *numint = new int[mynumpix];
       int *numind = new int[mynumpix];
-      int buffnztemp[blocknzmax];
 #pragma omp for
-      for (int n = 0; n < buffnztot * blocksize; n++) {
-        buffindex[n] = -1;
+      for (int n = 0; n < blocknztot; n++) {
+        buffmapnz[n] = 0;
+      }
+#pragma omp for
+      for (int n = 0; n < blocknztot * blocksize; n++) {
+        buffnz[n] = 0;
       }
 #pragma omp for schedule(dynamic)
       for (int block = 0; block < numblocks; block++) {
@@ -904,47 +902,48 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < raynumout;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
         int count = 0;
         for (int n = 0; n < mynumpix; n++) {
           if (numint[n]) {
-            int buffloc = count / buffsize;
-            numint[n]   = buffloc;
-            numind[n]   = count % buffsize;
+            int buffloc                                   = count / buffsize;
+            int buff                                      = blockdispl[block] + buffloc;
+            buffmap[buffmapdispl[buff] + buffmapnz[buff]] = n;
+            buffmapnz[buff]++;
+            numint[n] = buff;
+            numind[n] = count % buffsize;
             count++;
           }
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < raynumout;
              m++) {
-          for (int n = 0; n < blocknzmax; n++) {
-            buffnztemp[n] = 0;
-          }
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
-            int buffloc = numint[rowindex[n]];
-            int row     = buffdispl[blockdispl[block] + buffloc] + buffnztemp[buffloc];
-            buffindex[row * blocksize + m % blocksize] = numind[rowindex[n]];
-            buffnztemp[buffloc]++;
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+            int ind = numint[rowindex[n]] * blocksize + m % blocksize;
+            buffindex[buffdispl[ind] + buffnz[ind]] = numind[rowindex[n]];
+            buffnz[ind]++;
           }
         }
       }
       delete[] numint;
       delete[] numind;
     }
+    delete[] buffnz;
     delete[] rowindex;
-    proj_numblocks  = numblocks;
-    proj_blocknztot = blocknztot;
-    proj_blocknzall = blocknzall;
-    proj_blockdispl = blockdispl;
-    proj_buffnztot  = buffnztot;
-    proj_buffnzall  = buffnzall;
-    proj_buffdispl  = buffdispl;
-    proj_buffmap    = buffmap;
-    proj_buffindex  = buffindex;
+    proj_numblocks    = numblocks;
+    proj_blocknztot   = blocknztot;
+    proj_blockdispl   = blockdispl;
+    proj_buffnztot    = buffnztot;
+    proj_buffdispl    = buffdispl;
+    proj_buffmap      = buffmap;
+    proj_buffmapnz    = buffmapnz;
+    proj_buffmapnztot = buffmapnztot;
+    proj_buffmapnzall = buffmapnzall;
+    proj_buffmapdispl = buffmapdispl;
+    proj_buffindex    = buffindex;
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("BLOCKING TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -953,18 +952,16 @@ int main(int argc, char **argv) {
     printf("BLOCKING BACKPROJECTION MATRIX\n");
   }
   {
-    int *rowindex = back_rowindex;
-    int *rowdispl = back_rowdispl;
-    int blocksize = back_blocksize;
-    int buffsize  = back_buffsize;
-    int numblocks = mynumpix / blocksize;
+    int *rowindex  = back_rowindex;
+    long *rowdispl = back_rowdispl;
+    int blocksize  = back_blocksize;
+    int buffsize   = back_buffsize;
+    int numblocks  = mynumpix / blocksize;
     if (mynumpix % blocksize) {
       numblocks++;
     }
-    int numblocksall = numblocks;
-    MPI_Allreduce(MPI_IN_PLACE, &numblocksall, 1, MPI_INTEGER, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
-      printf("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocksall, buffsize);
+      printf("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocks, buffsize);
     }
     int *blocknz = new int[numblocks];
 #pragma omp parallel
@@ -977,7 +974,7 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < mynumpix;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
@@ -999,6 +996,7 @@ int main(int argc, char **argv) {
     for (int block = 1; block < numblocks + 1; block++) {
       blockdispl[block] = blockdispl[block - 1] + blocknz[block - 1];
     }
+    int blocknztot = blockdispl[numblocks];
     int blocknzmax = 0;
     for (int block = 0; block < numblocks; block++) {
       if (blocknz[block] > blocknzmax) {
@@ -1006,32 +1004,23 @@ int main(int argc, char **argv) {
       }
     }
     delete[] blocknz;
-    int blocknztot  = blockdispl[numblocks];
-    long blocknzall = blocknztot;
-    MPI_Allreduce(MPI_IN_PLACE, &blocknzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
       printf(
-          "NUMBER OF BUFFERS: %li AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n",
-          blocknzall, blocknzall / (float)numblocksall, blocknzmax);
+          "NUMBER OF BUFFERS: %d AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n", blocknztot,
+          blocknztot / (float)numblocks, blocknzmax);
     }
-    if (myid == 0) {
-      printf(
-          "BUFF MAP: %li (%f GB)\n", blocknzall * buffsize,
-          blocknzall * buffsize / 1024.0 / 1024.0 / 1024.0 * sizeof(float));
-    }
-    int *buffmap   = new int[blocknztot * buffsize];
-    int *buffnz    = new int[blocknztot];
-    long footprint = 0;
+    int *buffmapnz = new int[blocknztot];
+    int *buffnz    = new int[blocknztot * blocksize];
+    int footprint  = 0;
 #pragma omp parallel
     {
       int *numint = new int[raynumout];
-      int buffnztemp[blocknzmax];
-#pragma omp for
-      for (int n = 0; n < blocknztot * buffsize; n++) {
-        buffmap[n] = 0;
-      }
 #pragma omp for
       for (int n = 0; n < blocknztot; n++) {
+        buffmapnz[n] = 0;
+      }
+#pragma omp for
+      for (int n = 0; n < blocknztot * blocksize; n++) {
         buffnz[n] = 0;
       }
 #pragma omp for schedule(dynamic)
@@ -1041,17 +1030,16 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < mynumpix;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
         int count = 0;
         for (int n = 0; n < raynumout; n++) {
           if (numint[n]) {
-            int buffloc     = count / buffsize;
-            int mapind      = (blockdispl[block] + buffloc) * buffsize + count % buffsize;
-            buffmap[mapind] = n;
-            numint[n]       = buffloc;
+            int buff = blockdispl[block] + count / buffsize;
+            buffmapnz[buff]++;
+            numint[n] = buff;
             count++;
           }
         }
@@ -1059,56 +1047,61 @@ int main(int argc, char **argv) {
         footprint += count;
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < mynumpix;
              m++) {
-          for (int n = 0; n < blocknzmax; n++) {
-            buffnztemp[n] = 0;
-          }
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
-            buffnztemp[numint[rowindex[n]]]++;
-          }
-          for (int buff = blockdispl[block]; buff < blockdispl[block + 1]; buff++) {
-            int buffloc = buff - blockdispl[block];
-            if (buffnztemp[buffloc] > buffnz[buff]) {
-              buffnz[buff] = buffnztemp[buffloc];
-            }
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+            buffnz[numint[rowindex[n]] * blocksize + m % blocksize]++;
           }
         }
       }
       delete[] numint;
     }
-    int *buffdispl = new int[blocknztot + 1];
-    buffdispl[0]   = 0;
-    for (int buff = 1; buff < blocknztot + 1; buff++) {
-      buffdispl[buff] = buffdispl[buff - 1] + buffnz[buff - 1];
+    long *buffmapdispl = new long[blocknztot + 1];
+    buffmapdispl[0]    = 0;
+    for (int n = 1; n < blocknztot + 1; n++) {
+      buffmapdispl[n] = buffmapdispl[n - 1] + buffmapnz[n - 1];
     }
-    int buffnzmax = 0;
-    for (int buff = 0; buff < blocknztot; buff++) {
-      if (buffnzmax < buffnz[buff]) {
-        buffnzmax = buffnz[buff];
-      }
-    }
-    delete[] buffnz;
-    int buffnztot  = buffdispl[blocknztot];
-    long buffnzall = buffnztot;
-    MPI_Allreduce(MPI_IN_PLACE, &buffnzall, 1, MPI_INTEGER, MPI_SUM, MPI_COMM_WORLD);
-    MPI_Allreduce(MPI_IN_PLACE, &footprint, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
+    long buffmapnztot = buffmapdispl[blocknztot];
+    long buffmapnzall = buffmapnztot;
+    MPI_Allreduce(MPI_IN_PLACE, &buffmapnzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
     if (myid == 0) {
       printf(
-          "ELLPACK STORAGE: %li (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: "
-          "%f\n",
-          buffnzall * blocksize,
-          buffnzall * (float)blocksize * sizeof(float) * 1.5 / 1024.0 / 1024.0 / 1024.0,
-          buffnzmax, proj_rownzall / (float)buffnzall / blocksize * 1.5,
-          proj_rownzall / (float)footprint);
+          "BUFFER MAP: %lu (%f GB)\n", buffmapnzall,
+          buffmapnzall / 1024.0 / 1024.0 / 1024.0 * sizeof(int));
     }
-    short *buffindex = new short[buffnztot * blocksize];
+    long *buffdispl = new long[blocknztot * blocksize + 1];
+    buffdispl[0]    = 0;
+    for (int n = 1; n < blocknztot * blocksize + 1; n++) {
+      buffdispl[n] = buffdispl[n - 1] + buffnz[n - 1];
+    }
+    long buffnztot = buffdispl[blocknztot * blocksize];
+    int buffnzmax  = 0;
+    for (int n = 0; n < blocknztot * blocksize; n++) {
+      if (buffnzmax < buffnz[n]) {
+        buffnzmax = buffnz[n];
+      }
+    }
+    long buffnzall = buffnztot;
+    MPI_Allreduce(MPI_IN_PLACE, &buffnzall, 1, MPI_LONG, MPI_SUM, MPI_COMM_WORLD);
+    if (myid == 0) {
+      printf(
+          "CSR STORAGE: %lu (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: "
+          "%f\n",
+          buffnzall, buffnzall * sizeof(float) * 1.5 / 1024.0 / 1024.0 / 1024.0,
+          buffnzmax, proj_rownztot / (float)buffnzall * 1.5,
+          proj_rownztot / (float)footprint);
+    }
+    int *buffmap              = new int[buffmapnztot];
+    unsigned short *buffindex = new unsigned short[buffnztot];
 #pragma omp parallel
     {
       int *numint = new int[raynumout];
       int *numind = new int[raynumout];
-      int buffnztemp[blocknzmax];
 #pragma omp for
-      for (int n = 0; n < buffnztot * blocksize; n++) {
-        buffindex[n] = -1;
+      for (int n = 0; n < blocknztot; n++) {
+        buffmapnz[n] = 0;
+      }
+#pragma omp for
+      for (int n = 0; n < blocknztot * blocksize; n++) {
+        buffnz[n] = 0;
       }
 #pragma omp for schedule(dynamic)
       for (int block = 0; block < numblocks; block++) {
@@ -1117,47 +1110,48 @@ int main(int argc, char **argv) {
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < mynumpix;
              m++) {
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
             numint[rowindex[n]]++;
           }
         }
         int count = 0;
         for (int n = 0; n < raynumout; n++) {
           if (numint[n]) {
-            int buffloc = count / buffsize;
-            numint[n]   = buffloc;
-            numind[n]   = count % buffsize;
+            int buffloc                                   = count / buffsize;
+            int buff                                      = blockdispl[block] + buffloc;
+            buffmap[buffmapdispl[buff] + buffmapnz[buff]] = n;
+            buffmapnz[buff]++;
+            numint[n] = buff;
+            numind[n] = count % buffsize;
             count++;
           }
         }
         for (int m = block * blocksize; m < (block + 1) * blocksize && m < mynumpix;
              m++) {
-          for (int n = 0; n < blocknzmax; n++) {
-            buffnztemp[n] = 0;
-          }
-          for (int n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
-            int buffloc = numint[rowindex[n]];
-            int row     = buffdispl[blockdispl[block] + buffloc] + buffnztemp[buffloc];
-            buffindex[row * blocksize + m % blocksize] = numind[rowindex[n]];
-            buffnztemp[buffloc]++;
+          for (long n = rowdispl[m]; n < rowdispl[m + 1]; n++) {
+            int ind = numint[rowindex[n]] * blocksize + m % blocksize;
+            buffindex[buffdispl[ind] + buffnz[ind]] = numind[rowindex[n]];
+            buffnz[ind]++;
           }
         }
       }
       delete[] numint;
       delete[] numind;
     }
+    delete[] buffnz;
     delete[] rowindex;
-    back_numblocks  = numblocks;
-    back_blocknztot = blocknztot;
-    back_blocknzall = blocknzall;
-    back_blockdispl = blockdispl;
-    back_buffnztot  = buffnztot;
-    back_buffnzall  = buffnzall;
-    back_buffdispl  = buffdispl;
-    back_buffmap    = buffmap;
-    back_buffindex  = buffindex;
+    back_numblocks    = numblocks;
+    back_blocknztot   = blocknztot;
+    back_blockdispl   = blockdispl;
+    back_buffnztot    = buffnztot;
+    back_buffdispl    = buffdispl;
+    back_buffmap      = buffmap;
+    back_buffmapnz    = buffmapnz;
+    back_buffmapnztot = buffmapnztot;
+    back_buffmapnzall = buffmapnzall;
+    back_buffmapdispl = buffmapdispl;
+    back_buffindex    = buffindex;
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("BLOCKING TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -1166,9 +1160,9 @@ int main(int argc, char **argv) {
     printf("\nFILL PROJECTION MATRIX\n");
   }
   {
-    proj_buffvalue = new float[proj_buffnztot * proj_blocksize];
+    proj_buffvalue = new float[proj_buffnztot];
 #pragma omp parallel for
-    for (int n = 0; n < proj_buffnztot * proj_blocksize; n++) {
+    for (long n = 0; n < proj_buffnztot; n++) {
       proj_buffvalue[n] = 0;
     }
 #pragma omp parallel for schedule(dynamic)
@@ -1179,34 +1173,20 @@ int main(int argc, char **argv) {
         float theta = raycoorout[k].imag();
         for (int buff = proj_blockdispl[block]; buff < proj_blockdispl[block + 1];
              buff++) {
-          for (int row = proj_buffdispl[buff]; row < proj_buffdispl[buff + 1]; row++) {
-            int ind = row * proj_blocksize + k % proj_blocksize;
-            if (proj_buffindex[ind] == -1) {
-              proj_buffindex[ind] = 0;
-            }
-            else {
-              int mapind = buff * proj_buffsize + proj_buffindex[ind];
-              int pixind = proj_buffmap[mapind];
-              float domain[4];
-              domain[0] = pixcoor[pixind].real() - pixsize / 2;
-              domain[1] = domain[0] + pixsize;
-              domain[2] = pixcoor[pixind].imag() - pixsize / 2;
-              domain[3] = domain[2] + pixsize;
-              findlength(theta, rho, &domain[0], &proj_buffvalue[ind]);
-            }
+          int ind = buff * proj_blocksize + k % proj_blocksize;
+          for (long n = proj_buffdispl[ind]; n < proj_buffdispl[ind + 1]; n++) {
+            int pixind = proj_buffmap[proj_buffmapdispl[buff] + proj_buffindex[n]];
+            float domain[4];
+            domain[0] = pixcoor[pixind].real() - pixsize / 2;
+            domain[1] = domain[0] + pixsize;
+            domain[2] = pixcoor[pixind].imag() - pixsize / 2;
+            domain[3] = domain[2] + pixsize;
+            findlength(theta, rho, &domain[0], &proj_buffvalue[n]);
           }
         }
       }
     }
-#pragma omp parallel for
-    for (int n = 0; n < proj_buffnztot * proj_blocksize; n++) {
-      if (proj_buffindex[n] == -1) {
-        proj_buffindex[n] = 0;
-        proj_buffvalue[n] = 0;
-      }
-    }
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -1215,9 +1195,9 @@ int main(int argc, char **argv) {
     printf("FILL BACKPROJECTION MATRIX\n");
   }
   {
-    back_buffvalue = new float[back_buffnztot * back_blocksize];
+    back_buffvalue = new float[back_buffnztot];
 #pragma omp parallel for
-    for (int n = 0; n < back_buffnztot * back_blocksize; n++) {
+    for (long n = 0; n < back_buffnztot; n++) {
       back_buffvalue[n] = 0;
     }
 #pragma omp parallel for schedule(dynamic)
@@ -1231,31 +1211,17 @@ int main(int argc, char **argv) {
         domain[3] = domain[2] + pixsize;
         for (int buff = back_blockdispl[block]; buff < back_blockdispl[block + 1];
              buff++) {
-          for (int row = back_buffdispl[buff]; row < back_buffdispl[buff + 1]; row++) {
-            int ind = row * back_blocksize + n % back_blocksize;
-            if (back_buffindex[ind] == -1) {
-              back_buffindex[ind] = 0;
-            }
-            else {
-              int mapind  = buff * back_buffsize + back_buffindex[ind];
-              int rayind  = back_buffmap[mapind];
-              float rho   = raycoorout[rayind].real();
-              float theta = raycoorout[rayind].imag();
-              findlength(theta, rho, &domain[0], &back_buffvalue[ind]);
-            }
+          int ind = buff * back_blocksize + n % back_blocksize;
+          for (long k = back_buffdispl[ind]; k < back_buffdispl[ind + 1]; k++) {
+            int rayind  = back_buffmap[back_buffmapdispl[buff] + back_buffindex[k]];
+            float rho   = raycoorout[rayind].real();
+            float theta = raycoorout[rayind].imag();
+            findlength(theta, rho, &domain[0], &back_buffvalue[k]);
           }
         }
       }
     }
-#pragma omp parallel for
-    for (int n = 0; n < back_buffnztot * back_blocksize; n++) {
-      if (back_buffindex[n] == -1) {
-        back_buffindex[n] = 0;
-        back_buffvalue[n] = 0;
-      }
-    }
   }
-  MPI_Barrier(MPI_COMM_WORLD);
   if (myid == 0) {
     printf("TIME: %e\n", MPI_Wtime() - project_time);
   }
@@ -1306,19 +1272,16 @@ int main(int argc, char **argv) {
     printf("\n");
   }*/
 
-  // raypart = new float[raynumout]; //PARTIAL MEASUREMENT
-  // raybuff = new float[raynuminc]; //INPUT BUFFER
-  float *obj; // = new float[mynumpix]; //OBJECT
-  float *mes; // = new float[mynumray]; //MEASUREMENT
-  float *ray; // = new float[mynumray]; //RAYSUM
-  float *res; // = new float[mynumray]; //RESIDUAL ERRORKEK
-  float *gra; // = new float[mynumpix]; //GRADIENT
-  float *dir; // = new float[mynumpix]; //DIRECTION
-
-  setup_gpu(&obj, &gra, &dir, &mes, &res, &ray);
-
-  numproj = 0;
-  numback = 0;
+  raypart    = new float[raynumout]; // PARTIAL MEASUREMENT
+  raybuff    = new float[raynuminc]; // INPUT BUFFER
+  float *obj = new float[mynumpix];  // OBJECT
+  float *mes = new float[mynumray];  // MEASUREMENT
+  float *ray = new float[mynumray];  // RAYSUM
+  float *res = new float[mynumray];  // RESIDUAL ERRORKEK
+  float *gra = new float[mynumpix];  // GRADIENT
+  float *dir = new float[mynumpix];  // DIRECTION
+  numproj    = 0;
+  numback    = 0;
 
   /*if(myid==0)printf("SIMULATION STARTS\n");
   #pragma omp parallel for
@@ -1326,7 +1289,7 @@ int main(int argc, char **argv) {
     obj[n] = 0;
     if(pixcoor[n].real() > xstart/2 && pixcoor[n].real() < 0 )
       if(pixcoor[n].imag() > ystart/2 && pixcoor[n].imag() < 0)
-        obj[n] = 1;
+        obj[n] = 1;//(rand()%100)/100.0;
     if(pixcoor[n].real() < -xstart/2 && pixcoor[n].real() > 0)
       if(pixcoor[n].imag() < -ystart/2 && pixcoor[n].imag() > 0)
         obj[n] = 1;
@@ -1363,8 +1326,9 @@ int main(int argc, char **argv) {
     mesall[rayglobalind[k]] = mes[k];
   MPI_Allreduce(MPI_IN_PLACE,mesall,numray,MPI_FLOAT,MPI_SUM,MPI_COMM_WORLD);
   if(myid==0){
-    FILE *mesf = fopen("measurement.bin","wb");
-    fwrite(mesall,sizeof(float),numray,mesf);
+    FILE *mesf =
+  fopen("/gpfs/alpine/scratch/merth/csc362/MemXCT_datasets/ADS4_sinogram.bin","wb");
+    fwrite(mesall,sizeof(float),numthe*numrho,mesf);
     fclose(mesf);
   }
   delete[] mesall;*/
@@ -1485,18 +1449,12 @@ int main(int argc, char **argv) {
     double projflops = proj_rownzall / 1e9 * 2 * numproj / fktime;
     double backflops = proj_rownzall / 1e9 * 2 * numback / bktime;
     double totflops  = proj_rownzall / 1e9 * 2 * (numproj + numback) / (fktime + bktime);
-    double projbw    = (proj_buffnzall * proj_blocksize / 1e9 * 6
-                     + proj_blocknzall * proj_buffsize / 1e9 * 4)
-        * numproj / fktime;
-    double backbw = (back_buffnzall * back_blocksize / 1e9 * 6
-                     + back_blocknzall * back_buffsize / 1e9 * 4)
-        * numback / bktime;
-    double totbw = ((proj_buffnzall * proj_blocksize / 1e9 * 6
-                     + proj_blocknzall * proj_buffsize / 1e9 * 4)
-                        * numproj
-                    + (back_buffnzall * back_blocksize / 1e9 * 6
-                       + back_blocknzall * back_buffsize / 1e9 * 4)
-                        * numback)
+    double projbw
+        = (proj_rownzall / 1e9 * 6 + proj_buffmapnzall / 1e9 * 4) * numproj / fktime;
+    double backbw
+        = (proj_rownzall / 1e9 * 6 + back_buffmapnzall / 1e9 * 4) * numback / bktime;
+    double totbw = ((proj_rownzall / 1e9 * 6 + proj_buffmapnzall / 1e9 * 4) * numproj
+                    + (proj_rownzall / 1e9 * 6 + back_buffmapnzall / 1e9 * 4) * numback)
         / (fktime + bktime);
     if (myid == 0) {
       printf(
@@ -1534,7 +1492,6 @@ int main(int argc, char **argv) {
 
   MPI_Finalize();
 }
-
 float norm_kernel(float *a, int dim) {
   float reduce = 0;
 #pragma omp parallel for reduction(+ : reduce)

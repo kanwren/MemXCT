@@ -7,7 +7,7 @@ OPTFLAGS = -O3 #-xmic-avx512 -qopt-prefetch=0 -qopt-report=5 -qopt-report-file=$
 LD_FLAGS = -fopenmp
 
 TARGETS = memxct
-OBJECTS = main.o vars.h raytrace.o kernels.o
+OBJECTS = src/main.o src/raytrace.o src/kernels.o
 
 # ----- Make Rules -----
 
@@ -20,4 +20,4 @@ memxct: $(OBJECTS)
 	$(CXX) -o $@ $(OBJECTS) $(LD_FLAGS)
 
 clean:
-	rm -f $(TARGETS) *.o *.o.* *.txt *.bin core
+	rm -f $(TARGETS) src/*.o src/*.o.* *.txt *.bin core *.html *.xml
