@@ -20,7 +20,7 @@ void findlength(float theta, float rho, float *d, float *length){
   float u2 = 1;
   bool pass = true;
   int inid = 0;
-  for (int k = 0; k < 4; k++) {
+  for(int k = 0; k < 4; k++)
     if(p[k] == 0){
       if(q[k] < 0){
         pass = false;
@@ -32,19 +32,11 @@ void findlength(float theta, float rho, float *d, float *length){
         u1 = t;
         inid = k;
       }
-      else if (p[k] > 0 && u2 > t) {
+      else if(p[k] > 0 && u2 > t)
         u2 = t;
-      }
     }
-  }
-  if (u1 > u2 || u1 > 1 || u1 < 0) {
-    pass = false;
-  }
-  if (pass) {
-    if (u2 > u1) {
-      *length = *length + (u2 - u1) * raylength;
-    }
-  }
+  if(u1 > u2 || u1 > 1 || u1 < 0) pass = false;
+  if(pass)if(u2>u1)*length = *length+(u2-u1)*raylength;
 }
 
 void findnumpix(float theta, float rho, float *d, int *numpix){
@@ -67,7 +59,7 @@ void findnumpix(float theta, float rho, float *d, int *numpix){
   float u2 = 1;
   bool pass = true;
   int inid = 0;
-  for (int k = 0; k < 4; k++) {
+  for(int k = 0; k < 4; k++)
     if(p[k] == 0){
       if(q[k] < 0){
         pass = false;
@@ -79,14 +71,10 @@ void findnumpix(float theta, float rho, float *d, int *numpix){
         u1 = t;
         inid = k;
       }
-      else if (p[k] > 0 && u2 > t) {
+      else if(p[k] > 0 && u2 > t)
         u2 = t;
-      }
     }
-  }
-  if (u1 > u2 || u1 > 1 || u1 < 0) {
-    pass = false;
-  }
+  if(u1 > u2 || u1 > 1 || u1 < 0) pass = false;
   //IF RAY COLLIDES WITH DOMAIN
   if(pass){
     //FIND THE INITIAL PIXEL
@@ -122,18 +110,16 @@ void findnumpix(float theta, float rho, float *d, int *numpix){
       u2 = 1;
       for(int k = 0; k < 4; k++){
         float t = q[k]/p[k];
-        if (p[k] < 0 && u1 < t) {
+        if(p[k] < 0 && u1 < t)
           u1 = t;
-        }
-        else if (p[k] > 0 && u2 > t) {
+        else if(p[k] > 0 && u2 > t){
           u2 = t;
           exid = k;
         }
       }
       //INCREMENT NUMBER OF PIXELS
-      if (u2 > u1) {
+      if(u2 > u1)
         *numpix = *numpix + 1;
-      }
       //FIND NEXT PIXEL
       if(exid == 0){
         initx = initx-1;
@@ -175,7 +161,7 @@ void findpixind(float theta, float rho, float *d, int *numpix, int offset, int *
   float u2 = 1;
   bool pass = true;
   int inid = 0;
-  for (int k = 0; k < 4; k++) {
+  for(int k = 0; k < 4; k++)
     if(p[k] == 0){
       if(q[k] < 0){
         pass = false;
@@ -187,14 +173,10 @@ void findpixind(float theta, float rho, float *d, int *numpix, int offset, int *
         u1 = t;
         inid = k;
       }
-      else if (p[k] > 0 && u2 > t) {
+      else if(p[k] > 0 && u2 > t)
         u2 = t;
-      }
     }
-  }
-  if (u1 > u2 || u1 > 1 || u1 < 0) {
-    pass = false;
-  }
+  if(u1 > u2 || u1 > 1 || u1 < 0) pass = false;
   //IF RAY COLLIDES WITH DOMAIN
   if(pass){
     //FIND THE INITIAL PIXEL
@@ -230,31 +212,25 @@ void findpixind(float theta, float rho, float *d, int *numpix, int offset, int *
       u2 = 1;
       for(int k = 0; k < 4; k++){
         float t = q[k]/p[k];
-        if (p[k] < 0 && u1 < t) {
+        if(p[k] < 0 && u1 < t)
           u1 = t;
-        }
-        else if (p[k] > 0 && u2 > t) {
+        else if(p[k] > 0 && u2 > t){
           u2 = t;
           exid = k;
         }
       }
       //ADD CONTRIBUTION FROM CURRENT PIXEL
       int z = 0;
-      if (spatindexing == 1) {
-        z = inity * spatsize + initx;
-      }
-      if (spatindexing == 2) {
-        z = initx * spatsize + inity;
-      }
-      if (spatindexing == 3) {
-        z = encode(initx, inity);
-      }
-      if (spatindexing == 4) {
-        z = encode(inity, initx);
-      }
-      if (spatindexing == 5) {
-        z = xy2d(spatsize, initx, inity);
-      }
+      if(spatindexing==1)
+        z = inity*spatsize+initx;
+      if(spatindexing==2)
+        z = initx*spatsize+inity;
+      if(spatindexing==3)
+        z = encode(initx,inity);
+      if(spatindexing==4)
+        z = encode(inity,initx);
+      if(spatindexing==5)
+        z = xy2d(spatsize,initx,inity);
         //z = encode(initx,inity);
       if(u2 > u1){
         pixind[*numpix] = offset+z;
@@ -285,9 +261,8 @@ void findpixind(float theta, float rho, float *d, int *numpix, int offset, int *
 
 int encode(unsigned short x, unsigned short y){
   unsigned int z = 0; // z gets the resulting Morton Number.
-  for (int i = 0; i < sizeof(x) * 8; i++) {
+  for (int i = 0; i < sizeof(x)*8; i++)
     z |= (x & 1U << i) << i | (y & 1U << i) << (i + 1);
-  }
   return z;
 }
 
