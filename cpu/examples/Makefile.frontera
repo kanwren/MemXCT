@@ -1,10 +1,10 @@
 # ----- Make Macros -----
 
 CXX = mpicxx
-CXXFLAGS = -std=c++11 -fopenmp
-OPTFLAGS = -O3
+CXXFLAGS = -std=c++11 -qopenmp
+OPTFLAGS = -O3 -xhost 
 
-LD_FLAGS = -fopenmp
+LD_FLAGS = -qopenmp
 
 TARGETS = memxct
 OBJECTS = src/main.o src/raytrace.o src/kernels.o
@@ -13,8 +13,8 @@ OBJECTS = src/main.o src/raytrace.o src/kernels.o
 
 all:	$(TARGETS)
 
-src/%.o: src/%.cpp
-	$(CXX) $(CXXFLAGS) $(OPTFLAGS) -c $^ -o $@
+%.o: %.cpp vars.h
+	${CXX} ${CXXFLAGS} ${OPTFLAGS} $^ -c -o $@
 
 memxct: $(OBJECTS)
 	$(CXX) -o $@ $(OBJECTS) $(LD_FLAGS)

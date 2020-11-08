@@ -11,7 +11,7 @@
 
 **Modify Makefile**
 
-There are Makefiles for ALCF Theta (Intel KNL) and OLCF Summit (IBM POWER9) systems. You should use one of these to modify according to your system.
+There are Makefiles for ALCF Theta (Intel KNL) and OLCF Summit (IBM POWER9) and TACC Frontera (Intel Cascade Lake) systems. You should use one of these to modify according to your system.
 
 ## Download Datasets
 
@@ -22,7 +22,7 @@ We provide the challenge datasets over Box. Dimensions (Theta x Rho) and corresp
 * ADS1 (360x256): 512 MB
 * ADS2 (750x512): 3.6 GB
 * ADS3 (1500x1024): 28 GB
-* ADS3 (2400x2048): 180 GB
+* ADS4 (2400x2048): 180 GB
 
 **Challenge Datasets:**
 TBA
@@ -46,51 +46,78 @@ wget https://uofi.box.com/shared/static/ki7smuurh34cleayvwfxhjfn9mgsnega -O ADS4
 
 ## Run 
 
-Edit input parameters and run the application using run.sh
+Edit input parameters and run the application using run script. Update one of the run scripts for your system.
 
 ```bash
 #DOMAIN INFORMATION
-export NUMTHE= Number of Rotations (according to the input dataset)
-export NUMRHO= Number of Channels (according to the input dataset)
-export PIXSIZE= Pixel Size (should be 1)
+export NUMTHE= #Number of Rotations (according to the input dataset)
+export NUMRHO= #Number of Channels (according to the input dataset)
+export PIXSIZE= #Pixel Size (should be 1)
 #SOLVER DATA
-export NUMITER= Number of Iterations (should be 24)
+export NUMITER= #Number of Iterations (should be 24)
 #TILE SIZE (MUST BE POWER OF TWO)
-export SPATSIZE= Spatial Tile Size (tuning parameter, must be a power of two)
-export SPECSIZE= Spectral Tile Size (tuning parameter, must be a power of two)
+export SPATSIZE= #Spatial Tile Size (tuning parameter)
+export SPECSIZE= #Spectral Tile Size (tuning parameter)
 #BLOCK SIZE
-export PROJBLOCK= Projection Block Size (tuning parameter)
-export BACKBLOCK= Backprojection Block Size (tuning parameter)
+export PROJBLOCK= #Projection Partition Block Size (tuning parameter)
+export BACKBLOCK= #Backprojection Partition Block Size (tuning parameter)
 #BUFFER SIZE
-export PROJBUFF= Projection Buffer Size (tuning parameter)
-export BACKBUFF= Backprojection Buffer Size (tuning parameter)
+export PROJBUFF= #Projection Buffer Size in KB (tuning parameter)
+export BACKBUFF= #Backprojection Buffer Size in KB (tuning parameter)
 #I/O FILES
-export THEFILE= input theta file path
-export SINFILE= input sinogram file path
-export OUTFILE= output image file path
+export THEFILE= #input theta file path
+export SINFILE= #input sinogram file path
+export OUTFILE= #output image file path
+
+#RUN COMMAND COMES HERE
 ```
 
 You should see residual error drops in each iteration.
 
 ## Verify
 
-Download [Fiji](https://fiji.sc) open source, lightweight, standalone scientific visualization tool. Import the raw image file and inspect the image to verify the code. If you did it correctly you will see these images that correspond to the input datasets.
+Download [Fiji](https://fiji.sc) open source, lightweight, standalone scientific visualization tool. Import the raw image file and inspect the image to verify the code. Sinogram (input) and tomogram (output) test data should look as below.
 
-ADS1
+<table>
+  <tr>
+    <th>ADS1 Sinogram (360x256)</th>
+    <th>ADS1 Tomogram (256x256)</th>
+  </tr>
+  <tr valign="top">
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278602-0e326000-e74a-11ea-8d64-37dd8ce307e3.png" width="256" title="ADS1 Sinogram"></td>
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278668-22765d00-e74a-11ea-8e41-867c3ee286d6.png" width="256" title="ADS1 Tomogram" ></td>
+  </tr>
+</table>
 
-![recon_ADS1](https://user-images.githubusercontent.com/1329268/90914890-40d40580-e3a4-11ea-8fc8-8c866a66d414.png)
+<table>
+  <tr>
+    <th>ADS2 Sinogram (750x512)</th>
+    <th>ADS2 Tomogram (512x512)</th>
+  </tr>
+  <tr valign="top">
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278678-2609e400-e74a-11ea-8fd0-e789b2427c44.png" width="256" title="ADS2 Sinogram"></td>
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278685-286c3e00-e74a-11ea-9238-9ffb6c12699e.png" width="256" title="ADS2 Tomogram" ></td>
+  </tr>
+</table>
 
-ADS2
+<table>
+  <tr>
+    <th>ADS3 Sinogram (1500x1024)</th>
+    <th>ADS3 Tomogram (1024x1024)</th>
+  </tr>
+  <tr valign="top">
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278696-2ace9800-e74a-11ea-8bcc-17be6f63e693.png" width="256" title="ADS3 Sinogram"></td>
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278705-2d30f200-e74a-11ea-9563-bad5bb6e2e48.png" width="256" title="ADS3 Tomogram" ></td>
+  </tr>
+</table>
 
-![recon_ADS2](https://user-images.githubusercontent.com/1329268/90914889-40d40580-e3a4-11ea-957b-90c5c84ce6a7.png)
-
-ADS3
-
-![recon_ADS3](https://user-images.githubusercontent.com/1329268/90914888-40d40580-e3a4-11ea-8a8c-6a40348c7ba8.png)
-
-ADS4
-
-![recon_ADS4](https://user-images.githubusercontent.com/1329268/90914882-3dd91500-e3a4-11ea-9766-ccbe9870c7e2.png)
-
-
-
+<table>
+  <tr>
+    <th>ADS4 Sinogram (2400x2048)</th>
+    <th>ADS4 Tomogram (2048x2048)</th>
+  </tr>
+  <tr valign="top">
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278713-2efab580-e74a-11ea-8b6d-e4265b96c8ab.png" width="256" title="ADS4 Sinogram"></td>
+    <td style="text-align:center"><img src="https://user-images.githubusercontent.com/15988772/91278912-7123f700-e74a-11ea-8908-dbcfbb2e4dd7.png" width="256" title="ADS4 Tomogram" ></td>
+  </tr>
+</table>
