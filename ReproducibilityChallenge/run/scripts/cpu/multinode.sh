@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#PBS -N memxct
-#PBS -l nodes=1:ppn=60
-#PBS -j oe
-#PBS -o memxct-cds3.out
-
 set -euo pipefail
 
 die() {
@@ -16,11 +11,12 @@ PREFIX="/shared/scratch/MemXCT"
 EXE_PATH="$PREFIX/memxct"
 [ ! -f "$EXE_PATH" ] && die "Executable not found: $EXE_PATH"
 
-module load mpi/hpcx || die "Failed to load HPC-X"
-echo "Using mpirun from $(which mpirun)"
-mpirun --version
+# module load mpi/hpcx || die "Failed to load HPC-X"
+# module load mpi/mvapich2 || die "Failed to load MVAPICH2"
+# echo "Using mpirun from $(which mpirun)"
+# mpirun --version
 
-dataset="CDS3"
+dataset="${1:-CDS1}"
 
 # set box dimensions according to input dataset
 case "$dataset" in
@@ -74,20 +70,27 @@ export OUTFILE="$PREFIX/recon_${dataset}.bin"
 
 # Tuning parameters:
   # tile size (must be power of two)
-  export SPATSIZE=32
-  export SPECSIZE=32
+  export SPATSIZE=${2:-32}
+  export SPECSIZE=${2:-32}
 
   # block size
-  export PROJBLOCK=512
-  export BACKBLOCK=512
+  export PROJBLOCK=${3:-512}
+  export BACKBLOCK=${3:-512}
 
   # buffer size
-  export PROJBUFF=64
-  export BACKBUFF=64
+  export PROJBUFF=${4:-8}
+  export BACKBUFF=${4:-8}
 
 export OMP_PLACES=sockets
 export OMP_PROC_BIND=close
-export OMP_NUM_THREADS=60
+export OMP_NUM_THREADS=120
 
-exec "$EXE_PATH"
+hosts="$(scontrol show hostnames "$SLURM_JOB_NODELIST" | tr '\n' ',' | sed 's/,/:120,/g;s/,$//')"
+echo "Using hosts: $hosts"
+
+PKEY="$(cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/* | grep -v 0000 | grep -v 0x7fff)"
+PKEY="${PKEY/0x8/0x0}"
+echo "PKEY: $PKEY"
+
+mpirun -np ${5:-1} --host "$hosts" --map-by ppr:1:node:pe=120 --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc -x OMP_NUM_THREADS=120 "$EXE_PATH"
 
