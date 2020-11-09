@@ -5,7 +5,7 @@ CXXFLAGS = -std=c++11 -fopenmp
 OPTFLAGS = -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all
 
 NVCC = nvcc
-NVCCFLAGS = -lineinfo -O3 -std=c++11 -ccbin=mpicxx -gencode arch=compute_70,code=sm_70 -Xcompiler -fopenmp -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all
+NVCCFLAGS = -lineinfo -O3 -std=c++11 -ccbin=mpicxx -gencode arch=compute_70,code=sm_70 -Xcompiler -fopenmp
 
 LD_FLAGS = -fopenmp -L/usr/local/cuda-11.1/lib64 -lcudart
 
