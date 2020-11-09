@@ -5,7 +5,7 @@
 cd ~
 wget https://azcopyvnext.azureedge.net/release20201106/azcopy_linux_amd64_10.7.0.tar.gz
 tar xvzf azcopy_linux_amd64_10.7.0.tar.gz
-sudo mv azcopy_linux_amd64_10.7.0/azcopy /usr/local/bin
+mv azcopy_linux_amd64_10.7.0/azcopy /usr/local/bin
 
 # Optional tools for convenience
 
