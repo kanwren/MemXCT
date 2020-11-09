@@ -74,12 +74,12 @@ export OUTFILE="$PREFIX/recon_${dataset}.bin"
 
 # Tuning parameters:
   # tile size (must be power of two)
-  export SPATSIZE=128
-  export SPECSIZE=128
+  export SPATSIZE=32
+  export SPECSIZE=32
 
   # block size
-  export PROJBLOCK=128
-  export BACKBLOCK=128
+  export PROJBLOCK=512
+  export BACKBLOCK=512
 
   # buffer size
   export PROJBUFF=8
@@ -89,11 +89,5 @@ export OMP_PLACES=sockets
 export OMP_PROC_BIND=close
 export OMP_NUM_THREADS=60
 
-# export UCX_TLS=rc
-
-hosts="$(sort -u $PBS_NODEFILE | awk -F. '{print $1}' | tr '\n' ',' | sed 's/,/:120,/g;s/,$//')"
-
-echo "Using hosts: $hosts"
-
-mpirun -np 1 --bind-to socket --map-by socket --host "$hosts" "$EXE_PATH"
+exec "$EXE_PATH"
 
