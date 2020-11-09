@@ -11,10 +11,9 @@ PREFIX="/shared/scratch/MemXCT"
 EXE_PATH="$PREFIX/memxct"
 [ ! -f "$EXE_PATH" ] && die "Executable not found: $EXE_PATH"
 
-# module load mpi/hpcx || die "Failed to load HPC-X"
-# module load mpi/mvapich2 || die "Failed to load MVAPICH2"
-# echo "Using mpirun from $(which mpirun)"
-# mpirun --version
+module load mpi/hpcx || die "Failed to load HPC-X"
+echo "Using mpirun from $(which mpirun)"
+mpirun --version
 
 dataset="${1:-CDS1}"
 
@@ -57,7 +56,7 @@ esac
 
 export THEFILE="$PREFIX/data/${dataset}_theta.bin"
 export SINFILE="$PREFIX/data/${dataset}_sinogram.bin"
-export OUTFILE="$PREFIX/recon_${dataset}.bin"
+export OUTFILE="$PREFIX/recon_${dataset}-${5:-1}.bin"
 
 [ ! -f "$THEFILE" ] && die "Theta file not found: $THEFILE"
 [ ! -f "$SINFILE" ] && die "Sinogram file not found: $SINFILE"
