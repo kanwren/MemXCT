@@ -1,0 +1,1292 @@
+mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/main.cpp -o src/main.o
+src/main.cpp:503:55: missed: couldn't vectorize loop
+src/main.cpp:503:38: missed: not vectorized: not suitable for scatter store *_36 = _37;
+src/main.cpp:501:13: note: vectorized 0 loops in function.
+src/main.cpp:1187:35: missed: couldn't vectorize loop
+src/main.cpp:1187:29: missed: not vectorized: not suitable for scatter store *_27 = _28;
+src/main.cpp:1185:11: note: vectorized 0 loops in function.
+src/main.cpp:1182:11: note: vectorized 0 loops in function.
+src/main.cpp:1182:11: missed: statement clobbers memory: __builtin_memset (_26, 0, _29);
+src/main.cpp:1077:11: note: vectorized 0 loops in function.
+src/main.cpp:1077:11: missed: statement clobbers memory: __builtin_memset (_26, 0, _29);
+src/main.cpp:1049:18: missed: couldn't vectorize loop
+src/main.cpp:1049:53: missed: versioning for alias not supported for: can't determine dependence between *_29 and *_50
+src/main.cpp:1047:11: note: vectorized 0 loops in function.
+src/main.cpp:994:11: note: vectorized 0 loops in function.
+src/main.cpp:994:11: missed: statement clobbers memory: __builtin_memset (_26, 0, _29);
+src/main.cpp:984:11: note: vectorized 0 loops in function.
+src/main.cpp:984:11: missed: statement clobbers memory: __builtin_memset (_26, 0, _29);
+src/main.cpp:956:13: note: vectorized 0 loops in function.
+src/main.cpp:956:13: missed: statement clobbers memory: __builtin_memset (_30, 0, _33);
+src/main.cpp:929:13: note: vectorized 0 loops in function.
+src/main.cpp:929:13: missed: statement clobbers memory: __builtin_memset (_30, 0, _33);
+src/main.cpp:618:47: missed: couldn't vectorize loop
+src/main.cpp:618:35: missed: not vectorized: not suitable for scatter store *_102 = _101;
+src/main.cpp:618:47: missed: couldn't vectorize loop
+src/main.cpp:618:35: missed: not vectorized: not suitable for scatter store *_49 = _50;
+src/main.cpp:614:13: note: vectorized 0 loops in function.
+src/main.cpp:596:13: missed: couldn't vectorize loop
+src/main.cpp:599:49: missed: not vectorized: data ref analysis failed: _27 = *_26;
+src/main.cpp:598:24: missed: couldn't vectorize loop
+src/main.cpp:599:29: missed: not vectorized: not suitable for scatter store *_26 = _35;
+src/main.cpp:596:13: note: vectorized 0 loops in function.
+src/main.cpp:593:48: missed: couldn't vectorize loop
+src/main.cpp:594:64: missed: not vectorized: not suitable for scatter store *_42 = _44;
+src/main.cpp:591:13: note: vectorized 0 loops in function.
+src/main.cpp:588:13: note: vectorized 0 loops in function.
+src/main.cpp:588:13: missed: statement clobbers memory: __builtin_memset (_29, 0, _32);
+src/main.cpp:586:34: missed: couldn't vectorize loop
+src/main.cpp:586:34: missed: not vectorized: control flow in loop.
+src/main.cpp:586:40: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:584:13: note: vectorized 1 loops in function.
+src/main.cpp:513:41: missed: couldn't vectorize loop
+src/main.cpp:513:19: missed: not vectorized: more than one data ref in stmt: *_28 = MEM[(const struct complex &)_26];
+src/main.cpp:511:11: note: vectorized 0 loops in function.
+src/main.cpp:513:19: missed: not vectorized: more than one data ref in stmt: *_28 = MEM[(const struct complex &)_26];
+src/main.cpp:291:16: missed: couldn't vectorize loop
+src/main.cpp:291:16: missed: Loop costings may not be worthwhile.
+src/main.cpp:289:11: note: vectorized 0 loops in function.
+src/main.cpp:257:16: missed: couldn't vectorize loop
+src/main.cpp:257:16: missed: Loop costings may not be worthwhile.
+src/main.cpp:255:11: note: vectorized 0 loops in function.
+src/main.cpp:455:18: missed: couldn't vectorize loop
+src/main.cpp:455:18: missed: not vectorized: control flow in loop.
+src/main.cpp:458:41: missed: couldn't vectorize loop
+src/main.cpp:458:41: missed: not vectorized: control flow in loop.
+src/main.cpp:453:13: note: vectorized 0 loops in function.
+src/main.cpp:465:9: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:467:19: missed: statement clobbers memory: findlength (_56, _48, &domain[0], _31);
+src/main.cpp:959:13: missed: couldn't vectorize loop
+src/main.cpp:959:13: missed: not vectorized: multiple nested loops.
+src/main.cpp:961:15: missed: couldn't vectorize loop
+src/main.cpp:961:15: missed: not vectorized: multiple nested loops.
+src/main.cpp:961:75: missed: couldn't vectorize loop
+src/main.cpp:961:75: missed: not vectorized: multiple nested loops.
+src/main.cpp:967:53: missed: couldn't vectorize loop
+src/main.cpp:967:53: missed: not vectorized: control flow in loop.
+src/main.cpp:969:47: missed: couldn't vectorize loop
+src/main.cpp:969:47: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:959:13: note: vectorized 0 loops in function.
+src/main.cpp:959:13: missed: statement clobbers memory: _18 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _16, 1, 1, &.istart0.691, &.iend0.692);
+src/main.cpp:959:13: missed: statement clobbers memory: _100 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.691, &.iend0.692);
+src/main.cpp:967:53: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:973:23: missed: statement clobbers memory: findlength (_40, _32, &domain[0], _93);
+src/main.cpp:959:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+src/main.cpp:932:13: missed: couldn't vectorize loop
+src/main.cpp:932:13: missed: not vectorized: multiple nested loops.
+src/main.cpp:934:15: missed: couldn't vectorize loop
+src/main.cpp:934:15: missed: not vectorized: multiple nested loops.
+src/main.cpp:934:75: missed: couldn't vectorize loop
+src/main.cpp:934:75: missed: not vectorized: multiple nested loops.
+src/main.cpp:937:53: missed: couldn't vectorize loop
+src/main.cpp:937:53: missed: not vectorized: control flow in loop.
+src/main.cpp:939:47: missed: couldn't vectorize loop
+src/main.cpp:939:47: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:932:13: note: vectorized 0 loops in function.
+src/main.cpp:932:13: missed: statement clobbers memory: _18 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _16, 1, 1, &.istart0.697, &.iend0.698);
+src/main.cpp:932:13: missed: statement clobbers memory: _100 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.697, &.iend0.698);
+src/main.cpp:946:23: missed: statement clobbers memory: findlength (_86, _79, &domain[0], _93);
+src/main.cpp:946:23: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:946:23: missed: statement clobbers memory: findlength (_86, _79, &domain[0], _93);
+src/main.cpp:932:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+src/main.cpp:871:13: missed: couldn't vectorize loop
+src/main.cpp:871:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:883:26: missed: couldn't vectorize loop
+src/main.cpp:883:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:900:39: missed: couldn't vectorize loop
+src/main.cpp:902:51: missed: not vectorized: not suitable for scatter store *_294 = _293;
+src/main.cpp:889:26: missed: couldn't vectorize loop
+src/main.cpp:889:26: missed: not vectorized: control flow in loop.
+src/main.cpp:886:39: missed: couldn't vectorize loop
+src/main.cpp:887:32: missed: not vectorized: not suitable for scatter store *_161 = _109;
+src/main.cpp:883:26: missed: couldn't vectorize loop
+src/main.cpp:883:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:899:62: missed: couldn't vectorize loop
+src/main.cpp:899:62: missed: not vectorized: control flow in loop.
+src/main.cpp:900:39: missed: couldn't vectorize loop
+src/main.cpp:902:51: missed: not vectorized: not suitable for scatter store *_189 = _190;
+src/main.cpp:889:26: missed: couldn't vectorize loop
+src/main.cpp:889:26: missed: not vectorized: control flow in loop.
+src/main.cpp:885:62: missed: couldn't vectorize loop
+src/main.cpp:885:62: missed: not vectorized: control flow in loop.
+src/main.cpp:886:39: missed: couldn't vectorize loop
+src/main.cpp:887:32: missed: not vectorized: not suitable for scatter store *_117 = _119;
+src/main.cpp:871:13: note: vectorized 0 loops in function.
+src/main.cpp:873:38: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:873:38: missed: statement clobbers memory: _50 = operator new [] (iftmp.409_48);
+src/main.cpp:874:38: missed: statement clobbers memory: _56 = operator new [] (iftmp.411_54);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_memset (_22, 0, _27);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:871:13: missed: statement clobbers memory: _88 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _86, 1, 1, &.istart0.703, &.iend0.704);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_memset (_346, 0, _8);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_memset (_50, 0, _156);
+src/main.cpp:871:13: missed: statement clobbers memory: _197 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.703, &.iend0.704);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_memset (_50, 0, _320);
+src/main.cpp:871:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:907:16: missed: statement clobbers memory: operator delete [] (_50);
+src/main.cpp:908:16: missed: statement clobbers memory: operator delete [] (_56);
+src/main.cpp:787:13: missed: couldn't vectorize loop
+src/main.cpp:787:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:792:26: missed: couldn't vectorize loop
+src/main.cpp:792:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:798:26: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:794:62: missed: couldn't vectorize loop
+src/main.cpp:794:62: missed: not vectorized: control flow in loop.
+src/main.cpp:795:39: missed: couldn't vectorize loop
+src/main.cpp:796:32: missed: not vectorized: not suitable for scatter store *_61 = _63;
+src/main.cpp:787:13: note: vectorized 1 loops in function.
+src/main.cpp:789:38: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:789:38: missed: statement clobbers memory: _28 = operator new [] (iftmp.379_26);
+src/main.cpp:787:13: missed: statement clobbers memory: _32 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _30, 1, 1, &.istart0.720, &.iend0.721);
+src/main.cpp:787:13: missed: statement clobbers memory: _84 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.720, &.iend0.721);
+src/main.cpp:787:13: missed: statement clobbers memory: __builtin_memset (_28, 0, _158);
+src/main.cpp:787:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:803:16: missed: statement clobbers memory: operator delete [] (_28);
+src/main.cpp:722:13: missed: couldn't vectorize loop
+src/main.cpp:722:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:734:26: missed: couldn't vectorize loop
+src/main.cpp:734:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:751:39: missed: couldn't vectorize loop
+src/main.cpp:753:51: missed: not vectorized: not suitable for scatter store *_294 = _293;
+src/main.cpp:740:26: missed: couldn't vectorize loop
+src/main.cpp:740:26: missed: not vectorized: control flow in loop.
+src/main.cpp:737:39: missed: couldn't vectorize loop
+src/main.cpp:738:32: missed: not vectorized: not suitable for scatter store *_161 = _109;
+src/main.cpp:734:26: missed: couldn't vectorize loop
+src/main.cpp:734:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:750:62: missed: couldn't vectorize loop
+src/main.cpp:750:62: missed: not vectorized: control flow in loop.
+src/main.cpp:751:39: missed: couldn't vectorize loop
+src/main.cpp:753:51: missed: not vectorized: not suitable for scatter store *_189 = _190;
+src/main.cpp:740:26: missed: couldn't vectorize loop
+src/main.cpp:740:26: missed: not vectorized: control flow in loop.
+src/main.cpp:736:62: missed: couldn't vectorize loop
+src/main.cpp:736:62: missed: not vectorized: control flow in loop.
+src/main.cpp:737:39: missed: couldn't vectorize loop
+src/main.cpp:738:32: missed: not vectorized: not suitable for scatter store *_117 = _119;
+src/main.cpp:722:13: note: vectorized 0 loops in function.
+src/main.cpp:724:37: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:724:37: missed: statement clobbers memory: _50 = operator new [] (iftmp.366_48);
+src/main.cpp:725:37: missed: statement clobbers memory: _56 = operator new [] (iftmp.368_54);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_memset (_22, 0, _27);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:722:13: missed: statement clobbers memory: _88 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _86, 1, 1, &.istart0.724, &.iend0.725);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_memset (_346, 0, _8);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_memset (_50, 0, _156);
+src/main.cpp:722:13: missed: statement clobbers memory: _197 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.724, &.iend0.725);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_memset (_50, 0, _320);
+src/main.cpp:722:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:758:16: missed: statement clobbers memory: operator delete [] (_50);
+src/main.cpp:759:16: missed: statement clobbers memory: operator delete [] (_56);
+src/main.cpp:638:13: missed: couldn't vectorize loop
+src/main.cpp:638:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:643:26: missed: couldn't vectorize loop
+src/main.cpp:643:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:649:26: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:645:62: missed: couldn't vectorize loop
+src/main.cpp:645:62: missed: not vectorized: control flow in loop.
+src/main.cpp:646:39: missed: couldn't vectorize loop
+src/main.cpp:647:32: missed: not vectorized: not suitable for scatter store *_61 = _63;
+src/main.cpp:638:13: note: vectorized 1 loops in function.
+src/main.cpp:640:37: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:640:37: missed: statement clobbers memory: _28 = operator new [] (iftmp.336_26);
+src/main.cpp:638:13: missed: statement clobbers memory: _32 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _30, 1, 1, &.istart0.741, &.iend0.742);
+src/main.cpp:638:13: missed: statement clobbers memory: _84 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.741, &.iend0.742);
+src/main.cpp:638:13: missed: statement clobbers memory: __builtin_memset (_28, 0, _158);
+src/main.cpp:638:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:654:16: missed: statement clobbers memory: operator delete [] (_28);
+src/main.cpp:818:13: missed: couldn't vectorize loop
+src/main.cpp:818:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:829:26: missed: couldn't vectorize loop
+src/main.cpp:829:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:844:67: missed: couldn't vectorize loop
+src/main.cpp:844:67: missed: not vectorized: control flow in loop.
+src/main.cpp:845:39: missed: couldn't vectorize loop
+src/main.cpp:846:62: missed: not vectorized: not suitable for scatter store *_274 = _272;
+src/main.cpp:844:67: missed: couldn't vectorize loop
+src/main.cpp:844:67: missed: not vectorized: control flow in loop.
+src/main.cpp:845:39: missed: couldn't vectorize loop
+src/main.cpp:846:62: missed: not vectorized: not suitable for scatter store *_159 = _161;
+src/main.cpp:835:26: missed: couldn't vectorize loop
+src/main.cpp:835:26: missed: not vectorized: control flow in loop.
+src/main.cpp:831:62: missed: couldn't vectorize loop
+src/main.cpp:831:62: missed: not vectorized: control flow in loop.
+src/main.cpp:832:39: missed: couldn't vectorize loop
+src/main.cpp:833:32: missed: not vectorized: not suitable for scatter store *_108 = _110;
+src/main.cpp:818:13: note: vectorized 0 loops in function.
+src/main.cpp:820:38: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:820:38: missed: statement clobbers memory: _46 = operator new [] (iftmp.387_44);
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_memset (_258, 0, _261);
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:818:13: missed: statement clobbers memory: _78 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _76, 1, 1, &.istart0.712, &.iend0.713);
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_memset (_248, 0, _251);
+src/main.cpp:842:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, prephitmp_313, 0);
+src/main.cpp:818:13: missed: statement clobbers memory: _166 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.712, &.iend0.713);
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_memset (_46, 0, _243);
+src/main.cpp:818:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:848:16: missed: statement clobbers memory: operator delete [] (_46);
+src/main.cpp:842:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, 0, 0);
+src/main.cpp:842:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, 0, 0);
+src/main.cpp:669:13: missed: couldn't vectorize loop
+src/main.cpp:669:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:680:26: missed: couldn't vectorize loop
+src/main.cpp:680:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:695:67: missed: couldn't vectorize loop
+src/main.cpp:695:67: missed: not vectorized: control flow in loop.
+src/main.cpp:696:39: missed: couldn't vectorize loop
+src/main.cpp:697:62: missed: not vectorized: not suitable for scatter store *_274 = _272;
+src/main.cpp:695:67: missed: couldn't vectorize loop
+src/main.cpp:695:67: missed: not vectorized: control flow in loop.
+src/main.cpp:696:39: missed: couldn't vectorize loop
+src/main.cpp:697:62: missed: not vectorized: not suitable for scatter store *_159 = _161;
+src/main.cpp:686:26: missed: couldn't vectorize loop
+src/main.cpp:686:26: missed: not vectorized: control flow in loop.
+src/main.cpp:682:62: missed: couldn't vectorize loop
+src/main.cpp:682:62: missed: not vectorized: control flow in loop.
+src/main.cpp:683:39: missed: couldn't vectorize loop
+src/main.cpp:684:32: missed: not vectorized: not suitable for scatter store *_108 = _110;
+src/main.cpp:669:13: note: vectorized 0 loops in function.
+src/main.cpp:671:37: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:671:37: missed: statement clobbers memory: _46 = operator new [] (iftmp.344_44);
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_memset (_258, 0, _261);
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_GOMP_barrier ();
+src/main.cpp:669:13: missed: statement clobbers memory: _78 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _76, 1, 1, &.istart0.733, &.iend0.734);
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_memset (_248, 0, _251);
+src/main.cpp:693:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, prephitmp_313, 0);
+src/main.cpp:669:13: missed: statement clobbers memory: _166 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.733, &.iend0.734);
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_memset (_46, 0, _243);
+src/main.cpp:669:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/main.cpp:699:16: missed: statement clobbers memory: operator delete [] (_46);
+src/main.cpp:693:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, 0, 0);
+src/main.cpp:693:17: missed: statement clobbers memory: __atomic_fetch_add_4 (pretmp_314, 0, 0);
+src/main.cpp:552:13: missed: couldn't vectorize loop
+src/main.cpp:552:13: missed: not vectorized: multiple nested loops.
+src/main.cpp:554:30: missed: couldn't vectorize loop
+src/main.cpp:554:30: missed: not vectorized: control flow in loop.
+src/main.cpp:557:44: missed: couldn't vectorize loop
+src/main.cpp:557:44: missed: not vectorized: control flow in loop.
+src/main.cpp:552:13: note: vectorized 0 loops in function.
+src/main.cpp:552:13: missed: statement clobbers memory: _24 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _22, 1, _21, &.istart0.755, &.iend0.756);
+src/main.cpp:552:13: missed: statement clobbers memory: _92 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.755, &.iend0.756);
+src/main.cpp:564:9: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:568:19: missed: statement clobbers memory: findpixind (_62, _54, &domain[0], &pixtemp, offset_78, _82);
+src/main.cpp:552:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+src/main.cpp:522:13: missed: couldn't vectorize loop
+src/main.cpp:522:13: missed: not vectorized: multiple nested loops.
+src/main.cpp:524:30: missed: couldn't vectorize loop
+src/main.cpp:524:30: missed: not vectorized: control flow in loop.
+src/main.cpp:527:44: missed: couldn't vectorize loop
+src/main.cpp:527:44: missed: not vectorized: control flow in loop.
+src/main.cpp:522:13: note: vectorized 0 loops in function.
+src/main.cpp:522:13: missed: statement clobbers memory: _22 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _20, 1, _19, &.istart0.759, &.iend0.760);
+src/main.cpp:522:13: missed: statement clobbers memory: _80 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.759, &.iend0.760);
+src/main.cpp:534:9: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:536:19: missed: statement clobbers memory: findnumpix (_61, _53, &domain[0], _33);
+src/main.cpp:522:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+src/main.cpp:294:23: missed: couldn't vectorize loop
+src/main.cpp:299:17: missed: statement clobbers memory: _26 = xy2d (lspecdim_9, rhotile_24, thetile_23);
+src/main.cpp:292:11: note: vectorized 0 loops in function.
+src/main.cpp:299:17: missed: statement clobbers memory: _26 = xy2d (lspecdim_9, rhotile_24, thetile_23);
+src/main.cpp:302:20: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:260:21: missed: couldn't vectorize loop
+src/main.cpp:265:18: missed: statement clobbers memory: _27 = xy2d (numxtile.90_23, xtile_25, ytile_24);
+src/main.cpp:258:11: note: vectorized 0 loops in function.
+src/main.cpp:265:18: missed: statement clobbers memory: _27 = xy2d (numxtile.90_23, xtile_25, ytile_24);
+src/main.cpp:268:20: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:364:29: missed: couldn't vectorize loop
+src/main.cpp:364:29: missed: not vectorized: control flow in loop.
+src/main.cpp:362:11: note: vectorized 0 loops in function.
+src/main.cpp:387:23: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:379:17: missed: statement clobbers memory: _55 = xy2d (prephitmp_197, pixlocx_39, pixlocy_38);
+src/main.cpp:376:19: missed: statement clobbers memory: _51 = encode (_40, _33);
+src/main.cpp:374:19: missed: statement clobbers memory: _47 = encode (_28, _23);
+src/main.cpp:410:29: missed: couldn't vectorize loop
+src/main.cpp:410:29: missed: not vectorized: control flow in loop.
+src/main.cpp:408:11: note: vectorized 0 loops in function.
+src/main.cpp:435:20: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:425:17: missed: statement clobbers memory: _56 = xy2d (prephitmp_247, raylocrho_40, raylocthe_39);
+src/main.cpp:422:19: missed: statement clobbers memory: _52 = encode (_41, _34);
+src/main.cpp:420:19: missed: statement clobbers memory: _48 = encode (_29, _24);
+src/main.cpp:1203:40: missed: couldn't vectorize loop
+src/main.cpp:1203:11: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:1205:22: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:1203:11: note: vectorized 1 loops in function.
+src/main.cpp:1203:11: missed: statement clobbers memory: _31 = __atomic_load_4 (_29, 0);
+src/main.cpp:1203:11: missed: statement clobbers memory: _36 = __sync_val_compare_and_swap_4 (_29, _6, _34);
+src/main.cpp:1210:40: missed: couldn't vectorize loop
+src/main.cpp:1210:11: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:1212:17: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:1210:11: note: vectorized 1 loops in function.
+src/main.cpp:1210:11: missed: statement clobbers memory: _32 = __atomic_load_4 (_30, 0);
+src/main.cpp:1210:11: missed: statement clobbers memory: _37 = __sync_val_compare_and_swap_4 (_30, _6, _35);
+src/main.cpp:1218:14: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:1218:14: optimized:  loop versioned for vectorization because of possible aliasing
+src/main.cpp:1216:11: note: vectorized 1 loops in function.
+src/main.cpp:1223:14: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:1223:14: optimized:  loop versioned for vectorization because of possible aliasing
+src/main.cpp:1221:11: note: vectorized 1 loops in function.
+src/main.cpp:1228:14: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:1228:14: optimized:  loop versioned for vectorization because of possible aliasing
+src/main.cpp:1226:11: note: vectorized 1 loops in function.
+src/main.cpp:1113:28: missed: couldn't vectorize loop
+src/main.cpp:1113:28: missed: not vectorized: control flow in loop.
+src/main.cpp:996:20: missed: couldn't vectorize loop
+src/main.cpp:996:20: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:991:20: missed: couldn't vectorize loop
+src/main.cpp:992:37: missed: not vectorized, possible dependence between data-refs *_659 and *_663
+src/main.cpp:987:20: missed: couldn't vectorize loop
+src/main.cpp:988:30: missed: not vectorized: not suitable for scatter store *_650 = _652;
+src/main.cpp:864:22: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:860:22: missed: couldn't vectorize loop
+src/main.cpp:861:35: missed: not vectorized, possible dependence between data-refs *_595 and *_602
+src/main.cpp:852:22: missed: couldn't vectorize loop
+src/main.cpp:853:41: missed: not vectorized, possible dependence between data-refs *_573 and *_580
+src/main.cpp:811:30: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:807:30: missed: couldn't vectorize loop
+src/main.cpp:808:45: missed: not vectorized, possible dependence between data-refs *_552 and *_556
+src/main.cpp:715:22: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:711:22: missed: couldn't vectorize loop
+src/main.cpp:712:35: missed: not vectorized, possible dependence between data-refs *_507 and *_514
+src/main.cpp:703:22: missed: couldn't vectorize loop
+src/main.cpp:704:41: missed: not vectorized, possible dependence between data-refs *_485 and *_492
+src/main.cpp:662:30: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:658:30: missed: couldn't vectorize loop
+src/main.cpp:659:45: missed: not vectorized, possible dependence between data-refs *_464 and *_468
+src/main.cpp:605:22: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:602:22: missed: couldn't vectorize loop
+src/main.cpp:603:33: missed: not vectorized, possible dependence between data-refs *_420 and *_430
+src/main.cpp:544:22: missed: couldn't vectorize loop
+src/main.cpp:545:33: missed: not vectorized, possible dependence between data-refs *_384 and *_391
+src/main.cpp:540:22: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:510:60: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:509:60: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:500:20: missed: couldn't vectorize loop
+src/main.cpp:500:20: missed: not vectorized: control flow in loop.
+src/main.cpp:487:20: missed: couldn't vectorize loop
+src/main.cpp:487:20: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:453:13: missed: couldn't vectorize loop
+src/main.cpp:453:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/main.cpp:476:22: missed: couldn't vectorize loop
+src/main.cpp:476:22: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:471:22: missed: couldn't vectorize loop
+src/main.cpp:471:22: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:405:56: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:360:56: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:354:22: missed: couldn't vectorize loop
+src/main.cpp:354:22: missed: not vectorized: number of iterations cannot be computed.
+src/main.cpp:349:20: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:341:20: missed: couldn't vectorize loop
+src/main.cpp:342:31: missed: not vectorized, possible dependence between data-refs *_229 and *_233
+src/main.cpp:335:20: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:331:20: missed: couldn't vectorize loop
+src/main.cpp:332:33: missed: not vectorized, possible dependence between data-refs *_200 and *_204
+src/main.cpp:306:28: missed: couldn't vectorize loop
+src/main.cpp:306:28: missed: not vectorized: control flow in loop.
+src/main.cpp:304:58: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:288:68: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:283:5: missed: couldn't vectorize loop
+src/main.cpp:283:5: missed: not vectorized: latch block not empty.
+src/main.cpp:272:28: missed: couldn't vectorize loop
+src/main.cpp:272:28: missed: not vectorized: control flow in loop.
+src/main.cpp:270:58: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:254:68: optimized: loop vectorized using 32 byte vectors
+src/main.cpp:249:5: missed: couldn't vectorize loop
+src/main.cpp:249:5: missed: not vectorized: latch block not empty.
+src/main.cpp:106:5: note: vectorized 16 loops in function.
+src/main.cpp:110:11: missed: statement clobbers memory: MPI_Init (&argc, &argv);
+src/main.cpp:111:16: missed: statement clobbers memory: MPI_Comm_size (&ompi_mpi_comm_world, &numproc);
+src/main.cpp:112:16: missed: statement clobbers memory: MPI_Comm_rank (&ompi_mpi_comm_world, &myid);
+src/main.cpp:114:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:115:29: missed: statement clobbers memory: _977 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.0, &.omp_data_o.612, 0, 0);
+src/main.cpp:123:20: missed: statement clobbers memory: chartemp_984 = getenv ("NUMTHE");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2082 = strtol (chartemp_984, 0B, 10);
+src/main.cpp:125:20: missed: statement clobbers memory: chartemp_987 = getenv ("NUMRHO");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2080 = strtol (chartemp_987, 0B, 10);
+src/main.cpp:136:20: missed: statement clobbers memory: chartemp_993 = getenv ("PIXSIZE");
+/usr/include/bits/stdlib-float.h:28:17: missed: statement clobbers memory: _2079 = strtod (chartemp_993, 0B);
+src/main.cpp:148:20: missed: statement clobbers memory: chartemp_1000 = getenv ("NUMITER");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2077 = strtol (chartemp_1000, 0B, 10);
+src/main.cpp:151:20: missed: statement clobbers memory: chartemp_1003 = getenv ("SPATSIZE");
+/usr/include/bits/stdlib-float.h:28:17: missed: statement clobbers memory: _2076 = strtod (chartemp_1003, 0B);
+src/main.cpp:153:20: missed: statement clobbers memory: chartemp_1006 = getenv ("SPECSIZE");
+/usr/include/bits/stdlib-float.h:28:17: missed: statement clobbers memory: _2075 = strtod (chartemp_1006, 0B);
+src/main.cpp:156:20: missed: statement clobbers memory: chartemp_1009 = getenv ("PROJBLOCK");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2073 = strtol (chartemp_1009, 0B, 10);
+src/main.cpp:158:20: missed: statement clobbers memory: chartemp_1012 = getenv ("BACKBLOCK");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2071 = strtol (chartemp_1012, 0B, 10);
+src/main.cpp:160:20: missed: statement clobbers memory: chartemp_1015 = getenv ("PROJBUFF");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _2069 = strtol (chartemp_1015, 0B, 10);
+src/main.cpp:162:20: missed: statement clobbers memory: chartemp_1018 = getenv ("BACKBUFF");
+/usr/include/stdlib.h:280:23: missed: statement clobbers memory: _1157 = strtol (chartemp_1018, 0B, 10);
+src/main.cpp:165:19: missed: statement clobbers memory: _13 = getenv ("SINFILE");
+src/main.cpp:166:19: missed: statement clobbers memory: _14 = getenv ("THEFILE");
+src/main.cpp:167:19: missed: statement clobbers memory: _15 = getenv ("OUTFILE");
+src/main.cpp:184:11: missed: statement clobbers memory: printf ("NUM. THETA             : %d\n", numthe.20_40);
+src/main.cpp:185:11: missed: statement clobbers memory: printf ("NUM. RHO               : %d\n", numrho.35_63);
+src/main.cpp:186:11: missed: statement clobbers memory: printf ("NUM. X PIXELS          : %d\n", numx.36_64);
+src/main.cpp:187:11: missed: statement clobbers memory: printf ("NUM. Y PIXELS          : %d\n", numy.37_65);
+src/main.cpp:188:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:189:11: missed: statement clobbers memory: printf ("NUM. OF PIXELS         : %d\n", _68);
+src/main.cpp:190:11: missed: statement clobbers memory: printf ("NUM. OF RAYS           : %d\n", _71);
+src/main.cpp:191:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:192:11: missed: statement clobbers memory: printf ("NUM. ITERATIONS        : %d\n", numiter.42_72);
+src/main.cpp:193:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:194:11: missed: statement clobbers memory: printf ("SPATIAL TILE SIZE      : %d\n", spatsize.43_73);
+src/main.cpp:195:11: missed: statement clobbers memory: printf ("SPECTRAL TILE SIZE     : %d\n", specsize.44_74);
+src/main.cpp:196:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:197:11: missed: statement clobbers memory: printf ("NUMBER OF X TILES      : %d\n", numxtile.45_75);
+src/main.cpp:198:11: missed: statement clobbers memory: printf ("NUMBER OF Y TILES      : %d\n", numytile.46_76);
+src/main.cpp:199:11: missed: statement clobbers memory: printf ("NUM. OF THETA TILES    : %d\n", numttile.47_77);
+src/main.cpp:200:11: missed: statement clobbers memory: printf ("NUM. OF RHO TILES      : %d\n", numrtile.48_78);
+src/main.cpp:201:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:202:11: missed: statement clobbers memory: printf ("NUM. SPATIAL TILES     : %d\n", numspattile.49_79);
+src/main.cpp:203:11: missed: statement clobbers memory: printf ("NUM. SPECTRAL TILES    : %d\n", numspectile.50_80);
+src/main.cpp:204:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:205:11: missed: statement clobbers memory: printf ("NUM. OF X PIXELS (EXT) : %d\n", _83);
+src/main.cpp:206:11: missed: statement clobbers memory: printf ("NUM. OF Y PIXELS (EXT) : %d\n", _86);
+src/main.cpp:207:11: missed: statement clobbers memory: printf ("NUM. OF ANGLES (EXT)   : %d\n", _89);
+src/main.cpp:208:11: missed: statement clobbers memory: printf ("NUM. OF RHOS (EXT)     : %d\n", _92);
+src/main.cpp:209:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:210:11: missed: statement clobbers memory: printf ("NUM. OF PIXELS (EXT)   : %d\n", numpix.59_93);
+src/main.cpp:211:11: missed: statement clobbers memory: printf ("NUM. OF RAYS (EXT)     : %d\n", numray.60_94);
+src/main.cpp:212:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:213:11: missed: statement clobbers memory: printf ("NUMBER OF PROCESSES    : %d\n", numproc.61_95);
+src/main.cpp:214:11: missed: statement clobbers memory: printf ("NUMBER OF THRD./PROC.  : %d\n", numthreads_981);
+src/main.cpp:215:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:216:11: missed: statement clobbers memory: printf ("INTEGER: %d, FLOAT: %d, LONG: %d, SHORT: %d, POINTER: %d\n", 4, 4, 8, 2, 8);
+src/main.cpp:217:11: missed: statement clobbers memory: printf ("APPROX. MEMORY     TOTAL: %e GB\n", _106);
+src/main.cpp:218:11: missed: statement clobbers memory: printf ("APPROX. MEMORY PER PROC.: %e GB\n", _120);
+src/main.cpp:219:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:220:11: missed: statement clobbers memory: printf ("X START       : %e\n", _121);
+src/main.cpp:221:11: missed: statement clobbers memory: printf ("Y START       : %e\n", _121);
+src/main.cpp:222:11: missed: statement clobbers memory: printf ("PIXEL SIZE    : %e\n", _123);
+src/main.cpp:223:11: missed: statement clobbers memory: printf ("RHO START     : %e\n", _125);
+src/main.cpp:224:11: missed: statement clobbers memory: printf ("RAY LENGTH    : %e\n", _127);
+src/main.cpp:225:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:226:11: missed: statement clobbers memory: printf ("SPATIAL INDEXING       : %d\n", spatindexing.72_128);
+src/main.cpp:227:11: missed: statement clobbers memory: printf ("SPECTRAL INDEXING      : %d\n", specindexing.73_129);
+src/main.cpp:228:11: missed: statement clobbers memory: __builtin_puts (&" 1: CARTESIAN, NATURAL\n 2: CARTESIAN, TRANSPOSED\n 3: MORTON, NATURAL\n 4: MORTON, TRANSPOSED\n 5: HILBERT"[0]);
+src/main.cpp:229:11: missed: statement clobbers memory: printf ("PROJECTION BLOCK SIZE      : %d\n", proj_blocksize.74_130);
+src/main.cpp:230:11: missed: statement clobbers memory: printf ("BACKPROJECTION BLOCK SIZE  : %d\n", back_blocksize.75_131);
+src/main.cpp:231:11: missed: statement clobbers memory: printf ("PROJECTION BUFFER SIZE      : %d KB\n", proj_buffsize.76_132);
+src/main.cpp:232:11: missed: statement clobbers memory: printf ("BACKPROJECTION BUFFER SIZE  : %d KB\n", back_buffsize.77_133);
+src/main.cpp:233:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:234:11: missed: statement clobbers memory: printf ("SINOGRAM FILE : %s\n", sinfile.78_134);
+src/main.cpp:235:11: missed: statement clobbers memory: printf ("   THETA FILE : %s\n", thefile.79_135);
+src/main.cpp:236:11: missed: statement clobbers memory: printf ("  OUTPUT FILE : %s\n", outfile.80_136);
+src/main.cpp:237:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:238:11: missed: statement clobbers memory: __builtin_putchar (10);
+src/main.cpp:243:20: missed: statement clobbers memory: __builtin_puts (&"PLACE TILES"[0]);
+/opt/rh/devtoolset-9/root/usr/include/c++/9/cmath:418:17: missed: statement clobbers memory: _2089 = pow (2.0e+0, _2088);
+/opt/rh/devtoolset-9/root/usr/include/c++/9/cmath:418:17: missed: statement clobbers memory: _2090 = pow (2.0e+0, _2421);
+src/main.cpp:253:20: missed: statement clobbers memory: printf ("lspat %d lspatdim %d\n", lspat_923, lspatdim_1098);
+src/main.cpp:254:68: missed: statement clobbers memory: _1103 = operator new [] (iftmp.87_1101);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.1, &.omp_data_o.613, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.2, &.omp_data_o.615, 0, 0);
+src/main.cpp:258:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.2, &.omp_data_o.615, 0, 0);
+src/main.cpp:254:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:254:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:254:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:270:58: missed: statement clobbers memory: _1121 = operator new [] (iftmp.93_1119);
+src/main.cpp:270:58: missed: statement clobbers memory: __cxa_throw_bad_array_new_length ();
+src/main.cpp:277:12: missed: statement clobbers memory: operator delete [] (_1103);
+src/main.cpp:270:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:270:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:270:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:274:25: missed: not vectorized: more than one data ref in stmt: *_157 = MEM[(const struct complex &)_151];
+/opt/rh/devtoolset-9/root/usr/include/c++/9/cmath:418:17: missed: statement clobbers memory: _2093 = pow (2.0e+0, _2092);
+/opt/rh/devtoolset-9/root/usr/include/c++/9/cmath:418:17: missed: statement clobbers memory: _2094 = pow (2.0e+0, _2419);
+src/main.cpp:287:20: missed: statement clobbers memory: printf ("lspec %d lspecdim %d\n", lspec_929, lspecdim_1132);
+src/main.cpp:288:68: missed: statement clobbers memory: _1137 = operator new [] (iftmp.100_1135);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.3, &.omp_data_o.616, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.4, &.omp_data_o.618, 0, 0);
+src/main.cpp:288:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:288:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:288:68: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:304:58: missed: statement clobbers memory: _1153 = operator new [] (iftmp.108_1151);
+src/main.cpp:311:12: missed: statement clobbers memory: operator delete [] (_1137);
+src/main.cpp:304:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:304:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:304:58: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:308:25: missed: not vectorized: more than one data ref in stmt: *_174 = MEM[(const struct complex &)_167];
+src/main.cpp:312:20: missed: statement clobbers memory: __builtin_puts (&"MPI PARTITIONING"[0]);
+src/main.cpp:313:34: missed: statement clobbers memory: _1167 = operator new [] (iftmp.114_1165);
+src/main.cpp:314:34: missed: statement clobbers memory: _1172 = operator new [] (iftmp.116_1170);
+src/main.cpp:315:35: missed: statement clobbers memory: _1177 = operator new [] (iftmp.118_1175);
+src/main.cpp:316:35: missed: statement clobbers memory: _1182 = operator new [] (iftmp.120_1180);
+src/main.cpp:317:33: missed: statement clobbers memory: _1187 = operator new [] (iftmp.122_1185);
+src/main.cpp:318:33: missed: statement clobbers memory: _1192 = operator new [] (iftmp.124_1190);
+src/main.cpp:319:34: missed: statement clobbers memory: _1197 = operator new [] (iftmp.126_1195);
+src/main.cpp:320:34: missed: statement clobbers memory: _1202 = operator new [] (iftmp.128_1200);
+src/main.cpp:327:16: missed: statement clobbers memory: MPI_Allgather (&myspattile, 1, &ompi_mpi_integer, _1167, 1, &ompi_mpi_integer, &ompi_mpi_comm_world);
+src/main.cpp:328:16: missed: statement clobbers memory: MPI_Allgather (&myspectile, 1, &ompi_mpi_integer, _1172, 1, &ompi_mpi_integer, &ompi_mpi_comm_world);
+src/main.cpp:355:13: missed: statement clobbers memory: printf ("proc: %d numspats: %d numpixs: %d numspecs: %d numrays: %d\n", p_2301, _264, _262, _260, _258);
+src/main.cpp:356:11: missed: statement clobbers memory: printf ("maxnumpix: %d maxnumray: %d\n", maxnumpix_2348, maxnumray_2344);
+src/main.cpp:358:20: missed: statement clobbers memory: __builtin_puts (&"FILL PIXELS AND RAYS"[0]);
+src/main.cpp:360:56: missed: statement clobbers memory: _1233 = operator new [] (iftmp.157_1231);
+src/main.cpp:360:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:360:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:360:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:361:39: missed: statement clobbers memory: _1241 = operator new [] (iftmp.160_1239);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.5, &.omp_data_o.620, 0, 0);
+src/main.cpp:362:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.5, &.omp_data_o.620, 0, 0);
+src/main.cpp:398:37: missed: statement clobbers memory: _1255 = operator new [] (iftmp.168_1253);
+src/main.cpp:399:20: missed: statement clobbers memory: __builtin_puts (&"INPUT THETA DATA"[0]);
+src/main.cpp:400:23: missed: statement clobbers memory: _1258 = fopen (thefile.171_271, "rb");
+src/main.cpp:401:8: missed: statement clobbers memory: fread (_1255, 4, _273, _1258);
+src/main.cpp:402:9: missed: statement clobbers memory: fclose (_1258);
+src/main.cpp:405:56: missed: statement clobbers memory: _1265 = operator new [] (iftmp.173_1263);
+src/main.cpp:405:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:405:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:405:56: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:406:39: missed: statement clobbers memory: _1273 = operator new [] (iftmp.176_1271);
+src/main.cpp:407:36: missed: statement clobbers memory: _1278 = operator new [] (iftmp.178_1276);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.6, &.omp_data_o.622, 0, 0);
+src/main.cpp:408:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.6, &.omp_data_o.622, 0, 0);
+src/main.cpp:443:12: missed: statement clobbers memory: operator delete [] (_1255);
+src/main.cpp:444:12: missed: statement clobbers memory: operator delete [] (_1153);
+src/main.cpp:445:20: missed: statement clobbers memory: __builtin_puts (&"DOMAIN PARTITIONING"[0]);
+src/main.cpp:446:33: missed: statement clobbers memory: _1295 = operator new [] (iftmp.190_1293);
+src/main.cpp:447:33: missed: statement clobbers memory: _1301 = operator new [] (iftmp.192_1299);
+src/main.cpp:448:33: missed: statement clobbers memory: _1307 = operator new [] (iftmp.194_1305);
+src/main.cpp:449:33: missed: statement clobbers memory: _1313 = operator new [] (iftmp.196_1311);
+src/main.cpp:450:41: missed: statement clobbers memory: _1319 = operator new [] (iftmp.198_1317);
+src/main.cpp:451:39: missed: statement clobbers memory: _1324 = operator new [] (iftmp.200_1322);
+src/main.cpp:482:12: missed: statement clobbers memory: operator delete [] (_1319);
+src/main.cpp:484:15: missed: statement clobbers memory: MPI_Alltoall (rayrecvcount.218_314, 1, &ompi_mpi_integer, raysendcount.217_313, 1, &ompi_mpi_integer, &ompi_mpi_comm_world);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.7, &.omp_data_o.624, 0, 0);
+src/main.cpp:453:13: note: SLPing BB part
+src/main.cpp:453:13: note: ------>vectorizing SLP node starting from: .omp_data_o.624.spatll = _1121;
+src/main.cpp:453:13: note: vect_is_simple_use: operand operator new [] (iftmp.93_1119), type of def: external
+src/main.cpp:453:13: note: vect_is_simple_use: operand operator new [] (iftmp.114_1165), type of def: external
+src/main.cpp:453:13: note: vect_is_simple_use: operand operator new [] (iftmp.118_1175), type of def: external
+src/main.cpp:453:13: note: vect_is_simple_use: operand operator new [] (iftmp.173_1263), type of def: external
+src/main.cpp:453:13: note: conflicting alias set types.
+src/main.cpp:453:13: note: transform store. ncopies = 1
+src/main.cpp:453:13: note: created new init_stmt: vect_cst__3538 = _3537;
+src/main.cpp:453:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.624.spatll
+src/main.cpp:453:13: note: created &.omp_data_o.624.spatll
+src/main.cpp:453:13: note: add new stmt: MEM[(void *)&.omp_data_o.624] = vect_cst__3538;
+src/main.cpp:453:13: note: vectorizing stmts using SLP.
+src/main.cpp:453:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:471:22: note: basic block vectorized
+src/main.cpp:474:45: missed: statement clobbers memory: _1342 = operator new [] (iftmp.211_1340);
+src/main.cpp:495:16: missed: statement clobbers memory: MPI_Allreduce (1B, &raynumincall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:496:16: missed: statement clobbers memory: MPI_Allreduce (1B, &raynumoutall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:498:39: missed: statement clobbers memory: _1366 = operator new [] (iftmp.238_1364);
+src/main.cpp:499:34: missed: statement clobbers memory: _1371 = operator new [] (iftmp.240_1369);
+src/main.cpp:506:12: missed: statement clobbers memory: operator delete [] (_1324);
+src/main.cpp:507:16: missed: statement clobbers memory: MPI_Alltoallv (rayrecvlist.250_363, rayrecvcount.249_362, rayrecvstart.248_361, &ompi_mpi_integer, _1366, raysendcount.247_360, raysendstart.246_359, &ompi_mpi_integer, &ompi_mpi_comm_world);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.8, &.omp_data_o.625, 0, 0);
+src/main.cpp:504:27: missed: statement clobbers memory: operator delete [] (_358);
+src/main.cpp:509:60: missed: statement clobbers memory: _1385 = operator new [] (iftmp.251_1383);
+src/main.cpp:509:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:509:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:509:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:510:60: missed: statement clobbers memory: _1393 = operator new [] (iftmp.254_1391);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.9, &.omp_data_o.627, 0, 0);
+src/main.cpp:511:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.9, &.omp_data_o.627, 0, 0);
+src/main.cpp:511:11: note: SLPing BB part
+src/main.cpp:511:11: note: ------>vectorizing SLP node starting from: .omp_data_o.627.raycoor = _1265;
+src/main.cpp:511:11: note: vect_is_simple_use: operand operator new [] (iftmp.173_1263), type of def: external
+src/main.cpp:511:11: note: vect_is_simple_use: operand operator new [] (iftmp.251_1383), type of def: external
+src/main.cpp:511:11: note: transform store. ncopies = 1
+src/main.cpp:511:11: note: created new init_stmt: vect_cst__3551 = _3550;
+src/main.cpp:511:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.627.raycoor
+src/main.cpp:511:11: note: created &.omp_data_o.627.raycoor
+src/main.cpp:511:11: note: add new stmt: MEM[(struct complex * *)&.omp_data_o.627] = vect_cst__3551;
+src/main.cpp:511:11: note: vectorizing stmts using SLP.
+src/main.cpp:511:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:514:16: missed: statement clobbers memory: MPI_Alltoallv (_1385, rayrecvcount.262_371, rayrecvstart.261_370, &ompi_mpi_cplex, _1393, raysendcount.260_369, raysendstart.259_368, &ompi_mpi_cplex, &ompi_mpi_comm_world);
+src/main.cpp:515:12: missed: statement clobbers memory: operator delete [] (_1265);
+src/main.cpp:516:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:517:27: missed: statement clobbers memory: _1405 = MPI_Wtime ();
+src/main.cpp:518:34: missed: statement clobbers memory: _1407 = MPI_Wtime ();
+src/main.cpp:519:3: note: basic block vectorized
+src/main.cpp:510:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:510:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:510:60: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:519:20: missed: statement clobbers memory: __builtin_puts (&"\nCONSTRUCT PROJECTION MATRIX"[0]);
+src/main.cpp:521:35: missed: statement clobbers memory: _1413 = operator new [] (iftmp.264_1411);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.10, &.omp_data_o.629, 0, 0);
+src/main.cpp:522:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.10, &.omp_data_o.629, 0, 0);
+src/main.cpp:542:42: missed: statement clobbers memory: _1429 = operator new [] (iftmp.275_1427);
+src/main.cpp:546:14: missed: statement clobbers memory: operator delete [] (_1413);
+src/main.cpp:549:18: missed: statement clobbers memory: MPI_Allreduce (1B, &rownzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:550:22: missed: statement clobbers memory: printf ("CSR STORAGE: %lu (%f GB) rownzmax %d\n", rownzall.280_398, _404, rownzmax_2334);
+src/main.cpp:551:37: missed: statement clobbers memory: _1442 = operator new [] (iftmp.283_1440);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.11, &.omp_data_o.631, 0, 0);
+src/main.cpp:552:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.11, &.omp_data_o.631, 0, 0);
+src/main.cpp:577:55: missed: statement clobbers memory: _1460 = MPI_Wtime ();
+src/main.cpp:577:20: missed: statement clobbers memory: printf ("RAY-TRACING TIME: %e\n", _407);
+src/main.cpp:578:27: missed: statement clobbers memory: _1463 = MPI_Wtime ();
+src/main.cpp:579:20: missed: statement clobbers memory: __builtin_puts (&"CONSTRUCT BACKPROJECTION MATRIX"[0]);
+src/main.cpp:581:43: missed: statement clobbers memory: _1469 = operator new [] (iftmp.298_1467);
+src/main.cpp:582:49: missed: statement clobbers memory: _1474 = operator new [] (iftmp.301_1472);
+src/main.cpp:583:39: missed: statement clobbers memory: _1479 = operator new [] (iftmp.303_1477);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.12, &.omp_data_o.633, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.13, &.omp_data_o.634, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.14, &.omp_data_o.636, 0, 0);
+src/main.cpp:591:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.14, &.omp_data_o.636, 0, 0);
+src/main.cpp:591:13: note: SLPing BB part
+src/main.cpp:591:13: note: ------>vectorizing SLP node starting from: .omp_data_o.636.inter = _1474;
+src/main.cpp:591:13: note: vect_is_simple_use: operand operator new [] (iftmp.301_1472), type of def: external
+src/main.cpp:591:13: note: vect_is_simple_use: operand operator new [] (iftmp.303_1477), type of def: external
+src/main.cpp:591:13: note: transform store. ncopies = 1
+src/main.cpp:591:13: note: add new stmt: vect_cst__3564 = _3563;
+src/main.cpp:591:13: note: created new init_stmt: vect_cst__3564 = _3563;
+src/main.cpp:591:13: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.636.inter
+src/main.cpp:591:13: note: created &.omp_data_o.636.inter
+src/main.cpp:591:13: note: add new stmt: MEM[(int * *)&.omp_data_o.636] = vect_cst__3564;
+src/main.cpp:591:13: note: vectorizing stmts using SLP.
+src/main.cpp:591:13: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.15, &.omp_data_o.638, 0, 0);
+src/main.cpp:600:41: note: basic block vectorized
+src/main.cpp:600:41: missed: statement clobbers memory: _1499 = operator new [] (iftmp.315_1497);
+src/main.cpp:611:18: missed: statement clobbers memory: MPI_Allreduce (1B, &rownzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:612:22: missed: statement clobbers memory: printf ("CSR STORAGE: %lu (%f GB) rownzmax %d\n", rownzall.322_447, _453, rownzmax_2289);
+src/main.cpp:613:37: missed: statement clobbers memory: _1513 = operator new [] (iftmp.325_1511);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.16, &.omp_data_o.640, 0, 0);
+src/main.cpp:614:13: note: SLPing BB part
+src/main.cpp:614:13: note: ------>vectorizing SLP node starting from: .omp_data_o.640.csrRowInd = _1469;
+src/main.cpp:614:13: note: vect_is_simple_use: operand operator new [] (iftmp.298_1467), type of def: external
+src/main.cpp:614:13: note: vect_is_simple_use: operand operator new [] (iftmp.301_1472), type of def: external
+src/main.cpp:614:13: note: vect_is_simple_use: operand operator new [] (iftmp.303_1477), type of def: external
+src/main.cpp:614:13: note: vect_is_simple_use: operand operator new [] (iftmp.315_1497), type of def: external
+src/main.cpp:614:13: note: conflicting alias set types.
+src/main.cpp:614:13: note: transform store. ncopies = 1
+src/main.cpp:614:13: note: created new init_stmt: vect_cst__3571 = _3570;
+src/main.cpp:614:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.640.csrRowInd
+src/main.cpp:614:13: note: created &.omp_data_o.640.csrRowInd
+src/main.cpp:614:13: note: add new stmt: MEM[(void *)&.omp_data_o.640] = vect_cst__3571;
+src/main.cpp:614:13: note: vectorizing stmts using SLP.
+src/main.cpp:614:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:620:14: missed: statement clobbers memory: operator delete [] (_1474);
+src/main.cpp:621:14: missed: statement clobbers memory: operator delete [] (_1479);
+src/main.cpp:622:14: missed: statement clobbers memory: operator delete [] (_1469);
+src/main.cpp:626:3: note: basic block vectorized
+src/main.cpp:626:57: missed: statement clobbers memory: _1529 = MPI_Wtime ();
+src/main.cpp:626:20: missed: statement clobbers memory: printf ("TRANSPOSITION TIME: %e\n", _455);
+src/main.cpp:627:27: missed: statement clobbers memory: _1532 = MPI_Wtime ();
+src/main.cpp:628:20: missed: statement clobbers memory: __builtin_puts (&"\nBLOCKING PROJECTION MATRIX"[0]);
+src/main.cpp:636:22: missed: statement clobbers memory: printf ("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocks_848, buffsize_808);
+src/main.cpp:637:37: missed: statement clobbers memory: _1545 = operator new [] (iftmp.335_1543);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.17, &.omp_data_o.642, 0, 0);
+src/main.cpp:638:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.17, &.omp_data_o.642, 0, 0);
+src/main.cpp:638:13: note: SLPing BB part
+src/main.cpp:638:13: note: ------>vectorizing SLP node starting from: .omp_data_o.642.rowindex = rowindex_811;
+src/main.cpp:638:13: note: vect_is_simple_use: operand rowindex_811 = PHI <rowindex_813(155), rowindex_813(156), rowindex_849(283)>, type of def: external
+src/main.cpp:638:13: note: vect_is_simple_use: operand rowdispl_809 = PHI <rowdispl_810(155), rowdispl_810(156), rowdispl_2354(283)>, type of def: external
+src/main.cpp:638:13: note: conflicting alias set types.
+src/main.cpp:638:13: note: transform store. ncopies = 1
+src/main.cpp:638:13: note: created new init_stmt: vect_cst__3576 = _3575;
+src/main.cpp:638:13: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.642.rowindex
+src/main.cpp:638:13: note: created &.omp_data_o.642.rowindex
+src/main.cpp:638:13: note: add new stmt: MEM[(void *)&.omp_data_o.642] = vect_cst__3576;
+src/main.cpp:638:13: note: vectorizing stmts using SLP.
+src/main.cpp:638:13: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:656:42: note: basic block vectorized
+src/main.cpp:656:42: missed: statement clobbers memory: _1558 = operator new [] (iftmp.340_1556);
+src/main.cpp:664:14: missed: statement clobbers memory: operator delete [] (_1545);
+src/main.cpp:665:22: missed: statement clobbers memory: printf ("NUMBER OF BUFFERS: %d AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n", blocknztot_2310, _479, blocknzmax_2236);
+src/main.cpp:666:40: missed: statement clobbers memory: _1570 = operator new [] (iftmp.342_1568);
+src/main.cpp:667:47: missed: statement clobbers memory: _1575 = operator new [] (iftmp.343_1573);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.18, &.omp_data_o.645, 0, 0);
+src/main.cpp:669:13: note: SLPing BB part
+src/main.cpp:669:13: note: ------>vectorizing SLP node starting from: .omp_data_o.645.rowindex = rowindex_811;
+src/main.cpp:669:13: note: vect_is_simple_use: operand rowindex_811 = PHI <rowindex_813(155), rowindex_813(156), rowindex_849(283)>, type of def: external
+src/main.cpp:669:13: note: vect_is_simple_use: operand rowdispl_809 = PHI <rowdispl_810(155), rowdispl_810(156), rowdispl_2354(283)>, type of def: external
+src/main.cpp:669:13: note: vect_is_simple_use: operand operator new [] (iftmp.340_1556), type of def: external
+src/main.cpp:669:13: note: vect_is_simple_use: operand operator new [] (iftmp.342_1568), type of def: external
+src/main.cpp:669:13: note: conflicting alias set types.
+src/main.cpp:669:13: note: transform store. ncopies = 1
+src/main.cpp:669:13: note: created new init_stmt: vect_cst__3583 = _3582;
+src/main.cpp:669:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.645.rowindex
+src/main.cpp:669:13: note: created &.omp_data_o.645.rowindex
+src/main.cpp:669:13: note: add new stmt: MEM[(void *)&.omp_data_o.645] = vect_cst__3583;
+src/main.cpp:669:13: note: vectorizing stmts using SLP.
+src/main.cpp:669:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:701:48: note: basic block vectorized
+src/main.cpp:701:48: missed: statement clobbers memory: _1593 = operator new [] (iftmp.349_1591);
+src/main.cpp:707:18: missed: statement clobbers memory: MPI_Allreduce (1B, &buffmapnzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:708:22: missed: statement clobbers memory: printf ("BUFFER MAP: %lu (%f GB)\n", buffmapnzall.351_497, _502);
+src/main.cpp:709:54: missed: statement clobbers memory: _1605 = operator new [] (iftmp.353_1603);
+src/main.cpp:718:18: missed: statement clobbers memory: MPI_Allreduce (1B, &buffnzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:719:22: missed: statement clobbers memory: printf ("CSR STORAGE: %lu (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: %f\n", buffnzall.358_529, _540, buffnzmax_2209, _533, _528);
+src/main.cpp:720:40: missed: statement clobbers memory: _1618 = operator new [] (iftmp.362_1616);
+src/main.cpp:721:61: missed: statement clobbers memory: _1623 = operator new [] (iftmp.364_1621);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.19, &.omp_data_o.648, 0, 0);
+src/main.cpp:722:13: note: SLPing BB part
+src/main.cpp:722:13: note: ------>vectorizing SLP node starting from: .omp_data_o.648.rowindex = rowindex_811;
+src/main.cpp:722:13: note: vect_is_simple_use: operand rowindex_811 = PHI <rowindex_813(155), rowindex_813(156), rowindex_849(283)>, type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand rowdispl_809 = PHI <rowdispl_810(155), rowdispl_810(156), rowdispl_2354(283)>, type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.340_1556), type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.342_1568), type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.343_1573), type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.349_1591), type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.353_1603), type of def: external
+src/main.cpp:722:13: note: vect_is_simple_use: operand operator new [] (iftmp.362_1616), type of def: external
+src/main.cpp:722:13: note: conflicting alias set types.
+src/main.cpp:722:13: note: transform store. ncopies = 1
+src/main.cpp:722:13: note: created new init_stmt: vect_cst__3590 = _3589;
+src/main.cpp:722:13: note: created new init_stmt: vect_cst__3596 = _3595;
+src/main.cpp:722:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.648.rowindex
+src/main.cpp:722:13: note: created &.omp_data_o.648.rowindex
+src/main.cpp:722:13: note: add new stmt: MEM[(void *)&.omp_data_o.648] = vect_cst__3596;
+src/main.cpp:722:13: note: add new stmt: _3598 = &.omp_data_o.648.rowindex + 32;
+src/main.cpp:722:13: note: add new stmt: MEM[(void *)_3598] = vect_cst__3590;
+src/main.cpp:722:13: note: vectorizing stmts using SLP.
+src/main.cpp:722:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:761:14: missed: statement clobbers memory: operator delete [] (_1575);
+src/main.cpp:762:22: note: basic block vectorized
+src/main.cpp:762:14: missed: statement clobbers memory: operator delete [] (rowindex_811);
+src/main.cpp:775:52: missed: statement clobbers memory: _1656 = MPI_Wtime ();
+src/main.cpp:775:20: missed: statement clobbers memory: printf ("BLOCKING TIME: %e\n", _543);
+src/main.cpp:776:27: missed: statement clobbers memory: _1659 = MPI_Wtime ();
+src/main.cpp:777:20: missed: statement clobbers memory: __builtin_puts (&"BLOCKING BACKPROJECTION MATRIX"[0]);
+src/main.cpp:785:22: missed: statement clobbers memory: printf ("NUMBER OF BLOCKS: %d BUFFSIZE: %d\n", numblocks_856, buffsize_2263);
+src/main.cpp:786:37: missed: statement clobbers memory: _1672 = operator new [] (iftmp.378_1670);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.20, &.omp_data_o.650, 0, 0);
+src/main.cpp:787:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.20, &.omp_data_o.650, 0, 0);
+src/main.cpp:787:13: note: SLPing BB part
+src/main.cpp:787:13: note: ------>vectorizing SLP node starting from: .omp_data_o.650.rowindex = rowindex_2322;
+src/main.cpp:787:13: note: vect_is_simple_use: operand rowindex_2322 = PHI <rowindex_2316(186), rowindex_2316(187), rowindex_863(278)>, type of def: external
+src/main.cpp:787:13: note: vect_is_simple_use: operand rowdispl_2324 = PHI <rowdispl_2261(186), rowdispl_2261(187), rowdispl_862(278)>, type of def: external
+src/main.cpp:787:13: note: conflicting alias set types.
+src/main.cpp:787:13: note: transform store. ncopies = 1
+src/main.cpp:787:13: note: created new init_stmt: vect_cst__3603 = _3602;
+src/main.cpp:787:13: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.650.rowindex
+src/main.cpp:787:13: note: created &.omp_data_o.650.rowindex
+src/main.cpp:787:13: note: add new stmt: MEM[(void *)&.omp_data_o.650] = vect_cst__3603;
+src/main.cpp:787:13: note: vectorizing stmts using SLP.
+src/main.cpp:787:13: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:805:42: note: basic block vectorized
+src/main.cpp:805:42: missed: statement clobbers memory: _1685 = operator new [] (iftmp.383_1683);
+src/main.cpp:813:14: missed: statement clobbers memory: operator delete [] (_1672);
+src/main.cpp:814:22: missed: statement clobbers memory: printf ("NUMBER OF BUFFERS: %d AVERAGE BUFF/BLOCK: %f MAX BUFF/BLOCK: %d\n", blocknztot_2339, _567, blocknzmax_2284);
+src/main.cpp:815:40: missed: statement clobbers memory: _1697 = operator new [] (iftmp.385_1695);
+src/main.cpp:816:47: missed: statement clobbers memory: _1702 = operator new [] (iftmp.386_1700);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.21, &.omp_data_o.653, 0, 0);
+src/main.cpp:818:13: note: SLPing BB part
+src/main.cpp:818:13: note: ------>vectorizing SLP node starting from: .omp_data_o.653.rowindex = rowindex_2322;
+src/main.cpp:818:13: note: vect_is_simple_use: operand rowindex_2322 = PHI <rowindex_2316(186), rowindex_2316(187), rowindex_863(278)>, type of def: external
+src/main.cpp:818:13: note: vect_is_simple_use: operand rowdispl_2324 = PHI <rowdispl_2261(186), rowdispl_2261(187), rowdispl_862(278)>, type of def: external
+src/main.cpp:818:13: note: vect_is_simple_use: operand operator new [] (iftmp.383_1683), type of def: external
+src/main.cpp:818:13: note: vect_is_simple_use: operand operator new [] (iftmp.385_1695), type of def: external
+src/main.cpp:818:13: note: conflicting alias set types.
+src/main.cpp:818:13: note: transform store. ncopies = 1
+src/main.cpp:818:13: note: created new init_stmt: vect_cst__3610 = _3609;
+src/main.cpp:818:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.653.rowindex
+src/main.cpp:818:13: note: created &.omp_data_o.653.rowindex
+src/main.cpp:818:13: note: add new stmt: MEM[(void *)&.omp_data_o.653] = vect_cst__3610;
+src/main.cpp:818:13: note: vectorizing stmts using SLP.
+src/main.cpp:818:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:850:48: note: basic block vectorized
+src/main.cpp:850:48: missed: statement clobbers memory: _1720 = operator new [] (iftmp.392_1718);
+src/main.cpp:856:18: missed: statement clobbers memory: MPI_Allreduce (1B, &buffmapnzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:857:22: missed: statement clobbers memory: printf ("BUFFER MAP: %lu (%f GB)\n", buffmapnzall.394_585, _590);
+src/main.cpp:858:54: missed: statement clobbers memory: _1732 = operator new [] (iftmp.396_1730);
+src/main.cpp:867:18: missed: statement clobbers memory: MPI_Allreduce (1B, &buffnzall, 1, &ompi_mpi_long, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:868:22: missed: statement clobbers memory: printf ("CSR STORAGE: %lu (%f GB) buffnzmax: %d STORAGE EFFICIENCY: %f DATA REUSE: %f\n", buffnzall.401_617, _628, buffnzmax_2207, _621, _616);
+src/main.cpp:869:40: missed: statement clobbers memory: _1745 = operator new [] (iftmp.405_1743);
+src/main.cpp:870:61: missed: statement clobbers memory: _1750 = operator new [] (iftmp.407_1748);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.22, &.omp_data_o.656, 0, 0);
+src/main.cpp:871:13: note: SLPing BB part
+src/main.cpp:871:13: note: ------>vectorizing SLP node starting from: .omp_data_o.656.rowindex = rowindex_2322;
+src/main.cpp:871:13: note: vect_is_simple_use: operand rowindex_2322 = PHI <rowindex_2316(186), rowindex_2316(187), rowindex_863(278)>, type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand rowdispl_2324 = PHI <rowdispl_2261(186), rowdispl_2261(187), rowdispl_862(278)>, type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.383_1683), type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.385_1695), type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.386_1700), type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.392_1718), type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.396_1730), type of def: external
+src/main.cpp:871:13: note: vect_is_simple_use: operand operator new [] (iftmp.405_1743), type of def: external
+src/main.cpp:871:13: note: conflicting alias set types.
+src/main.cpp:871:13: note: transform store. ncopies = 1
+src/main.cpp:871:13: note: created new init_stmt: vect_cst__3617 = _3616;
+src/main.cpp:871:13: note: created new init_stmt: vect_cst__3623 = _3622;
+src/main.cpp:871:13: note: create vector_type-pointer variable to type: vector(4) long unsigned int  vectorizing a pointer ref: .omp_data_o.656.rowindex
+src/main.cpp:871:13: note: created &.omp_data_o.656.rowindex
+src/main.cpp:871:13: note: add new stmt: MEM[(void *)&.omp_data_o.656] = vect_cst__3623;
+src/main.cpp:871:13: note: add new stmt: _3625 = &.omp_data_o.656.rowindex + 32;
+src/main.cpp:871:13: note: add new stmt: MEM[(void *)_3625] = vect_cst__3617;
+src/main.cpp:871:13: note: vectorizing stmts using SLP.
+src/main.cpp:871:13: optimized: basic block part vectorized using 32 byte vectors
+src/main.cpp:910:14: missed: statement clobbers memory: operator delete [] (_1702);
+src/main.cpp:911:22: note: basic block vectorized
+src/main.cpp:911:14: missed: statement clobbers memory: operator delete [] (rowindex_2322);
+src/main.cpp:924:52: missed: statement clobbers memory: _1783 = MPI_Wtime ();
+src/main.cpp:924:20: missed: statement clobbers memory: printf ("BLOCKING TIME: %e\n", _631);
+src/main.cpp:925:27: missed: statement clobbers memory: _1786 = MPI_Wtime ();
+src/main.cpp:926:20: missed: statement clobbers memory: __builtin_puts (&"\nFILL PROJECTION MATRIX"[0]);
+src/main.cpp:928:46: missed: statement clobbers memory: _1792 = operator new [] (iftmp.418_1790);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.23, 0B, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.24, &.omp_data_o.659, 0, 0);
+src/main.cpp:932:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.24, &.omp_data_o.659, 0, 0);
+src/main.cpp:932:13: note: SLPing BB part
+src/main.cpp:932:13: note: ------>vectorizing SLP node starting from: .omp_data_o.659.pixcoor = _1233;
+src/main.cpp:932:13: note: vect_is_simple_use: operand operator new [] (iftmp.157_1231), type of def: external
+src/main.cpp:932:13: note: vect_is_simple_use: operand operator new [] (iftmp.254_1391), type of def: external
+src/main.cpp:932:13: note: transform store. ncopies = 1
+src/main.cpp:932:13: note: created new init_stmt: vect_cst__3630 = _3629;
+src/main.cpp:932:13: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.659.pixcoor
+src/main.cpp:932:13: note: created &.omp_data_o.659.pixcoor
+src/main.cpp:932:13: note: add new stmt: MEM[(struct complex * *)&.omp_data_o.659] = vect_cst__3630;
+src/main.cpp:932:13: note: vectorizing stmts using SLP.
+src/main.cpp:932:13: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:951:3: note: basic block vectorized
+src/main.cpp:951:43: missed: statement clobbers memory: _1800 = MPI_Wtime ();
+src/main.cpp:951:20: missed: statement clobbers memory: printf ("TIME: %e\n", _635);
+src/main.cpp:952:27: missed: statement clobbers memory: _1803 = MPI_Wtime ();
+src/main.cpp:953:20: missed: statement clobbers memory: __builtin_puts (&"FILL BACKPROJECTION MATRIX"[0]);
+src/main.cpp:955:46: missed: statement clobbers memory: _1809 = operator new [] (iftmp.437_1807);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.25, 0B, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.26, &.omp_data_o.662, 0, 0);
+src/main.cpp:959:13: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.26, &.omp_data_o.662, 0, 0);
+src/main.cpp:959:13: note: SLPing BB part
+src/main.cpp:959:13: note: ------>vectorizing SLP node starting from: .omp_data_o.662.pixcoor = _1233;
+src/main.cpp:959:13: note: vect_is_simple_use: operand operator new [] (iftmp.157_1231), type of def: external
+src/main.cpp:959:13: note: vect_is_simple_use: operand operator new [] (iftmp.254_1391), type of def: external
+src/main.cpp:959:13: note: transform store. ncopies = 1
+src/main.cpp:959:13: note: created new init_stmt: vect_cst__3635 = _3634;
+src/main.cpp:959:13: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.662.pixcoor
+src/main.cpp:959:13: note: created &.omp_data_o.662.pixcoor
+src/main.cpp:959:13: note: add new stmt: MEM[(struct complex * *)&.omp_data_o.662] = vect_cst__3635;
+src/main.cpp:959:13: note: vectorizing stmts using SLP.
+src/main.cpp:959:13: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:978:3: note: basic block vectorized
+src/main.cpp:978:43: missed: statement clobbers memory: _1817 = MPI_Wtime ();
+src/main.cpp:978:20: missed: statement clobbers memory: printf ("TIME: %e\n", _639);
+src/main.cpp:979:12: missed: statement clobbers memory: operator delete [] (_1393);
+src/main.cpp:980:12: missed: statement clobbers memory: operator delete [] (_1385);
+src/main.cpp:981:20: missed: statement clobbers memory: __builtin_puts (&"REDUCTION MAPPINGS"[0]);
+src/main.cpp:983:36: missed: statement clobbers memory: _1826 = operator new [] (iftmp.456_1824);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.27, &.omp_data_o.664, 0, 0);
+src/main.cpp:989:35: missed: statement clobbers memory: _1836 = operator new [] (iftmp.461_1834);
+src/main.cpp:993:32: missed: statement clobbers memory: _1845 = operator new [] (iftmp.467_1843);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.28, &.omp_data_o.666, 0, 0);
+src/main.cpp:1000:12: missed: statement clobbers memory: operator delete [] (_1826);
+src/main.cpp:1001:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1002:57: missed: statement clobbers memory: _1856 = MPI_Wtime ();
+src/main.cpp:1002:20: missed: statement clobbers memory: printf ("PREPROCESSING TIME: %e\n", _691);
+src/main.cpp:1017:32: missed: statement clobbers memory: _1862 = operator new [] (iftmp.477_1860);
+src/main.cpp:1018:32: missed: statement clobbers memory: _1868 = operator new [] (iftmp.479_1866);
+src/main.cpp:1019:34: missed: statement clobbers memory: _1874 = operator new [] (iftmp.481_1872);
+src/main.cpp:1020:34: missed: statement clobbers memory: _1879 = operator new [] (iftmp.483_1877);
+src/main.cpp:1021:34: missed: statement clobbers memory: _1884 = operator new [] (iftmp.485_1882);
+src/main.cpp:1022:34: missed: statement clobbers memory: _1889 = operator new [] (iftmp.487_1887);
+src/main.cpp:1023:34: missed: statement clobbers memory: _1894 = operator new [] (iftmp.489_1892);
+src/main.cpp:1024:34: missed: statement clobbers memory: _1899 = operator new [] (iftmp.491_1897);
+src/main.cpp:1042:20: missed: statement clobbers memory: __builtin_puts (&"INPUT MEASUREMENT DATA"[0]);
+src/main.cpp:1043:43: missed: statement clobbers memory: _1907 = operator new [] (iftmp.494_1905);
+src/main.cpp:1044:22: missed: statement clobbers memory: _1909 = fopen (sinfile.497_704, "rb");
+src/main.cpp:1045:8: missed: statement clobbers memory: fread (_1907, 4, _708, _1909);
+src/main.cpp:1046:9: missed: statement clobbers memory: fclose (_1909);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.29, &.omp_data_o.668, 0, 0);
+src/main.cpp:1047:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.29, &.omp_data_o.668, 0, 0);
+src/main.cpp:1047:11: note: SLPing BB part
+src/main.cpp:1047:11: note: ------>vectorizing SLP node starting from: .omp_data_o.668.raymesind = _1278;
+src/main.cpp:1047:11: note: vect_is_simple_use: operand operator new [] (iftmp.178_1276), type of def: external
+src/main.cpp:1047:11: note: vect_is_simple_use: operand operator new [] (iftmp.483_1877), type of def: external
+src/main.cpp:1047:11: note: conflicting alias set types.
+src/main.cpp:1047:11: note: transform store. ncopies = 1
+src/main.cpp:1047:11: note: created new init_stmt: vect_cst__3640 = _3639;
+src/main.cpp:1047:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.668.raymesind
+src/main.cpp:1047:11: note: created &.omp_data_o.668.raymesind
+src/main.cpp:1047:11: note: add new stmt: MEM[(void *)&.omp_data_o.668] = vect_cst__3640;
+src/main.cpp:1047:11: note: vectorizing stmts using SLP.
+src/main.cpp:1047:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1051:12: missed: statement clobbers memory: operator delete [] (_1907);
+src/main.cpp:1052:3: note: basic block vectorized
+src/main.cpp:1052:20: missed: statement clobbers memory: __builtin_puts (&"INPUT ENDS"[0]);
+src/main.cpp:1072:12: missed: statement clobbers memory: operator delete [] (_1273);
+src/main.cpp:1073:12: missed: statement clobbers memory: operator delete [] (_1278);
+src/main.cpp:1074:20: missed: statement clobbers memory: __builtin_puts (&"GRADIENT-DESCENT OPTIMIZATION"[0]);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.30, &.omp_data_o.670, 0, 0);
+src/main.cpp:1080:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1085:29: missed: statement clobbers memory: _1927 = MPI_Wtime ();
+src/main.cpp:1087:15: missed: statement clobbers memory: projection (_1884, _1874);
+src/main.cpp:1089:21: missed: statement clobbers memory: _1930 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: SLPing BB part
+src/main.cpp:1226:11: note: ------>vectorizing SLP node starting from: .omp_data_o.799.a = _1889;
+src/main.cpp:1226:11: note: vect_is_simple_use: operand operator new [] (iftmp.487_1887), type of def: external
+src/main.cpp:1226:11: note: vect_is_simple_use: operand operator new [] (iftmp.485_1882), type of def: external
+src/main.cpp:1226:11: note: transform store. ncopies = 1
+src/main.cpp:1226:11: note: created new init_stmt: vect_cst__3645 = _3644;
+src/main.cpp:1226:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.799.a
+src/main.cpp:1226:11: note: created &.omp_data_o.799.a
+src/main.cpp:1226:11: note: add new stmt: MEM[(float * *)&.omp_data_o.799] = vect_cst__3645;
+src/main.cpp:1226:11: note: vectorizing stmts using SLP.
+src/main.cpp:1226:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1091:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1092:30: missed: statement clobbers memory: _1933 = MPI_Wtime ();
+src/main.cpp:1094:19: missed: statement clobbers memory: backprojection (_1894, _1889);
+src/main.cpp:1095:21: missed: statement clobbers memory: _1937 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:1098:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1099:30: missed: statement clobbers memory: _1942 = MPI_Wtime ();
+src/main.cpp:1100:21: missed: statement clobbers memory: _1945 = MPI_Wtime ();
+src/main.cpp:1101:18: missed: statement clobbers memory: MPI_Allreduce (1B, &error, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1102:18: missed: statement clobbers memory: MPI_Allreduce (1B, &gradnorm, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1103:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1104:30: missed: statement clobbers memory: _1950 = MPI_Wtime ();
+src/main.cpp:1105:5: note: basic block vectorized
+src/main.cpp:1105:22: missed: statement clobbers memory: printf ("iter: %d error: %e gradnorm: %e\n", 0, _721, _719);
+src/main.cpp:1107:21: missed: statement clobbers memory: _1954 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11copy_kernelPfS_i._omp_fn.0, &.omp_data_o.794, 0, 0);
+src/main.cpp:1221:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11copy_kernelPfS_i._omp_fn.0, &.omp_data_o.794, 0, 0);
+src/main.cpp:1221:11: note: SLPing BB part
+src/main.cpp:1221:11: note: ------>vectorizing SLP node starting from: .omp_data_o.794.a = _1899;
+src/main.cpp:1221:11: note: vect_is_simple_use: operand operator new [] (iftmp.491_1897), type of def: external
+src/main.cpp:1221:11: note: vect_is_simple_use: operand operator new [] (iftmp.489_1892), type of def: external
+src/main.cpp:1221:11: note: transform store. ncopies = 1
+src/main.cpp:1221:11: note: created new init_stmt: vect_cst__3650 = _3649;
+src/main.cpp:1221:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.794.a
+src/main.cpp:1221:11: note: created &.omp_data_o.794.a
+src/main.cpp:1221:11: note: add new stmt: MEM[(float * *)&.omp_data_o.794] = vect_cst__3650;
+src/main.cpp:1221:11: note: vectorizing stmts using SLP.
+src/main.cpp:1221:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1110:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1111:30: missed: statement clobbers memory: _1958 = MPI_Wtime ();
+src/main.cpp:1113:28: note: basic block vectorized
+src/main.cpp:1115:17: missed: statement clobbers memory: projection (_1884, _1899);
+src/main.cpp:1117:23: missed: statement clobbers memory: _1962 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10dot_kernelPfS_i._omp_fn.0, &.omp_data_o.784, 0, 0);
+src/main.cpp:1210:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10dot_kernelPfS_i._omp_fn.0, &.omp_data_o.784, 0, 0);
+src/main.cpp:1210:11: note: SLPing BB part
+src/main.cpp:1210:11: note: ------>vectorizing SLP node starting from: .omp_data_o.784.a = _1889;
+src/main.cpp:1210:11: note: vect_is_simple_use: operand operator new [] (iftmp.487_1887), type of def: external
+src/main.cpp:1210:11: note: vect_is_simple_use: operand operator new [] (iftmp.485_1882), type of def: external
+src/main.cpp:1210:11: note: transform store. ncopies = 1
+src/main.cpp:1210:11: note: created new init_stmt: vect_cst__3655 = _3654;
+src/main.cpp:1210:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.784.a
+src/main.cpp:1210:11: note: created &.omp_data_o.784.a
+src/main.cpp:1210:11: note: add new stmt: MEM[(float * *)&.omp_data_o.784] = vect_cst__3655;
+src/main.cpp:1210:11: note: vectorizing stmts using SLP.
+src/main.cpp:1210:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:1120:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1121:32: missed: statement clobbers memory: _1967 = MPI_Wtime ();
+src/main.cpp:1122:23: missed: statement clobbers memory: _1970 = MPI_Wtime ();
+src/main.cpp:1123:20: missed: statement clobbers memory: MPI_Allreduce (1B, &temp1, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1124:20: missed: statement clobbers memory: MPI_Allreduce (1B, &temp2, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1125:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1126:32: missed: statement clobbers memory: _1975 = MPI_Wtime ();
+src/main.cpp:1128:23: missed: statement clobbers memory: _1978 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: SLPing BB part
+src/main.cpp:1216:11: note: ------>vectorizing SLP node starting from: .omp_data_o.789.a = _1874;
+src/main.cpp:1216:11: note: vect_is_simple_use: operand operator new [] (iftmp.481_1872), type of def: external
+src/main.cpp:1216:11: note: vect_is_simple_use: operand operator new [] (iftmp.481_1872), type of def: external
+src/main.cpp:1216:11: note: transform store. ncopies = 1
+src/main.cpp:1216:11: note: created new init_stmt: vect_cst__3660 = _3659;
+src/main.cpp:1216:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.789.a
+src/main.cpp:1216:11: note: created &.omp_data_o.789.a
+src/main.cpp:1216:11: note: add new stmt: MEM[(float * *)&.omp_data_o.789] = vect_cst__3660;
+src/main.cpp:1216:11: note: vectorizing stmts using SLP.
+src/main.cpp:1216:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1131:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1132:32: missed: statement clobbers memory: _1982 = MPI_Wtime ();
+src/main.cpp:1134:17: missed: statement clobbers memory: projection (_1884, _1874);
+src/main.cpp:1136:23: missed: statement clobbers memory: _1986 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: SLPing BB part
+src/main.cpp:1226:11: note: ------>vectorizing SLP node starting from: .omp_data_o.799.a = _1889;
+src/main.cpp:1226:11: note: vect_is_simple_use: operand operator new [] (iftmp.487_1887), type of def: external
+src/main.cpp:1226:11: note: vect_is_simple_use: operand operator new [] (iftmp.485_1882), type of def: external
+src/main.cpp:1226:11: note: transform store. ncopies = 1
+src/main.cpp:1226:11: note: created new init_stmt: vect_cst__3665 = _3664;
+src/main.cpp:1226:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.799.a
+src/main.cpp:1226:11: note: created &.omp_data_o.799.a
+src/main.cpp:1226:11: note: add new stmt: MEM[(float * *)&.omp_data_o.799] = vect_cst__3665;
+src/main.cpp:1226:11: note: vectorizing stmts using SLP.
+src/main.cpp:1226:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1138:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1139:32: missed: statement clobbers memory: _1989 = MPI_Wtime ();
+src/main.cpp:1141:21: missed: statement clobbers memory: backprojection (_1894, _1889);
+src/main.cpp:1142:23: missed: statement clobbers memory: _1993 = MPI_Wtime ();
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:1145:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1146:32: missed: statement clobbers memory: _1998 = MPI_Wtime ();
+src/main.cpp:1147:23: missed: statement clobbers memory: _2001 = MPI_Wtime ();
+src/main.cpp:1148:20: missed: statement clobbers memory: MPI_Allreduce (1B, &error, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1149:20: missed: statement clobbers memory: MPI_Allreduce (1B, &gradnorm, 1, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1150:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1151:32: missed: statement clobbers memory: _2006 = MPI_Wtime ();
+src/main.cpp:1153:23: missed: statement clobbers memory: _2009 = MPI_Wtime ();
+src/main.cpp:1154:7: note: basic block vectorized
+src/main.cpp:1154:24: missed: statement clobbers memory: printf ("iter: %d error: %e gradnorm: %e\n", iter_2229, _744, _742);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: SLPing BB part
+src/main.cpp:1216:11: note: ------>vectorizing SLP node starting from: .omp_data_o.789.a = _1899;
+src/main.cpp:1216:11: note: vect_is_simple_use: operand operator new [] (iftmp.491_1897), type of def: external
+src/main.cpp:1216:11: note: vect_is_simple_use: operand operator new [] (iftmp.489_1892), type of def: external
+src/main.cpp:1216:11: note: transform store. ncopies = 1
+src/main.cpp:1216:11: note: created new init_stmt: vect_cst__3670 = _3669;
+src/main.cpp:1216:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.789.a
+src/main.cpp:1216:11: note: created &.omp_data_o.789.a
+src/main.cpp:1216:11: note: add new stmt: MEM[(float * *)&.omp_data_o.789] = vect_cst__3670;
+src/main.cpp:1216:11: note: vectorizing stmts using SLP.
+src/main.cpp:1216:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1160:18: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1161:32: missed: statement clobbers memory: _2014 = MPI_Wtime ();
+src/main.cpp:1113:28: note: basic block vectorized
+src/main.cpp:1163:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1164:22: missed: statement clobbers memory: _2023 = MPI_Wtime ();
+src/main.cpp:1167:22: missed: statement clobbers memory: printf ("recon: %e proj: %e (%e %e %e) backproj: %e (%e %e %e) ctime: %e wtime: %e\n", rtime_2024, ftime.533_756, fktime.532_755, aftime.531_754, frtime.530_753, btime.529_752, brtime.528_751, abtime.527_750, bktime.526_749, ctime_2232, wtime_2230);
+src/main.cpp:1169:22: missed: statement clobbers memory: printf ("numproj: %d numback: %d\n", numproj.536_759, numback.535_758);
+src/main.cpp:1170:18: missed: statement clobbers memory: MPI_Allreduce (1B, &fktime, 1, &ompi_mpi_double, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1171:18: missed: statement clobbers memory: MPI_Allreduce (1B, &bktime, 1, &ompi_mpi_double, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1178:22: missed: statement clobbers memory: printf ("proj: %e s (%f GFLOPS) backproj: %e s (%f GFLOPS) avGFLOPS: %f totGFLOPS: %f\n", fktime.539_767, projflops_2029, bktime.542_771, backflops_2030, totflops_2031, _793);
+src/main.cpp:1179:22: missed: statement clobbers memory: printf ("proj: %f GB/s back: %f GB/s av: %f GB/s tot: %f GB/s\n", projbw_2032, backbw_2033, totbw_2034, _797);
+src/main.cpp:1181:35: missed: statement clobbers memory: _2043 = operator new [] (iftmp.570_2041);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.31, &.omp_data_o.672, 0, 0);
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.32, &.omp_data_o.674, 0, 0);
+src/main.cpp:1185:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:106:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._omp_fn.32, &.omp_data_o.674, 0, 0);
+src/main.cpp:1185:11: note: SLPing BB part
+src/main.cpp:1185:11: note: ------>vectorizing SLP node starting from: .omp_data_o.674.pixglobalind = _1241;
+src/main.cpp:1185:11: note: vect_is_simple_use: operand operator new [] (iftmp.160_1239), type of def: external
+src/main.cpp:1185:11: note: vect_is_simple_use: operand operator new [] (iftmp.481_1872), type of def: external
+src/main.cpp:1185:11: note: conflicting alias set types.
+src/main.cpp:1185:11: note: transform store. ncopies = 1
+src/main.cpp:1185:11: note: created new init_stmt: vect_cst__3675 = _3674;
+src/main.cpp:1185:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.674.pixglobalind
+src/main.cpp:1185:11: note: created &.omp_data_o.674.pixglobalind
+src/main.cpp:1185:11: note: add new stmt: MEM[(void *)&.omp_data_o.674] = vect_cst__3675;
+src/main.cpp:1185:11: note: vectorizing stmts using SLP.
+src/main.cpp:1185:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1188:16: missed: statement clobbers memory: MPI_Allreduce (1B, _2043, numpix.574_799, &ompi_mpi_float, &ompi_mpi_op_sum, &ompi_mpi_comm_world);
+src/main.cpp:1189:3: note: basic block vectorized
+src/main.cpp:1190:23: missed: statement clobbers memory: _2054 = fopen (outfile.576_801, "wb");
+src/main.cpp:1191:11: missed: statement clobbers memory: fwrite (_2043, 4, _803, _2054);
+src/main.cpp:1192:11: missed: statement clobbers memory: fclose (_2054);
+src/main.cpp:1194:12: missed: statement clobbers memory: operator delete [] (_2043);
+src/main.cpp:1196:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/main.cpp:1197:49: missed: statement clobbers memory: _2060 = MPI_Wtime ();
+src/main.cpp:1197:20: missed: statement clobbers memory: printf ("Total Time: %e\n", _805);
+src/main.cpp:1199:15: missed: statement clobbers memory: MPI_Finalize ();
+src/main.cpp:1201:7: note: vectorized 0 loops in function.
+src/main.cpp:1201:7: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11norm_kernelPfi._omp_fn.0, &.omp_data_o.779, 0, 0);
+src/main.cpp:1208:7: note: vectorized 0 loops in function.
+src/main.cpp:1208:7: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10dot_kernelPfS_i._omp_fn.0, &.omp_data_o.784, 0, 0);
+src/main.cpp:1210:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:1208:7: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10dot_kernelPfS_i._omp_fn.0, &.omp_data_o.784, 0, 0);
+src/main.cpp:1210:11: note: SLPing BB part
+src/main.cpp:1210:11: note: ------>vectorizing SLP node starting from: .omp_data_o.784.a = a_7(D);
+src/main.cpp:1210:11: note: vect_is_simple_use: operand a_7(D), type of def: external
+src/main.cpp:1210:11: note: vect_is_simple_use: operand b_5(D), type of def: external
+src/main.cpp:1210:11: note: transform store. ncopies = 1
+src/main.cpp:1210:11: note: created new init_stmt: vect_cst__15 = _14;
+src/main.cpp:1210:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.784.a
+src/main.cpp:1210:11: note: created &.omp_data_o.784.a
+src/main.cpp:1210:11: note: add new stmt: MEM[(float * *)&.omp_data_o.784] = vect_cst__15;
+src/main.cpp:1210:11: note: vectorizing stmts using SLP.
+src/main.cpp:1210:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1213:10: note: basic block vectorized
+src/main.cpp:1215:6: note: vectorized 0 loops in function.
+src/main.cpp:1215:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:1215:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z12saxpy_kernelPfS_fS_i._omp_fn.0, &.omp_data_o.789, 0, 0);
+src/main.cpp:1216:11: note: SLPing BB part
+src/main.cpp:1216:11: note: ------>vectorizing SLP node starting from: .omp_data_o.789.a = a_10(D);
+src/main.cpp:1216:11: note: vect_is_simple_use: operand a_10(D), type of def: external
+src/main.cpp:1216:11: note: vect_is_simple_use: operand b_8(D), type of def: external
+src/main.cpp:1216:11: note: transform store. ncopies = 1
+src/main.cpp:1216:11: note: created new init_stmt: vect_cst__17 = _16;
+src/main.cpp:1216:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.789.a
+src/main.cpp:1216:11: note: created &.omp_data_o.789.a
+src/main.cpp:1216:11: note: add new stmt: MEM[(float * *)&.omp_data_o.789] = vect_cst__17;
+src/main.cpp:1216:11: note: vectorizing stmts using SLP.
+src/main.cpp:1216:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1219:1: note: basic block vectorized
+src/main.cpp:1220:6: note: vectorized 0 loops in function.
+src/main.cpp:1220:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11copy_kernelPfS_i._omp_fn.0, &.omp_data_o.794, 0, 0);
+src/main.cpp:1221:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:1220:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z11copy_kernelPfS_i._omp_fn.0, &.omp_data_o.794, 0, 0);
+src/main.cpp:1221:11: note: SLPing BB part
+src/main.cpp:1221:11: note: ------>vectorizing SLP node starting from: .omp_data_o.794.a = a_6(D);
+src/main.cpp:1221:11: note: vect_is_simple_use: operand a_6(D), type of def: external
+src/main.cpp:1221:11: note: vect_is_simple_use: operand b_4(D), type of def: external
+src/main.cpp:1221:11: note: transform store. ncopies = 1
+src/main.cpp:1221:11: note: created new init_stmt: vect_cst__13 = _12;
+src/main.cpp:1221:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.794.a
+src/main.cpp:1221:11: note: created &.omp_data_o.794.a
+src/main.cpp:1221:11: note: add new stmt: MEM[(float * *)&.omp_data_o.794] = vect_cst__13;
+src/main.cpp:1221:11: note: vectorizing stmts using SLP.
+src/main.cpp:1221:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1224:1: note: basic block vectorized
+src/main.cpp:1225:6: note: vectorized 0 loops in function.
+src/main.cpp:1225:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: ***** Re-trying analysis with vector size 16
+src/main.cpp:1225:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z15subtract_kernelPfS_S_i._omp_fn.0, &.omp_data_o.799, 0, 0);
+src/main.cpp:1226:11: note: SLPing BB part
+src/main.cpp:1226:11: note: ------>vectorizing SLP node starting from: .omp_data_o.799.a = a_8(D);
+src/main.cpp:1226:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+src/main.cpp:1226:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+src/main.cpp:1226:11: note: transform store. ncopies = 1
+src/main.cpp:1226:11: note: created new init_stmt: vect_cst__15 = _14;
+src/main.cpp:1226:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.799.a
+src/main.cpp:1226:11: note: created &.omp_data_o.799.a
+src/main.cpp:1226:11: note: add new stmt: MEM[(float * *)&.omp_data_o.799] = vect_cst__15;
+src/main.cpp:1226:11: note: vectorizing stmts using SLP.
+src/main.cpp:1226:11: optimized: basic block part vectorized using 16 byte vectors
+src/main.cpp:1229:1: note: basic block vectorized
+mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/raytrace.cpp -o src/raytrace.o
+src/raytrace.cpp:24:11: missed: couldn't vectorize loop
+src/raytrace.cpp:24:11: missed: not vectorized: control flow in loop.
+src/raytrace.cpp:10:6: note: vectorized 0 loops in function.
+src/raytrace.cpp:24:5: note: ***** Re-trying analysis with vector size 16
+src/raytrace.cpp:103:21: missed: couldn't vectorize loop
+src/raytrace.cpp:103:21: missed: not vectorized: control flow in loop.
+src/raytrace.cpp:63:11: missed: couldn't vectorize loop
+src/raytrace.cpp:63:11: missed: not vectorized: control flow in loop.
+src/raytrace.cpp:42:6: note: vectorized 0 loops in function.
+src/raytrace.cpp:46:16: missed: statement clobbers memory: MPI_Comm_size (&ompi_mpi_comm_world, &numproc);
+src/raytrace.cpp:47:16: missed: statement clobbers memory: MPI_Comm_rank (&ompi_mpi_comm_world, &myid);
+src/raytrace.cpp:63:5: note: ***** Re-trying analysis with vector size 16
+src/raytrace.cpp:205:21: missed: couldn't vectorize loop
+src/raytrace.cpp:205:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/raytrace.cpp:286:18: missed: couldn't vectorize loop
+src/raytrace.cpp:286:18: missed: not vectorized: number of iterations cannot be computed.
+src/raytrace.cpp:165:11: missed: couldn't vectorize loop
+src/raytrace.cpp:165:11: missed: not vectorized: control flow in loop.
+src/raytrace.cpp:144:6: note: vectorized 0 loops in function.
+src/raytrace.cpp:148:16: missed: statement clobbers memory: MPI_Comm_size (&ompi_mpi_comm_world, &numproc);
+src/raytrace.cpp:149:16: missed: statement clobbers memory: MPI_Comm_rank (&ompi_mpi_comm_world, &myid);
+src/raytrace.cpp:165:5: note: ***** Re-trying analysis with vector size 16
+src/raytrace.cpp:264:21: optimized: loop vectorized using 32 byte vectors
+src/raytrace.cpp:262:5: note: vectorized 1 loops in function.
+src/raytrace.cpp:286:18: missed: couldn't vectorize loop
+src/raytrace.cpp:286:18: missed: not vectorized: number of iterations cannot be computed.
+src/raytrace.cpp:284:5: note: vectorized 0 loops in function.
+src/raytrace.cpp:298:16: missed: couldn't vectorize loop
+src/raytrace.cpp:298:16: missed: not vectorized: control flow in loop.
+src/raytrace.cpp:295:6: note: vectorized 0 loops in function.
+mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/kernels.cpp -o src/kernels.o
+src/kernels.cpp:106:32: missed: couldn't vectorize loop
+src/kernels.cpp:106:32: missed: not vectorized: control flow in loop.
+src/kernels.cpp:106:39: optimized: loop vectorized using 32 byte vectors
+src/kernels.cpp:103:13: note: vectorized 1 loops in function.
+src/kernels.cpp:107:48: missed: statement clobbers memory: vect__39.81_61 = __builtin_ia32_gathersiv8sf ({ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, raybuff.16_30, vect__35.80_64, {  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan }, 4);
+src/kernels.cpp:87:22: missed: couldn't vectorize loop
+src/kernels.cpp:87:22: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:75:26: missed: couldn't vectorize loop
+src/kernels.cpp:75:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:86:26: optimized: loop vectorized using 32 byte vectors
+src/kernels.cpp:77:48: missed: couldn't vectorize loop
+src/kernels.cpp:77:48: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:81:28: missed: couldn't vectorize loop
+src/kernels.cpp:81:28: missed: not vectorized: control flow in loop.
+src/kernels.cpp:82:48: missed: couldn't vectorize loop
+src/kernels.cpp:83:25: missed: not vectorized: relevant stmt not supported: _97 = _96 + output.0__I_lsm.109_2;
+src/kernels.cpp:78:28: optimized: loop vectorized using 32 byte vectors
+src/kernels.cpp:68:13: note: vectorized 2 loops in function.
+src/kernels.cpp:87:19: note: Create new block 82 to sink mask stores.src/kernels.cpp:87:19: note: Move stmt to created bb
+.MASK_STORE (vectp.122_225, 4B, mask__281.118_246, vect__110.121_241);
+src/kernels.cpp:87:19: note: Move stmt to created bb
+vect__110.121_241 = .MASK_LOAD (vectp_output.119_245, 4B, mask__281.118_246);
+src/kernels.cpp:90:7: missed: statement clobbers memory: saved_stack.5_32 = __builtin_stack_save ();
+src/kernels.cpp:70:13: missed: statement clobbers memory: output.0_35 = __builtin_alloca_with_align (_33, 32);
+src/kernels.cpp:71:13: missed: statement clobbers memory: input.1_38 = __builtin_alloca_with_align (_36, 32);
+src/kernels.cpp:68:13: missed: statement clobbers memory: _42 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _40, 1, 1, &.istart0.29, &.iend0.30);
+src/kernels.cpp:68:13: missed: statement clobbers memory: _115 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.29, &.iend0.30);
+src/kernels.cpp:79:57: missed: statement clobbers memory: vect__73.131_185 = __builtin_ia32_gathersiv8sf ({ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, obj_30, vect__69.130_188, {  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan }, 4);
+src/kernels.cpp:68:13: missed: statement clobbers memory: __builtin_memset (output.0_35, 0, _290);
+src/kernels.cpp:68:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/kernels.cpp:68:13: missed: statement clobbers memory: __builtin_stack_restore (saved_stack.5_32);
+src/kernels.cpp:124:36: missed: couldn't vectorize loop
+src/kernels.cpp:124:38: missed: versioning for alias not supported for: can't determine dependence between *_25 and *_27
+src/kernels.cpp:122:13: note: vectorized 0 loops in function.
+src/kernels.cpp:157:61: missed: couldn't vectorize loop
+src/kernels.cpp:157:61: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:153:26: missed: couldn't vectorize loop
+src/kernels.cpp:153:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:164:26: optimized: loop vectorized using 32 byte vectors
+src/kernels.cpp:155:48: missed: couldn't vectorize loop
+src/kernels.cpp:155:48: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/kernels.cpp:159:28: missed: couldn't vectorize loop
+src/kernels.cpp:159:28: missed: not vectorized: control flow in loop.
+src/kernels.cpp:160:48: missed: couldn't vectorize loop
+src/kernels.cpp:161:25: missed: not vectorized: relevant stmt not supported: _98 = _97 + output.44__I_lsm.210_2;
+src/kernels.cpp:156:28: optimized: loop vectorized using 32 byte vectors
+src/kernels.cpp:146:13: note: vectorized 2 loops in function.
+src/kernels.cpp:165:19: note: Create new block 82 to sink mask stores.src/kernels.cpp:165:19: note: Move stmt to created bb
+.MASK_STORE (vectp.223_225, 4B, mask__281.219_246, vect__110.222_241);
+src/kernels.cpp:165:19: note: Move stmt to created bb
+vect__110.222_241 = .MASK_LOAD (vectp_output.220_245, 4B, mask__281.219_246);
+src/kernels.cpp:168:7: missed: statement clobbers memory: saved_stack.49_32 = __builtin_stack_save ();
+src/kernels.cpp:148:13: missed: statement clobbers memory: output.44_35 = __builtin_alloca_with_align (_33, 32);
+src/kernels.cpp:149:13: missed: statement clobbers memory: input.45_38 = __builtin_alloca_with_align (_36, 32);
+src/kernels.cpp:146:13: missed: statement clobbers memory: _42 = __builtin_GOMP_loop_nonmonotonic_dynamic_start (0, _40, 1, 1, &.istart0.59, &.iend0.60);
+src/kernels.cpp:146:13: missed: statement clobbers memory: _115 = __builtin_GOMP_loop_nonmonotonic_dynamic_next (&.istart0.59, &.iend0.60);
+src/kernels.cpp:157:61: missed: statement clobbers memory: vect__74.232_185 = __builtin_ia32_gathersiv8sf ({ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, raypart.46_61, vect__70.231_188, {  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan,  Nan }, 4);
+src/kernels.cpp:146:13: missed: statement clobbers memory: __builtin_memset (output.44_35, 0, _290);
+src/kernels.cpp:146:13: missed: statement clobbers memory: __builtin_GOMP_loop_end ();
+src/kernels.cpp:146:13: missed: statement clobbers memory: __builtin_stack_restore (saved_stack.49_32);
+src/kernels.cpp:53:6: note: vectorized 0 loops in function.
+src/kernels.cpp:54:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:55:27: missed: statement clobbers memory: _24 = MPI_Wtime ();
+src/kernels.cpp:57:28: missed: statement clobbers memory: _26 = MPI_Wtime ();
+src/kernels.cpp:53:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10projectionPfS_._omp_fn.0, &.omp_data_o.24, 0, 0);
+src/kernels.cpp:68:13: note: ***** Re-trying analysis with vector size 16
+src/kernels.cpp:53:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10projectionPfS_._omp_fn.0, &.omp_data_o.24, 0, 0);
+src/kernels.cpp:92:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:93:32: missed: statement clobbers memory: _53 = MPI_Wtime ();
+src/kernels.cpp:96:28: missed: statement clobbers memory: _56 = MPI_Wtime ();
+src/kernels.cpp:97:18: missed: statement clobbers memory: MPI_Alltoallv (raypart.12_9, raysendcount.11_8, raysendstart.10_7, &ompi_mpi_float, raybuff.9_6, rayrecvcount.8_5, rayrecvstart.7_4, &ompi_mpi_float, &ompi_mpi_comm_world);
+src/kernels.cpp:98:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:99:32: missed: statement clobbers memory: _60 = MPI_Wtime ();
+src/kernels.cpp:102:29: missed: statement clobbers memory: _63 = MPI_Wtime ();
+src/kernels.cpp:53:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10projectionPfS_._omp_fn.1, &.omp_data_o.26, 0, 0);
+src/kernels.cpp:110:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:111:32: missed: statement clobbers memory: _70 = MPI_Wtime ();
+src/kernels.cpp:113:28: missed: statement clobbers memory: _73 = MPI_Wtime ();
+src/kernels.cpp:117:6: note: vectorized 0 loops in function.
+src/kernels.cpp:118:14: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:119:27: missed: statement clobbers memory: _24 = MPI_Wtime ();
+src/kernels.cpp:117:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z14backprojectionPfS_._omp_fn.0, &.omp_data_o.56, 0, 0);
+src/kernels.cpp:125:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:126:32: missed: statement clobbers memory: _31 = MPI_Wtime ();
+src/kernels.cpp:129:28: missed: statement clobbers memory: _34 = MPI_Wtime ();
+src/kernels.cpp:130:18: missed: statement clobbers memory: MPI_Alltoallv (raybuff.42_9, rayrecvcount.41_8, rayrecvstart.40_7, &ompi_mpi_float, raypart.39_6, raysendcount.38_5, raysendstart.37_4, &ompi_mpi_float, &ompi_mpi_comm_world);
+src/kernels.cpp:131:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:132:32: missed: statement clobbers memory: _38 = MPI_Wtime ();
+src/kernels.cpp:135:28: missed: statement clobbers memory: _41 = MPI_Wtime ();
+src/kernels.cpp:117:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z14backprojectionPfS_._omp_fn.1, &.omp_data_o.58, 0, 0);
+src/kernels.cpp:146:13: note: ***** Re-trying analysis with vector size 16
+src/kernels.cpp:117:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z14backprojectionPfS_._omp_fn.1, &.omp_data_o.58, 0, 0);
+src/kernels.cpp:170:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
+src/kernels.cpp:171:32: missed: statement clobbers memory: _68 = MPI_Wtime ();
+src/kernels.cpp:173:28: missed: statement clobbers memory: _71 = MPI_Wtime ();
+mpicxx -o memxct src/main.o src/raytrace.o src/kernels.o -fopenmp
