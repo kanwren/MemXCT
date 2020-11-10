@@ -87,9 +87,9 @@ export OMP_NUM_THREADS=1
 hosts="$(scontrol show hostnames "$SLURM_JOB_NODELIST" | tr '\n' ',' | sed 's/,$//')"
 echo "Using hosts: $hosts"
 
-PKEY="$(cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/* | grep -v 0000 | grep -v 0x7fff)"
+PKEY="$(cat /sys/class/infiniband/mlx4_0/ports/1/pkeys/* | grep -v 0000 | grep -v 0x7fff)"
 PKEY="${PKEY/0x8/0x0}"
 echo "PKEY: $PKEY"
 
-mpirun -np ${5:-1} --host "$hosts" --map-by core --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc "$EXE_PATH"
+mpirun -np ${5:-1} --host "$hosts" --map-by core --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx4_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc "$EXE_PATH"
 
