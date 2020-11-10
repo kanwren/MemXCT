@@ -1,4 +1,3 @@
-mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/main.cpp -o src/main.o
 src/main.cpp:503:55: missed: couldn't vectorize loop
 src/main.cpp:503:38: missed: not vectorized: not suitable for scatter store *_36 = _37;
 src/main.cpp:501:13: note: vectorized 0 loops in function.
@@ -1162,7 +1161,6 @@ src/main.cpp:1226:11: note: add new stmt: MEM[(float * *)&.omp_data_o.799] = vec
 src/main.cpp:1226:11: note: vectorizing stmts using SLP.
 src/main.cpp:1226:11: optimized: basic block part vectorized using 16 byte vectors
 src/main.cpp:1229:1: note: basic block vectorized
-mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/raytrace.cpp -o src/raytrace.o
 src/raytrace.cpp:24:11: missed: couldn't vectorize loop
 src/raytrace.cpp:24:11: missed: not vectorized: control flow in loop.
 src/raytrace.cpp:10:6: note: vectorized 0 loops in function.
@@ -1193,7 +1191,6 @@ src/raytrace.cpp:284:5: note: vectorized 0 loops in function.
 src/raytrace.cpp:298:16: missed: couldn't vectorize loop
 src/raytrace.cpp:298:16: missed: not vectorized: control flow in loop.
 src/raytrace.cpp:295:6: note: vectorized 0 loops in function.
-mpicxx -std=c++11 -fopenmp -O3 -march=native -ftree-vectorize -mavx2 -fopt-info-vec-all -c src/kernels.cpp -o src/kernels.o
 src/kernels.cpp:106:32: missed: couldn't vectorize loop
 src/kernels.cpp:106:32: missed: not vectorized: control flow in loop.
 src/kernels.cpp:106:39: optimized: loop vectorized using 32 byte vectors
@@ -1289,4 +1286,3 @@ src/kernels.cpp:117:6: missed: statement clobbers memory: __builtin_GOMP_paralle
 src/kernels.cpp:170:16: missed: statement clobbers memory: MPI_Barrier (&ompi_mpi_comm_world);
 src/kernels.cpp:171:32: missed: statement clobbers memory: _68 = MPI_Wtime ();
 src/kernels.cpp:173:28: missed: statement clobbers memory: _71 = MPI_Wtime ();
-mpicxx -o memxct src/main.o src/raytrace.o src/kernels.o -fopenmp
