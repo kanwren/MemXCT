@@ -8,10 +8,9 @@ done
 
 for i in {1..10}; do
 	for d in CDS1 CDS2; do
-		sbatch --job-name "memxct-multinode-${d}-1_${i}" --nodes=1 --ntasks-per-node=120 --output="memxct-multinode-${d}-1_${i}.out" cpu/multinode.sh "$d" 32 512 8 1
-		sbatch --job-name "memxct-multinode-${d}-2_${i}" --nodes=2 --ntasks-per-node=120 --output="memxct-multinode-${d}-2_${i}.out" cpu/multinode.sh "$d" 32 512 8 2
-		sbatch --job-name "memxct-multinode-${d}-4_${i}" --nodes=4 --ntasks-per-node=120 --output="memxct-multinode-${d}-4_${i}.out" cpu/multinode.sh "$d" 32 512 8 4
-		sbatch --job-name "memxct-multinode-${d}-8_${i}" --nodes=8 --ntasks-per-node=120 --output="memxct-multinode-${d}-8_${i}.out" cpu/multinode.sh "$d" 32 512 8 8
+		sbatch --job-name "memxct-multinode-${d}-1_${i}" --nodes=1 --ntasks-per-node=120 --output="memxct-multinode-${d}-1_${i}.out" cpu/multinode.sh "$d" 32 512 8
+		sbatch --job-name "memxct-multinode-${d}-2_${i}" --nodes=2 --ntasks-per-node=120 --output="memxct-multinode-${d}-2_${i}.out" cpu/multinode.sh "$d" 32 512 8
+		sbatch --job-name "memxct-multinode-${d}-4_${i}" --nodes=4 --ntasks-per-node=120 --output="memxct-multinode-${d}-4_${i}.out" cpu/multinode.sh "$d" 32 512 8
 	done
 done
 
