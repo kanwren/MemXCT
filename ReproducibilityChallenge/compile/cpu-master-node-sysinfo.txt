@@ -1,0 +1,346 @@
+MANPATH=/opt/rh/devtoolset-9/USER/usr/share/man:
+XDG_SESSION_ID=6
+HOSTNAME=ip-0A000008
+SELINUX_ROLE_REQUESTED=
+TERM=screen
+SHELL=/bin/bash
+HISTSIZE=1000
+SSH_CLIENT=71.59.9.252 48938 22
+SELINUX_USE_CURRENT_RANGE=
+X_SCLS=devtoolset-9 
+SSH_TTY=/dev/pts/0
+CYCLECLOUD_BOOTSTRAP=/opt/cycle/jetpack/system/bootstrap
+PCP_DIR=/opt/rh/devtoolset-9/USER
+USER=USER
+LD_LIBRARY_PATH=/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+SUDO_USER=ccuser
+SUDO_UID=20002
+USERNAME=USER
+TMUX=/tmp/tmux-20002/default,5780,0
+PATH=/opt/rh/devtoolset-9/USER/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin
+MAIL=/var/spool/mail/ccuser
+_=/usr/bin/env
+PWD=/mnt/exports/shared/home/ccuser/Author-Kit
+LANG=en_US.UTF-8
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+TMUX_PANE=%2
+SELINUX_LEVEL_REQUESTED=
+HISTCONTROL=ignoredups
+SUDO_COMMAND=/bin/env LD_LIBRARY_PATH=/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib PATH=/opt/rh/devtoolset-9/USER/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin scl enable devtoolset-9  './collect_environment.sh'
+SHLVL=11
+HOME=/USER
+LOGNAME=USER
+SSH_CONNECTION=71.59.9.252 48938 10.0.0.8 22
+MODULESHOME=/usr/share/Modules
+PKG_CONFIG_PATH=/opt/rh/devtoolset-9/USER/usr/lib64/pkgconfig
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+INFOPATH=/opt/rh/devtoolset-9/USER/usr/share/info
+CYCLECLOUD_HOME=/opt/cycle/jetpack
+SUDO_GID=20002
+XDG_RUNTIME_DIR=/run/user/20002
+Linux ip-0A000008 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz
+Stepping:              4
+CPU MHz:               2095.080
+BogoMIPS:              4190.16
+Hypervisor vendor:     Microsoft
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              36608K
+NUMA node0 CPU(s):     0-3
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec md_clear
+MemTotal:       28798904 kB
+MemFree:        26580580 kB
+MemAvailable:   27715636 kB
+Buffers:            5408 kB
+Cached:          1378840 kB
+SwapCached:            0 kB
+Active:           916724 kB
+Inactive:         638596 kB
+Active(anon):     171436 kB
+Inactive(anon):     9016 kB
+Active(file):     745288 kB
+Inactive(file):   629580 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:                20 kB
+Writeback:             0 kB
+AnonPages:        170956 kB
+Mapped:            38312 kB
+Shmem:              9384 kB
+Slab:             236076 kB
+SReclaimable:     141036 kB
+SUnreclaim:        95040 kB
+KernelStack:        5904 kB
+PageTables:         9424 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    16496600 kB
+Committed_AS:     499740 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      144832 kB
+VmallocChunk:   34359590912 kB
+Percpu:            25600 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     12288 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      169920 kB
+DirectMap2M:     2975744 kB
+DirectMap1G:    28311552 kB
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda       8:0    0   30G  0 disk 
+├─sda1    8:1    0  500M  0 part /boot
+├─sda2    8:2    0   29G  0 part /
+├─sda14   8:14   0    4M  0 part 
+└─sda15   8:15   0  495M  0 part /boot/efi
+sdb       8:16   0  200G  0 disk 
+└─sdb1    8:17   0  200G  0 part /mnt/resource
+sr0      11:0    1  628K  0 rom  
+[1:0:0:0]    cd/dvd  Msft     Virtual CD/ROM   1.0   /dev/sr0        -
+[2:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sda   32.2GB
+[3:0:1:0]    disk    Msft     Virtual Disk     1.0   /dev/sdb    214GB
+H/W path          Device      Class          Description
+========================================================
+                              system         Virtual Machine
+/0                            bus            Virtual Machine
+/0/0                          memory         64KiB BIOS
+/0/5                          processor      Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz
+/0/6                          processor      Xeon (None)
+/0/7                          processor      Xeon (None)
+/0/8                          processor      Xeon (None)
+/0/9                          processor      (None)
+/0/a                          processor      (None)
+/0/b                          processor      (None)
+/0/c                          processor      (None)
+/0/d                          processor      (None)
+/0/e                          processor      (None)
+/0/f                          processor      (None)
+/0/10                         processor      (None)
+/0/11                         processor      (None)
+/0/12                         processor      (None)
+/0/13                         processor      (None)
+/0/14                         processor      (None)
+/0/15                         processor      (None)
+/0/16                         processor      (None)
+/0/17                         processor      (None)
+/0/18                         processor      (None)
+/0/19                         processor      (None)
+/0/1a                         processor      (None)
+/0/1b                         processor      (None)
+/0/1c                         processor      (None)
+/0/1d                         processor      (None)
+/0/1e                         processor      (None)
+/0/1f                         processor      (None)
+/0/20                         processor      (None)
+/0/21                         processor      (None)
+/0/22                         processor      (None)
+/0/23                         processor      (None)
+/0/24                         processor      (None)
+/0/25                         processor      (None)
+/0/26                         processor      (None)
+/0/27                         processor      (None)
+/0/28                         processor      (None)
+/0/29                         processor      (None)
+/0/2a                         processor      (None)
+/0/2b                         processor      (None)
+/0/2c                         processor      (None)
+/0/2d                         processor      (None)
+/0/2e                         processor      (None)
+/0/2f                         processor      (None)
+/0/30                         processor      (None)
+/0/31                         processor      (None)
+/0/32                         processor      (None)
+/0/33                         processor      (None)
+/0/34                         processor      (None)
+/0/35                         processor      (None)
+/0/36                         processor      (None)
+/0/37                         processor      (None)
+/0/38                         processor      (None)
+/0/39                         processor      (None)
+/0/3a                         processor      (None)
+/0/3b                         processor      (None)
+/0/3c                         processor      (None)
+/0/3d                         processor      (None)
+/0/3e                         processor      (None)
+/0/3f                         processor      (None)
+/0/40                         processor      (None)
+/0/41                         processor      (None)
+/0/42                         processor      (None)
+/0/43                         processor      (None)
+/0/44                         processor      (None)
+/0/51                         memory         28GiB System Memory
+/0/51/0                       memory         1GiB 
+/0/51/1                       memory         27GiB 
+/0/51/2                       memory         [empty]
+/0/51/3                       memory         [empty]
+/0/51/4                       memory         [empty]
+/0/51/5                       memory         [empty]
+/0/51/6                       memory         [empty]
+/0/51/7                       memory         [empty]
+/0/51/8                       memory         [empty]
+/0/51/9                       memory         [empty]
+/0/51/a                       memory         [empty]
+/0/51/b                       memory         [empty]
+/0/51/c                       memory         [empty]
+/0/51/d                       memory         [empty]
+/0/51/e                       memory         [empty]
+/0/51/f                       memory         [empty]
+/0/51/10                      memory         [empty]
+/0/51/11                      memory         [empty]
+/0/51/12                      memory         [empty]
+/0/51/13                      memory         [empty]
+/0/51/14                      memory         [empty]
+/0/51/15                      memory         [empty]
+/0/51/16                      memory         [empty]
+/0/51/17                      memory         [empty]
+/0/51/18                      memory         [empty]
+/0/51/19                      memory         [empty]
+/0/51/1a                      memory         [empty]
+/0/51/1b                      memory         [empty]
+/0/51/1c                      memory         [empty]
+/0/51/1d                      memory         [empty]
+/0/51/1e                      memory         [empty]
+/0/51/1f                      memory         [empty]
+/0/51/20                      memory         [empty]
+/0/51/21                      memory         [empty]
+/0/51/22                      memory         [empty]
+/0/51/23                      memory         [empty]
+/0/51/24                      memory         [empty]
+/0/51/25                      memory         [empty]
+/0/51/26                      memory         [empty]
+/0/51/27                      memory         [empty]
+/0/51/28                      memory         [empty]
+/0/51/29                      memory         [empty]
+/0/51/2a                      memory         [empty]
+/0/51/2b                      memory         [empty]
+/0/51/2c                      memory         [empty]
+/0/51/2d                      memory         [empty]
+/0/51/2e                      memory         [empty]
+/0/51/2f                      memory         [empty]
+/0/51/30                      memory         [empty]
+/0/51/31                      memory         [empty]
+/0/51/32                      memory         [empty]
+/0/51/33                      memory         [empty]
+/0/51/34                      memory         [empty]
+/0/51/35                      memory         [empty]
+/0/51/36                      memory         [empty]
+/0/51/37                      memory         [empty]
+/0/51/38                      memory         [empty]
+/0/51/39                      memory         [empty]
+/0/51/3a                      memory         [empty]
+/0/51/3b                      memory         [empty]
+/0/51/3c                      memory         [empty]
+/0/51/3d                      memory         [empty]
+/0/51/3e                      memory         [empty]
+/0/51/3f                      memory         [empty]
+/0/51/40                      memory         [empty]
+/0/51/41                      memory         [empty]
+/0/51/42                      memory         [empty]
+/0/51/43                      memory         [empty]
+/0/51/44                      memory         [empty]
+/0/51/45                      memory         [empty]
+/0/51/46                      memory         [empty]
+/0/51/47                      memory         [empty]
+/0/51/48                      memory         [empty]
+/0/51/49                      memory         [empty]
+/0/51/4a                      memory         [empty]
+/0/51/4b                      memory         [empty]
+/0/51/4c                      memory         [empty]
+/0/51/4d                      memory         [empty]
+/0/51/4e                      memory         [empty]
+/0/51/4f                      memory         [empty]
+/0/51/50                      memory         [empty]
+/0/51/51                      memory         [empty]
+/0/51/52                      memory         [empty]
+/0/51/53                      memory         [empty]
+/0/51/54                      memory         [empty]
+/0/51/55                      memory         [empty]
+/0/51/56                      memory         [empty]
+/0/51/57                      memory         [empty]
+/0/51/58                      memory         [empty]
+/0/51/59                      memory         [empty]
+/0/51/5a                      memory         [empty]
+/0/51/5b                      memory         [empty]
+/0/51/5c                      memory         [empty]
+/0/51/5d                      memory         [empty]
+/0/51/5e                      memory         [empty]
+/0/51/5f                      memory         [empty]
+/0/51/60                      memory         [empty]
+/0/51/61                      memory         [empty]
+/0/51/62                      memory         [empty]
+/0/51/63                      memory         [empty]
+/0/51/64                      memory         [empty]
+/0/51/65                      memory         [empty]
+/0/51/66                      memory         [empty]
+/0/51/67                      memory         [empty]
+/0/51/68                      memory         [empty]
+/0/51/69                      memory         [empty]
+/0/51/6a                      memory         [empty]
+/0/51/6b                      memory         [empty]
+/0/51/6c                      memory         [empty]
+/0/51/6d                      memory         [empty]
+/0/51/6e                      memory         [empty]
+/0/51/6f                      memory         [empty]
+/0/51/70                      memory         [empty]
+/0/51/71                      memory         [empty]
+/0/51/72                      memory         [empty]
+/0/51/73                      memory         [empty]
+/0/51/74                      memory         [empty]
+/0/51/75                      memory         [empty]
+/0/51/76                      memory         [empty]
+/0/51/77                      memory         [empty]
+/0/51/78                      memory         [empty]
+/0/51/79                      memory         [empty]
+/0/51/7a                      memory         [empty]
+/0/51/7b                      memory         [empty]
+/0/51/7c                      memory         [empty]
+/0/100                        bridge         440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled)
+/0/100/7                      bridge         82371AB/EB/MB PIIX4 ISA
+/0/100/7.1        scsi1       storage        82371AB/EB/MB PIIX4 IDE
+/0/100/7.1/0.0.0  /dev/cdrom  disk           Virtual CD/ROM
+/0/100/7.3                    bridge         82371AB/EB/MB PIIX4 ACPI
+/0/100/8                      display        Hyper-V virtual VGA
+/0/2              eth1        network        MT27710 Family [ConnectX-4 Lx Virtual Function]
+/0/1                          system         PnP device PNP0b00
+/0/3                          input          PnP device PNP0303
+/0/4                          input          PnP device PNP0f03
+/0/45                         communication  PnP device PNP0501
+/0/46                         communication  PnP device PNP0501
+/0/47                         storage        PnP device PNP0700
+/0/48                         system         PnP device PNP0c02
+/0/49                         system         PnP device PNP0c02
+/0/4a                         system         PnP device PNP0c01
+/0/4b             scsi2       storage        
+/0/4b/0.0.0       /dev/sda    disk           32GB Virtual Disk
+/0/4b/0.0.0/1                 volume         499MiB data partition
+/0/4b/0.0.0/2     /dev/sda2   volume         29GiB data partition
+/0/4b/0.0.0/e     /dev/sda14  volume         4095KiB BIOS Boot partition
+/0/4b/0.0.0/f     /dev/sda15  volume         495MiB Windows FAT volume
+/0/4c             scsi3       storage        
+/0/4c/0.1.0       /dev/sdb    disk           214GB Virtual Disk
+/0/4c/0.1.0/1     /dev/sdb1   volume         199GiB EXT4 volume
+/1                eth0        network        Ethernet interface
