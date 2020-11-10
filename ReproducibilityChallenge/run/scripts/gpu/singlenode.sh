@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#PBS -N memxct
-#PBS -l nodes=1:ppn=24
-#PBS -j oe
-#PBS -o memxct-cds1.out
-
 set -euo pipefail
 
 die() {
@@ -20,7 +15,7 @@ module load mpi/hpcx || die "Failed to load HPC-X"
 echo "Using mpirun from $(which mpirun)"
 mpirun --version
 
-dataset="CDS1"
+dataset="${1:-CDS1}"
 
 # set box dimensions according to input dataset
 case "$dataset" in
@@ -74,20 +69,19 @@ export OUTFILE="$PREFIX/recon_${dataset}.bin"
 
 # Tuning parameters:
   # tile size (must be power of two)
-  export SPATSIZE=128
-  export SPECSIZE=128
+  export SPATSIZE=${2:-32}
+  export SPECSIZE=${2:-32}
 
   # block size
-  export PROJBLOCK=512
-  export BACKBLOCK=512
+  export PROJBLOCK=${3:-512}
+  export BACKBLOCK=${3:-512}
 
   # buffer size
-  export PROJBUFF=48
-  export BACKBUFF=48
+  export PROJBUFF=${4:-8}
+  export BACKBUFF=${4:-8}
 
-# export OMP_PLACES=sockets
-# export OMP_PROC_BIND=close
+export OMP_PLACES=sockets
+export OMP_PROC_BIND=close
 export OMP_NUM_THREADS=1
 
-# mpirun -np 1 --bind-to none "$EXE_PATH"
 exec "$EXE_PATH"

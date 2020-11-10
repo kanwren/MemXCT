@@ -91,5 +91,5 @@ PKEY="$(cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/* | grep -v 0000 | grep -
 PKEY="${PKEY/0x8/0x0}"
 echo "PKEY: $PKEY"
 
-mpirun -np ${5:-1} --host "$hosts" --map-by ppr:1:node:pe=120 --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc -x OMP_NUM_THREADS=120 "$EXE_PATH"
+mpirun -np ${5:-1} --host "$hosts" --map-by ppr:1:node:pe=120 --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc "$EXE_PATH"
 

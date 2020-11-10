@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#PBS -N memxct
-#PBS -l nodes=1:ppn=24
-#PBS -j oe
-#PBS -o memxct-cds2.out
-
 set -euo pipefail
 
 die() {
@@ -20,7 +15,7 @@ module load mpi/hpcx || die "Failed to load HPC-X"
 echo "Using mpirun from $(which mpirun)"
 mpirun --version
 
-dataset="CDS2"
+dataset="${1:-CDS1}"
 
 # set box dimensions according to input dataset
 case "$dataset" in
@@ -61,7 +56,7 @@ esac
 
 export THEFILE="$PREFIX/data/${dataset}_theta.bin"
 export SINFILE="$PREFIX/data/${dataset}_sinogram.bin"
-export OUTFILE="$PREFIX/recon_${dataset}.bin"
+export OUTFILE="$PREFIX/recon_${dataset}-${5:-1}.bin"
 
 [ ! -f "$THEFILE" ] && die "Theta file not found: $THEFILE"
 [ ! -f "$SINFILE" ] && die "Sinogram file not found: $SINFILE"
@@ -74,20 +69,27 @@ export OUTFILE="$PREFIX/recon_${dataset}.bin"
 
 # Tuning parameters:
   # tile size (must be power of two)
-  export SPATSIZE=128
-  export SPECSIZE=128
+  export SPATSIZE=${2:-32}
+  export SPECSIZE=${2:-32}
 
   # block size
-  export PROJBLOCK=512
-  export BACKBLOCK=512
+  export PROJBLOCK=${3:-512}
+  export BACKBLOCK=${3:-512}
 
   # buffer size
-  export PROJBUFF=48
-  export BACKBUFF=48
+  export PROJBUFF=${4:-8}
+  export BACKBUFF=${4:-8}
 
-# export OMP_PLACES=sockets
-# export OMP_PROC_BIND=close
+export OMP_PLACES=sockets
+export OMP_PROC_BIND=close
 export OMP_NUM_THREADS=1
 
-# mpirun -np 1 --bind-to none "$EXE_PATH"
-exec "$EXE_PATH"
+hosts="$(scontrol show hostnames "$SLURM_JOB_NODELIST" | tr '\n' ',' | sed 's/,$//')"
+echo "Using hosts: $hosts"
+
+PKEY="$(cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/* | grep -v 0000 | grep -v 0x7fff)"
+PKEY="${PKEY/0x8/0x0}"
+echo "PKEY: $PKEY"
+
+mpirun -np ${5:-1} --host "$hosts" --map-by core --bind-to none -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_PKEY=$PKEY -x UCX_TLS=rc "$EXE_PATH"
+
