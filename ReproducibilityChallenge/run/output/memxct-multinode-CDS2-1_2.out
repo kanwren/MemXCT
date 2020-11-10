@@ -2,8 +2,8 @@ Using mpirun from /opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86
 mpirun (Open MPI) 4.0.4rc3
 
 Report bugs to http://www.open-mpi.org/community/help/
-Using hosts: hpc-pg0-1:120
-PKEY: 0x0016
+Using hosts: hpc-pg0-2:120
+PKEY: 0x003d
 NUM. THETA             : 375
 NUM. RHO               : 1024
 NUM. X PIXELS          : 1024
@@ -75,60 +75,60 @@ DOMAIN PARTITIONING
 
 CONSTRUCT PROJECTION MATRIX
 CSR STORAGE: 470024162 (3.501953 GB) rownzmax 2046
-RAY-TRACING TIME: 4.589939e-01
+RAY-TRACING TIME: 4.387534e-01
 CONSTRUCT BACKPROJECTION MATRIX
 CSR STORAGE: 470024162 (3.501953 GB) rownzmax 607
-TRANSPOSITION TIME: 4.582345e-01
+TRANSPOSITION TIME: 3.567887e-01
 
 BLOCKING PROJECTION MATRIX
 NUMBER OF BLOCKS: 750 BUFFSIZE: 2048
 NUMBER OF BUFFERS: 18280 AVERAGE BUFF/BLOCK: 24.373333 MAX BUFF/BLOCK: 42
 BUFFER MAP: 36702739 (0.136728 GB)
 CSR STORAGE: 470024162 (2.626465 GB) buffnzmax: 284 STORAGE EFFICIENCY: 1.500000 DATA REUSE: 12.806242
-BLOCKING TIME: 5.918300e-01
+BLOCKING TIME: 5.684802e-01
 BLOCKING BACKPROJECTION MATRIX
 NUMBER OF BLOCKS: 2048 BUFFSIZE: 2048
 NUMBER OF BUFFERS: 11604 AVERAGE BUFF/BLOCK: 5.666016 MAX BUFF/BLOCK: 6
 BUFFER MAP: 22022777 (0.082041 GB)
 CSR STORAGE: 470024162 (2.626465 GB) buffnzmax: 321 STORAGE EFFICIENCY: 1.500000 DATA REUSE: 21.342640
-BLOCKING TIME: 4.218496e-01
+BLOCKING TIME: 4.441372e-01
 
 FILL PROJECTION MATRIX
-TIME: 3.522678e-01
+TIME: 3.557713e-01
 FILL BACKPROJECTION MATRIX
-TIME: 1.935846e-01
+TIME: 1.811472e-01
 REDUCTION MAPPINGS
-PREPROCESSING TIME: 2.525566e+00
+PREPROCESSING TIME: 2.373204e+00
 INPUT MEASUREMENT DATA
 INPUT ENDS
 GRADIENT-DESCENT OPTIMIZATION
-iter: 0 error: 5.498395e+04 gradnorm: 5.780559e+09
-iter: 1 error: 2.713759e+04 gradnorm: 4.174670e+08
-iter: 2 error: 2.306866e+04 gradnorm: 9.086836e+07
-iter: 3 error: 2.127431e+04 gradnorm: 3.168983e+07
-iter: 4 error: 2.032669e+04 gradnorm: 1.557751e+07
-iter: 5 error: 1.975908e+04 gradnorm: 1.008936e+07
-iter: 6 error: 1.938425e+04 gradnorm: 8.237606e+06
-iter: 7 error: 1.911243e+04 gradnorm: 6.110369e+06
-iter: 8 error: 1.886862e+04 gradnorm: 5.386872e+06
-iter: 9 error: 1.867521e+04 gradnorm: 5.360034e+06
-iter: 10 error: 1.858301e+04 gradnorm: 9.978437e+06
-iter: 11 error: 1.844639e+04 gradnorm: 4.338131e+06
-iter: 12 error: 1.828188e+04 gradnorm: 3.280964e+06
-iter: 13 error: 1.811534e+04 gradnorm: 2.897098e+06
-iter: 14 error: 1.798108e+04 gradnorm: 2.751328e+06
-iter: 15 error: 1.784751e+04 gradnorm: 2.133979e+06
-iter: 16 error: 1.772670e+04 gradnorm: 3.095372e+06
-iter: 17 error: 1.767163e+04 gradnorm: 2.503227e+06
-iter: 18 error: 1.756554e+04 gradnorm: 3.168794e+06
-iter: 19 error: 1.753482e+04 gradnorm: 2.983780e+06
-iter: 20 error: 1.744994e+04 gradnorm: 1.937472e+06
-iter: 21 error: 1.736015e+04 gradnorm: 1.587172e+06
-iter: 22 error: 1.726249e+04 gradnorm: 1.342179e+06
-iter: 23 error: 1.716981e+04 gradnorm: 1.258296e+06
-iter: 24 error: 1.708010e+04 gradnorm: 1.303752e+06
-recon: 3.511564e+00 proj: 1.874473e+00 (1.486047e+00 2.297982e-02 3.654114e-01) backproj: 1.022695e+00 (9.391171e-02 5.703600e-03 9.230612e-01) ctime: 6.142239e-01 wtime: 8.211000e-05
+iter: 0 error: 5.498396e+04 gradnorm: 5.780560e+09
+iter: 1 error: 2.713758e+04 gradnorm: 4.174669e+08
+iter: 2 error: 2.306865e+04 gradnorm: 9.086844e+07
+iter: 3 error: 2.127431e+04 gradnorm: 3.168980e+07
+iter: 4 error: 2.032669e+04 gradnorm: 1.557750e+07
+iter: 5 error: 1.975909e+04 gradnorm: 1.008936e+07
+iter: 6 error: 1.938425e+04 gradnorm: 8.237615e+06
+iter: 7 error: 1.911243e+04 gradnorm: 6.110386e+06
+iter: 8 error: 1.886862e+04 gradnorm: 5.387774e+06
+iter: 9 error: 1.867543e+04 gradnorm: 5.397024e+06
+iter: 10 error: 1.858434e+04 gradnorm: 9.889986e+06
+iter: 11 error: 1.844644e+04 gradnorm: 4.330512e+06
+iter: 12 error: 1.828188e+04 gradnorm: 3.280873e+06
+iter: 13 error: 1.811535e+04 gradnorm: 2.896950e+06
+iter: 14 error: 1.798106e+04 gradnorm: 2.749215e+06
+iter: 15 error: 1.784706e+04 gradnorm: 2.094131e+06
+iter: 16 error: 1.771287e+04 gradnorm: 1.990098e+06
+iter: 17 error: 1.764571e+04 gradnorm: 5.309682e+06
+iter: 18 error: 1.758399e+04 gradnorm: 3.643183e+06
+iter: 19 error: 1.753293e+04 gradnorm: 2.452841e+06
+iter: 20 error: 1.744943e+04 gradnorm: 1.968693e+06
+iter: 21 error: 1.736014e+04 gradnorm: 1.589026e+06
+iter: 22 error: 1.726249e+04 gradnorm: 1.342215e+06
+iter: 23 error: 1.716981e+04 gradnorm: 1.258511e+06
+iter: 24 error: 1.708035e+04 gradnorm: 1.356134e+06
+recon: 3.382336e+00 proj: 1.846201e+00 (1.519158e+00 2.466605e-02 3.023374e-01) backproj: 1.002768e+00 (5.411343e-02 4.625418e-03 9.440056e-01) ctime: 5.331821e-01 wtime: 9.310300e-05
 numproj: 49 numback: 25
-proj: 1.486047e+00 s (30.996569 GFLOPS) backproj: 9.230612e-01 s (25.460075 GFLOPS) avGFLOPS: 28.875235 totGFLOPS: 28.875235
-proj: 97.830561 GB/s back: 78.766065 GB/s av: 90.525910 GB/s tot: 90.525910 GB/s
-Total Time: 6.713288e+00
+proj: 1.519158e+00 s (30.320979 GFLOPS) backproj: 9.440056e-01 s (24.895200 GFLOPS) avGFLOPS: 28.241554 totGFLOPS: 28.241554
+proj: 95.698282 GB/s back: 77.018508 GB/s av: 88.539273 GB/s tot: 88.539273 GB/s
+Total Time: 6.422493e+00
