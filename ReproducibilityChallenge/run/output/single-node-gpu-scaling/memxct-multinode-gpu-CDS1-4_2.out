@@ -1,0 +1,178 @@
+Using mpirun from /opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/bin/mpirun
+mpirun (Open MPI) 4.0.4rc3
+
+Report bugs to http://www.open-mpi.org/community/help/
+[LOG_CAT_ML] You must specify a valid HCA device by setting:
+-x HCOLL_MAIN_IB=<dev_name:port> or -x UCX_NET_DEVICES=<dev_name:port>.
+If no device was specified for HCOLL (or the calling library), automatic device detection will be run.
+In case of unfounded HCA device please contact your system administrator.
+[LOG_CAT_ML] You must specify a valid HCA device by setting:
+-x HCOLL_MAIN_IB=<dev_name:port> or -x UCX_NET_DEVICES=<dev_name:port>.
+If no device was specified for HCOLL (or the calling library), automatic device detection will be run.
+In case of unfounded HCA device please contact your system administrator.
+[LOG_CAT_ML] You must specify a valid HCA device by setting:
+-x HCOLL_MAIN_IB=<dev_name:port> or -x UCX_NET_DEVICES=<dev_name:port>.
+If no device was specified for HCOLL (or the calling library), automatic device detection will be run.
+In case of unfounded HCA device please contact your system administrator.
+[LOG_CAT_ML] You must specify a valid HCA device by setting:
+-x HCOLL_MAIN_IB=<dev_name:port> or -x UCX_NET_DEVICES=<dev_name:port>.
+If no device was specified for HCOLL (or the calling library), automatic device detection will be run.
+In case of unfounded HCA device please contact your system administrator.
+[ip-0A000006:07782] Error: coll_hcoll_module.c:301 - mca_coll_hcoll_comm_query() Hcol library init failed
+[ip-0A000006:07781] Error: coll_hcoll_module.c:301 - mca_coll_hcoll_comm_query() Hcol library init failed
+[ip-0A000006:07779] Error: coll_hcoll_module.c:301 - mca_coll_hcoll_comm_query() Hcol library init failed
+[ip-0A000006:07780] Error: coll_hcoll_module.c:301 - mca_coll_hcoll_comm_query() Hcol library init failed
+NUM. THETA             : 750
+NUM. RHO               : 512
+NUM. X PIXELS          : 512
+NUM. Y PIXELS          : 512
+
+NUM. OF PIXELS         : 262144
+NUM. OF RAYS           : 384000
+
+NUM. ITERATIONS        : 24
+
+SPATIAL TILE SIZE      : 128
+SPECTRAL TILE SIZE     : 128
+
+NUMBER OF X TILES      : 4
+NUMBER OF Y TILES      : 4
+NUM. OF THETA TILES    : 6
+NUM. OF RHO TILES      : 4
+
+NUM. SPATIAL TILES     : 16
+NUM. SPECTRAL TILES    : 24
+
+NUM. OF X PIXELS (EXT) : 512
+NUM. OF Y PIXELS (EXT) : 512
+NUM. OF ANGLES (EXT)   : 768
+NUM. OF RHOS (EXT)     : 512
+
+NUM. OF PIXELS (EXT)   : 262144
+NUM. OF RAYS (EXT)     : 393216
+
+NUMBER OF PROCESSES    : 4
+NUMBER OF THRD./PROC.  : 1
+
+INTEGER: 4, FLOAT: 4, LONG: 8, SHORT: 2, POINTER: 8
+APPROX. MEMORY     TOTAL: 4.394531e+00 GB
+APPROX. MEMORY PER PROC.: 1.098633e+00 GB
+
+X START       : -2.560000e+02
+Y START       : -2.560000e+02
+PIXEL SIZE    : 1.000000e+00
+RHO START     : -2.560000e+02
+RAY LENGTH    : 1.024000e+03
+
+SPATIAL INDEXING       : 5
+SPECTRAL INDEXING      : 5
+ 1: CARTESIAN, NATURAL
+ 2: CARTESIAN, TRANSPOSED
+ 3: MORTON, NATURAL
+ 4: MORTON, TRANSPOSED
+PROJECTION BLOCK SIZE      : 512
+BACKPROJECTION BLOCK SIZE  : 512
+PROJECTION BUFFER SIZE      : 48 KB
+BACKPROJECTION BUFFER SIZE  : 48 KB
+
+SINOGRAM FILE : /shared/scratch/MemXCT/data/CDS1_sinogram.bin
+   THETA FILE : /shared/scratch/MemXCT/data/CDS1_theta.bin
+  OUTPUT FILE : /shared/scratch/MemXCT/recon_CDS1-4.bin
+
+
+PLACE TILES
+lspat 4 lspatdim 4
+lspec 6 lspecdim 8
+MPI PARTITIONING
+proc: 0 numspats: 4 numpixs: 65536 numspecs: 6 numrays: 98304
+proc: 1 numspats: 4 numpixs: 65536 numspecs: 6 numrays: 98304
+proc: 2 numspats: 4 numpixs: 65536 numspecs: 6 numrays: 98304
+proc: 3 numspats: 4 numpixs: 65536 numspecs: 6 numrays: 98304
+maxnumpix: 65536 maxnumray: 98304
+FILL PIXELS AND RAYS
+INPUT THETA DATA
+DOMAIN PARTITIONING
+myid 0 raynuminc 223599/872870 raynumout 218217/872870
+myid 3 raynuminc 201952/872870 raynumout 218218/872870
+myid 2 raynuminc 223626/872870 raynumout 218217/872870
+myid 1 raynuminc 223693/872870 raynumout 218218/872870
+
+CONSTRUCT PROJECTION MATRIX
+CSR STORAGE: 235011123 (1.750969 GB) rownzmax 511
+RAY-TRACING TIME: 3.052413e+00
+CONSTRUCT BACKPROJECTION MATRIX
+CSR STORAGE: 235011123 (1.750969 GB) rownzmax 1092
+TRANSPOSITION TIME: 8.299249e-01
+
+BLOCKING PROJECTION MATRIX
+NUMBER OF BLOCKS: 1708 BUFFSIZE: 12288
+NUMBER OF BUFFERS: 1850 AVERAGE BUFF/BLOCK: 1.083138 MAX BUFF/BLOCK: 2
+BUFF MAP: 22732800 (0.084686 GB)
+ELLPACK STORAGE: 275701248 (1.540601 GB) buffnzmax: 511 STORAGE EFFICIENCY: 1.278618 DATA REUSE: 17.177723
+BLOCKING TIME: 1.433137e+00
+BLOCKING BACKPROJECTION MATRIX
+NUMBER OF BLOCKS: 512 BUFFSIZE: 12288
+NUMBER OF BUFFERS: 1020 AVERAGE BUFF/BLOCK: 1.992188 MAX BUFF/BLOCK: 2
+BUFF MAP: 12533760 (0.046692 GB)
+ELLPACK STORAGE: 260354048 (1.454842 GB) buffnzmax: 746 STORAGE EFFICIENCY: 1.353990 DATA REUSE: 21.340651
+BLOCKING TIME: 1.654697e+00
+
+FILL PROJECTION MATRIX
+TIME: 2.545177e+00
+FILL BACKPROJECTION MATRIX
+TIME: 3.430667e+00
+REDUCTION MAPPINGS
+PREPROCESSING TIME: 1.294808e+01
+myid: 0 device: 0
+
+Device Count: 4
+myid: 1 device: 1
+myid: 3 device: 3
+myid: 2 device: 2
+Device 0 name: -776470144
+Computational Capabilities: 7, 0
+Maximum global memory size: 16945512448
+Maximum constant memory size: 65536
+Maximum shared memory size per block: 49152
+Maximum block dimensions: 1024x1024x64
+Maximum grid dimensions: 2147483647x65535x65535
+Maximum threads per block: 1024
+Warp size: 32
+
+PROC 3 TOTAL GPU MEMORY: 1.121060 GB
+PROC 0 TOTAL GPU MEMORY: 1.100752 GB
+PROC 2 TOTAL GPU MEMORY: 1.098855 GB
+PROC 1 TOTAL GPU MEMORY: 1.108862 GB
+INPUT MEASUREMENT DATA
+INPUT ENDS
+GRADIENT-DESCENT OPTIMIZATION
+iter: 0 error: 4.958706e+04 gradnorm: 1.560967e+10
+iter: 1 error: 5.316473e+03 gradnorm: 4.760909e+08
+iter: 2 error: 5.074512e+02 gradnorm: 1.604516e+07
+iter: 3 error: 2.940048e+02 gradnorm: 8.082556e+06
+iter: 4 error: 1.716274e+02 gradnorm: 1.355213e+06
+iter: 5 error: 1.161708e+02 gradnorm: 8.692291e+05
+iter: 6 error: 1.088264e+02 gradnorm: 1.459884e+06
+iter: 7 error: 8.535223e+01 gradnorm: 5.673028e+05
+iter: 8 error: 7.161600e+01 gradnorm: 4.174343e+05
+iter: 9 error: 5.778303e+01 gradnorm: 2.257019e+05
+iter: 10 error: 4.879436e+01 gradnorm: 2.103741e+05
+iter: 11 error: 4.502184e+01 gradnorm: 6.181529e+05
+iter: 12 error: 4.110163e+01 gradnorm: 1.079474e+05
+iter: 13 error: 3.664473e+01 gradnorm: 1.705222e+05
+iter: 14 error: 3.407669e+01 gradnorm: 1.048183e+05
+iter: 15 error: 3.112128e+01 gradnorm: 5.964298e+04
+iter: 16 error: 2.847895e+01 gradnorm: 7.134552e+04
+iter: 17 error: 2.782744e+01 gradnorm: 1.165868e+05
+iter: 18 error: 2.655393e+01 gradnorm: 4.655900e+04
+iter: 19 error: 2.508812e+01 gradnorm: 2.620477e+04
+iter: 20 error: 2.379955e+01 gradnorm: 2.492521e+04
+iter: 21 error: 2.280663e+01 gradnorm: 1.673915e+04
+iter: 22 error: 2.249881e+01 gradnorm: 6.791706e+04
+iter: 23 error: 2.182241e+01 gradnorm: 1.227464e+04
+iter: 24 error: 2.127471e+01 gradnorm: 2.041184e+04
+recon: 1.174832e-01 proj: 6.773914e-02 (2.742611e-02 3.309045e-02 3.934139e-03) backproj: 3.370173e-02 (2.395601e-03 1.726280e-02 1.263184e-02) ctime: 1.562306e-02 wtime: 2.780910e-04
+numproj: 49 numback: 25
+proj: 1.112542e-01 s (207.013205 GFLOPS) backproj: 5.084611e-02 s (231.100387 GFLOPS) avGFLOPS: 214.568647 totGFLOPS: 858.274587
+proj: 768.616285 GB/s back: 792.715150 GB/s av: 776.175391 GB/s tot: 3104.701565 GB/s
+Total Time: 1.391178e+01
