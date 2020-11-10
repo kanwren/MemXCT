@@ -85,4 +85,6 @@ export OMP_PROC_BIND=close
 export OMP_NUM_THREADS=60
 
 exec "$EXE_PATH"
-
+ 
+ 
+ 
