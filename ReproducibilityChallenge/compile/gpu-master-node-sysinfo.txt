@@ -1,0 +1,383 @@
+MANPATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/share/man:/opt/rh/devtoolset-9/USER/usr/share/man:
+XDG_SESSION_ID=5
+SHMEM_HOME=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+HOSTNAME=ip-0A00000A
+SELINUX_ROLE_REQUESTED=
+HPCX_MPI_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+TERM=screen-256color
+SHELL=/bin/bash
+HISTSIZE=1000
+SSH_CLIENT=71.59.9.252 60056 22
+LIBRARY_PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib
+SELINUX_USE_CURRENT_RANGE=
+X_SCLS=devtoolset-9 
+CYCLECLOUD_BOOTSTRAP=/opt/cycle/jetpack/system/bootstrap
+SSH_TTY=/dev/pts/0
+PCP_DIR=/opt/rh/devtoolset-9/USER
+USER=USER
+HPCX_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64
+OPAL_PREFIX=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+PMIX_INSTALL_PREFIX=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+LD_LIBRARY_PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib/ucx:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+SUDO_USER=ccuser
+SUDO_UID=20002
+CPATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/include:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/include:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp/include:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/include
+USERNAME=USER
+HPCX_HOME=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64
+HPCX_CLUSTERKIT_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/clusterkit
+HPCX_IPM_LIB=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests/ipm-2.0.6/lib/libipm.so
+HPCX_SHARP_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp
+MAIL=/var/spool/mail/ccuser
+PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/clusterkit/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests/imb:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/bin:/opt/rh/devtoolset-9/USER/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/opt/ibutils/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin
+HPCX_HCOLL_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll
+_=/usr/bin/env
+PWD=/mnt/exports/shared/home/ccuser/Author-Kit
+OSHMEM_HOME=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+_LMFILES_=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/modulefiles/hpcx:/usr/share/Modules/modulefiles/mpi/hpcx
+LANG=en_US.UTF-8
+HPCX_IPM_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests/ipm-2.0.6
+HPCX_UCX_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=hpcx:mpi/hpcx
+SELINUX_LEVEL_REQUESTED=
+OMPI_HOME=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+HISTCONTROL=ignoredups
+HPCX_OSU_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests/osu-micro-benchmarks-5.3.2
+SUDO_COMMAND=/bin/env LD_LIBRARY_PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib/ucx:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/clusterkit/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests/imb:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/bin:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/bin:/opt/rh/devtoolset-9/USER/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/opt/ibutils/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin scl enable devtoolset-9  './collect_environment.sh'
+SHLVL=10
+HOME=/USER
+HPCX_OSHMEM_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+LOGNAME=USER
+SSH_CONNECTION=71.59.9.252 60056 10.0.0.10 22
+MODULESHOME=/usr/share/Modules
+MPI_HOME=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi
+PKG_CONFIG_PATH=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/lib/pkgconfig:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ucx/lib/pkgconfig:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/sharp/lib/pkgconfig:/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/hcoll/lib/pkgconfig:/opt/rh/devtoolset-9/USER/usr/lib64/pkgconfig
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+INFOPATH=/opt/rh/devtoolset-9/USER/usr/share/info
+CYCLECLOUD_HOME=/opt/cycle/jetpack
+SUDO_GID=20002
+XDG_RUNTIME_DIR=/run/user/20002
+HPCX_MPI_TESTS_DIR=/opt/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64/ompi/tests
++ lsb_release -a
+./collect_environment.sh: line 10: lsb_release: command not found
++ uname -a
+Linux ip-0A00000A 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
++ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                64
+On-line CPU(s) list:   0-63
+Thread(s) per core:    2
+Core(s) per socket:    16
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz
+Stepping:              7
+CPU MHz:               2593.907
+BogoMIPS:              5187.81
+Virtualization:        VT-x
+Hypervisor vendor:     Microsoft
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              36608K
+NUMA node0 CPU(s):     0-31
+NUMA node1 CPU(s):     32-63
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single tpr_shadow vnmi ept vpid fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 avx512_vnni md_clear arch_capabilities
++ cat /proc/meminfo
+MemTotal:       264148020 kB
+MemFree:        249133972 kB
+MemAvailable:   253338812 kB
+Buffers:            6356 kB
+Cached:          4854492 kB
+SwapCached:            0 kB
+Active:           659584 kB
+Inactive:        4339968 kB
+Active(anon):     139320 kB
+Inactive(anon):     9020 kB
+Active(file):     520264 kB
+Inactive(file):  4330948 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:                24 kB
+Writeback:             0 kB
+AnonPages:        139360 kB
+Mapped:            37472 kB
+Shmem:              9384 kB
+Slab:             549152 kB
+SReclaimable:     241924 kB
+SUnreclaim:       307228 kB
+KernelStack:       15392 kB
+PageTables:         9288 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    134171156 kB
+Committed_AS:     487364 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:     1009300 kB
+VmallocChunk:   34224519168 kB
+Percpu:            12288 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      8192 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      450496 kB
+DirectMap2M:     6889472 kB
+DirectMap1G:    261095424 kB
++ inxi -F -c0
+./collect_environment.sh: line 14: inxi: command not found
++ lsblk -a
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda       8:0    0   30G  0 disk 
+├─sda1    8:1    0  500M  0 part /boot
+├─sda2    8:2    0   29G  0 part /
+├─sda14   8:14   0    4M  0 part 
+└─sda15   8:15   0  495M  0 part /boot/efi
+sdb       8:16   0  2.4T  0 disk 
+└─sdb1    8:17   0  2.4T  0 part /mnt/resource
+sr0      11:0    1  628K  0 rom  
++ lsscsi -s
+[1:0:0:0]    cd/dvd  Msft     Virtual CD/ROM   1.0   /dev/sr0        -
+[2:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sda   32.2GB
+[3:0:1:0]    disk    Msft     Virtual Disk     1.0   /dev/sdb   2.57TB
++ module list
+./collect_environment.sh: line 17: module: command not found
++ nvidia-smi
+./collect_environment.sh: line 18: nvidia-smi: command not found
++ lshw -short -quiet -sanitize
++ cat
+H/W path          Device      Class          Description
+========================================================
+                              system         Virtual Machine
+/0                            bus            Virtual Machine
+/0/0                          memory         64KiB BIOS
+/0/5                          processor      Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz
+/0/6                          processor      Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz
+/0/7                          processor      Xeon (None)
+/0/8                          processor      Xeon (None)
+/0/9                          processor      Xeon (None)
+/0/a                          processor      Xeon (None)
+/0/b                          processor      Xeon (None)
+/0/c                          processor      Xeon (None)
+/0/d                          processor      Xeon (None)
+/0/e                          processor      Xeon (None)
+/0/f                          processor      Xeon (None)
+/0/10                         processor      Xeon (None)
+/0/11                         processor      Xeon (None)
+/0/12                         processor      Xeon (None)
+/0/13                         processor      Xeon (None)
+/0/14                         processor      Xeon (None)
+/0/15                         processor      Xeon (None)
+/0/16                         processor      Xeon (None)
+/0/17                         processor      Xeon (None)
+/0/18                         processor      Xeon (None)
+/0/19                         processor      Xeon (None)
+/0/1a                         processor      Xeon (None)
+/0/1b                         processor      Xeon (None)
+/0/1c                         processor      Xeon (None)
+/0/1d                         processor      Xeon (None)
+/0/1e                         processor      Xeon (None)
+/0/1f                         processor      Xeon (None)
+/0/20                         processor      Xeon (None)
+/0/21                         processor      Xeon (None)
+/0/22                         processor      Xeon (None)
+/0/23                         processor      Xeon (None)
+/0/24                         processor      Xeon (None)
+/0/25                         processor      Xeon (None)
+/0/26                         processor      Xeon (None)
+/0/27                         processor      Xeon (None)
+/0/28                         processor      Xeon (None)
+/0/29                         processor      Xeon (None)
+/0/2a                         processor      Xeon (None)
+/0/2b                         processor      Xeon (None)
+/0/2c                         processor      Xeon (None)
+/0/2d                         processor      Xeon (None)
+/0/2e                         processor      Xeon (None)
+/0/2f                         processor      Xeon (None)
+/0/30                         processor      Xeon (None)
+/0/31                         processor      Xeon (None)
+/0/32                         processor      Xeon (None)
+/0/33                         processor      Xeon (None)
+/0/34                         processor      Xeon (None)
+/0/35                         processor      Xeon (None)
+/0/36                         processor      Xeon (None)
+/0/37                         processor      Xeon (None)
+/0/38                         processor      Xeon (None)
+/0/39                         processor      Xeon (None)
+/0/3a                         processor      Xeon (None)
+/0/3b                         processor      Xeon (None)
+/0/3c                         processor      Xeon (None)
+/0/3d                         processor      Xeon (None)
+/0/3e                         processor      Xeon (None)
+/0/3f                         processor      Xeon (None)
+/0/40                         processor      Xeon (None)
+/0/41                         processor      Xeon (None)
+/0/42                         processor      Xeon (None)
+/0/43                         processor      Xeon (None)
+/0/44                         processor      Xeon (None)
+/0/51                         memory         12PiB System Memory
+/0/51/0                       memory         1GiB 
+/0/51/1                       memory         1780TiB 
+/0/51/2                       memory         1780TiB 
+/0/51/3                       memory         1780TiB 
+/0/51/4                       memory         1780TiB 
+/0/51/5                       memory         1780TiB 
+/0/51/6                       memory         1780TiB 
+/0/51/7                       memory         1780TiB 
+/0/51/8                       memory         31GiB 
+/0/51/9                       memory         [empty]
+/0/51/a                       memory         [empty]
+/0/51/b                       memory         [empty]
+/0/51/c                       memory         [empty]
+/0/51/d                       memory         [empty]
+/0/51/e                       memory         [empty]
+/0/51/f                       memory         [empty]
+/0/51/10                      memory         [empty]
+/0/51/11                      memory         [empty]
+/0/51/12                      memory         [empty]
+/0/51/13                      memory         [empty]
+/0/51/14                      memory         [empty]
+/0/51/15                      memory         [empty]
+/0/51/16                      memory         [empty]
+/0/51/17                      memory         [empty]
+/0/51/18                      memory         [empty]
+/0/51/19                      memory         [empty]
+/0/51/1a                      memory         [empty]
+/0/51/1b                      memory         [empty]
+/0/51/1c                      memory         [empty]
+/0/51/1d                      memory         [empty]
+/0/51/1e                      memory         [empty]
+/0/51/1f                      memory         [empty]
+/0/51/20                      memory         [empty]
+/0/51/21                      memory         [empty]
+/0/51/22                      memory         [empty]
+/0/51/23                      memory         [empty]
+/0/51/24                      memory         [empty]
+/0/51/25                      memory         [empty]
+/0/51/26                      memory         [empty]
+/0/51/27                      memory         [empty]
+/0/51/28                      memory         [empty]
+/0/51/29                      memory         [empty]
+/0/51/2a                      memory         [empty]
+/0/51/2b                      memory         [empty]
+/0/51/2c                      memory         [empty]
+/0/51/2d                      memory         [empty]
+/0/51/2e                      memory         [empty]
+/0/51/2f                      memory         [empty]
+/0/51/30                      memory         [empty]
+/0/51/31                      memory         [empty]
+/0/51/32                      memory         [empty]
+/0/51/33                      memory         [empty]
+/0/51/34                      memory         [empty]
+/0/51/35                      memory         [empty]
+/0/51/36                      memory         [empty]
+/0/51/37                      memory         [empty]
+/0/51/38                      memory         [empty]
+/0/51/39                      memory         [empty]
+/0/51/3a                      memory         [empty]
+/0/51/3b                      memory         [empty]
+/0/51/3c                      memory         [empty]
+/0/51/3d                      memory         [empty]
+/0/51/3e                      memory         [empty]
+/0/51/3f                      memory         [empty]
+/0/51/40                      memory         [empty]
+/0/51/41                      memory         [empty]
+/0/51/42                      memory         [empty]
+/0/51/43                      memory         [empty]
+/0/51/44                      memory         [empty]
+/0/51/45                      memory         [empty]
+/0/51/46                      memory         [empty]
+/0/51/47                      memory         [empty]
+/0/51/48                      memory         [empty]
+/0/51/49                      memory         [empty]
+/0/51/4a                      memory         [empty]
+/0/51/4b                      memory         [empty]
+/0/51/4c                      memory         [empty]
+/0/51/4d                      memory         [empty]
+/0/51/4e                      memory         [empty]
+/0/51/4f                      memory         [empty]
+/0/51/50                      memory         [empty]
+/0/51/51                      memory         [empty]
+/0/51/52                      memory         [empty]
+/0/51/53                      memory         [empty]
+/0/51/54                      memory         [empty]
+/0/51/55                      memory         [empty]
+/0/51/56                      memory         [empty]
+/0/51/57                      memory         [empty]
+/0/51/58                      memory         [empty]
+/0/51/59                      memory         [empty]
+/0/51/5a                      memory         [empty]
+/0/51/5b                      memory         [empty]
+/0/51/5c                      memory         [empty]
+/0/51/5d                      memory         [empty]
+/0/51/5e                      memory         [empty]
+/0/51/5f                      memory         [empty]
+/0/51/60                      memory         [empty]
+/0/51/61                      memory         [empty]
+/0/51/62                      memory         [empty]
+/0/51/63                      memory         [empty]
+/0/51/64                      memory         [empty]
+/0/51/65                      memory         [empty]
+/0/51/66                      memory         [empty]
+/0/51/67                      memory         [empty]
+/0/51/68                      memory         [empty]
+/0/51/69                      memory         [empty]
+/0/51/6a                      memory         [empty]
+/0/51/6b                      memory         [empty]
+/0/51/6c                      memory         [empty]
+/0/51/6d                      memory         [empty]
+/0/51/6e                      memory         [empty]
+/0/51/6f                      memory         [empty]
+/0/51/70                      memory         [empty]
+/0/51/71                      memory         [empty]
+/0/51/72                      memory         [empty]
+/0/51/73                      memory         [empty]
+/0/51/74                      memory         [empty]
+/0/51/75                      memory         [empty]
+/0/51/76                      memory         [empty]
+/0/51/77                      memory         [empty]
+/0/51/78                      memory         [empty]
+/0/51/79                      memory         [empty]
+/0/51/7a                      memory         [empty]
+/0/51/7b                      memory         [empty]
+/0/51/7c                      memory         [empty]
+/0/100                        bridge         440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled)
+/0/100/7                      bridge         82371AB/EB/MB PIIX4 ISA
+/0/100/7.1        scsi1       storage        82371AB/EB/MB PIIX4 IDE
+/0/100/7.1/0.0.0  /dev/cdrom  disk           Virtual CD/ROM
+/0/100/7.3                    bridge         82371AB/EB/MB PIIX4 ACPI
+/0/100/8                      display        Hyper-V virtual VGA
+/0/2              eth1        network        MT27710 Family [ConnectX-4 Lx Virtual Function]
+/0/1                          system         PnP device PNP0b00
+/0/3                          input          PnP device PNP0303
+/0/4                          input          PnP device PNP0f03
+/0/45                         communication  PnP device PNP0501
+/0/46                         communication  PnP device PNP0501
+/0/47                         storage        PnP device PNP0700
+/0/48                         system         PnP device PNP0c02
+/0/49                         system         PnP device PNP0c02
+/0/4a                         system         PnP device PNP0c01
+/0/4b             scsi2       storage        
+/0/4b/0.0.0       /dev/sda    disk           32GB Virtual Disk
+/0/4b/0.0.0/1                 volume         499MiB data partition
+/0/4b/0.0.0/2     /dev/sda2   volume         29GiB data partition
+/0/4b/0.0.0/e     /dev/sda14  volume         4095KiB BIOS Boot partition
+/0/4b/0.0.0/f     /dev/sda15  volume         495MiB Windows FAT volume
+/0/4c             scsi3       storage        
+/0/4c/0.1.0       /dev/sdb    disk           2576GB Virtual Disk
+/0/4c/0.1.0/1     /dev/sdb1   volume         2399GiB EXT4 volume
+/1                eth0        network        Ethernet interface
