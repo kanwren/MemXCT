@@ -52,10 +52,10 @@ notebook) that corresponds to which figures you want to generate. If you are
 trying to reproduce the strong scaling experiments (any of the following:
 CPU-cds1, CPU-cds2, GPU-cds1, or GPU-cds2) use the file
 `StrongScaling_plots.ipynb`. If attempting to create the performance plots (for
-single node CPU or GPU) use `singlenode_performance(gpu_cpu)_plots.ipynb`. I
-recommend opening these in google colab, as that will ensure all dependencies
-are setup and ready. Additionally, if you wish to generate the memory bandwidth
-bar charts, use the code found in `memoryBandwidth_plots.ipynb`. The data inside
+single node CPU or GPU) use `singlenode_performance(gpu_cpu)_plots.ipynb`. Additionally, if you wish to generate the memory bandwidth
+bar charts, use the code found in `memoryBandwidth_plots.ipynb`. I
+recommend opening any of the above in google colab, as that will ensure all dependencies
+are setup and ready. The data inside
 these files is populated by hand, but we calculated the numbers by manually
 looking at our log files (getting them into csv using vim) and parsing what we
 needed from the CSVs. These final CSVs can also be found in our figures/scripts
