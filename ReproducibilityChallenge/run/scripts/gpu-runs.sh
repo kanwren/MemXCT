@@ -2,8 +2,8 @@
 
 for i in {6..10}; do
 	for n in 1 2 4; do
-		sbatch --job-name "memxct-singlenode-gpu-CDS1_${i}.out" --nodes 1 --ntasks-per-node 24 --output "memxct-singlenode-gpu-CDS1_${i}.out" gpu/singlenode.sh "$d" 128 512 48
-		sbatch --job-name "memxct-singlenode-gpu-CDS2_${i}.out" --nodes 1 --ntasks-per-node 24 --output "memxct-singlenode-gpu-CDS2_${i}.out" gpu/singlenode.sh "$d" 128 512 48
+		sbatch --job-name "memxct-singlenode-gpu-CDS1_${i}.out" --nodes 1 --ntasks-per-node 24 --output "memxct-singlenode-gpu-CDS1_${i}.out" gpu/singlenode.sh "CDS1" 128 512 48
+		sbatch --job-name "memxct-singlenode-gpu-CDS2_${i}.out" --nodes 1 --ntasks-per-node 24 --output "memxct-singlenode-gpu-CDS2_${i}.out" gpu/singlenode.sh "CDS2" 128 512 48
 	done
 done
 
