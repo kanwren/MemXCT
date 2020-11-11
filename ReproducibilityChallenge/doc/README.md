@@ -61,3 +61,13 @@ looking at our log files (getting them into csv using vim) and parsing what we
 needed from the CSVs. These final CSVs can also be found in our figures/scripts
 directory.
 
+The eight graphs (four single-node experiments, four multi-node scaling
+experiments) correspond to Figure 9 and Figure 11 from the MemXCT paper. They
+are formatted very similarly, so the results may be compared directly. Notably,
+the original MemXCT paper lacks GPU scaling experiments, though the curves
+should be of roughly the same shape.
+
+There are additionally two output visualizations, `recon_CDS1.png` and
+`recon_CDS2.png`. These are visualizations of the output of MemXCT, tomographic
+image reconstructions of the pieces of shale from which the sinogram and theta
+information were measured.
