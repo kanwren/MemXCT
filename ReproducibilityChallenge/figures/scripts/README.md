@@ -25,3 +25,24 @@ looking at our log files (getting them into csv using vim) and parsing what we
 needed from the CSVs. These final CSVs can also be found in our figures/scripts
 directory.
 
+## Visualizing
+
+In order to visualize the reconstructed output from MemXCT, you may use the Fiji
+image viewer:
+
+- Select "File"
+- Select "Import"
+- Select "Raw"
+- Select the appropriate `.bin` file, e.g. `recon_CDS2.bin`
+- Select "32-bit real" for the image type
+- Enter the appropriate dimensions
+  - 512x512 for `recon_CDS1.bin`
+  - 1024x1024 for `recon_CDS1.bin`
+- "Offset to first image" and "Gap between images" should both be 0. "Number of images" should be 1.
+- Select "little-endian byte order"
+- Deselect "White is zero", "Open all files in folder", and "Use virtual stack".
+
+All other images are simply `.png` files, and may be opened in any image viewer.
+For example, `.png` files may be opened in Fiji simply by clicking "File" >
+"Open" and selecting the appropriate image file.
+
