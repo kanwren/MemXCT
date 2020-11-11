@@ -57,7 +57,7 @@ bar charts, use the code found in `memoryBandwidth_plots.ipynb`. I
 recommend opening any of the above in google colab, as that will ensure all dependencies
 are setup and ready. The data inside
 these files is populated by hand, but we calculated the numbers by manually
-looking at our log files (getting them into csv using vim) and parsing what we
+looking at our log files (getting them into csv using vim macros, which do not leave scripts so we cannot leave them in this artifact) and parsing what we
 needed from the CSVs. These final CSVs can also be found in our figures/scripts
 directory.
 
