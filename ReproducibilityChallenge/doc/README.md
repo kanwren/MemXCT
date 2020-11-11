@@ -9,9 +9,20 @@ the nature of MemXCT, most of the directories contain both CPU and GPU versions.
 
 To install the necessary dependencies, download the competition datasets, and
 compile MemXCT, go to `compile/cpu` or `compile/gpu` and run `./build.sh`. These
-assume that you are on similar hardware, running CentOS 7. To only compile, see
+assume that you are on similar hardware, running CentOS 7. If not on CentOS, see
 the notes about necessary dependencies in `compile/README.md` and use the CPU or
 GPU Makefile.
+
+`compile/` additionally contains:
+
+- a GCC vectorization report (`vectorization-report.log`)
+  - Note that vectorization on AMD is very limited, so most of the vectorization
+    does not fire
+- system information files:
+  - CPU cluster master node system information (`cpu-master-node-sysinfo.txt`)
+  - CPU cluster execute node system information (`cpu-execute-node-sysinfo.txt`)
+  - GPU cluster master node system information (`gpu-master-node-sysinfo.txt`)
+  - GPU cluster execute node system information (`gpu-execute-node-sysinfo.txt`)
 
 ## Running
 
