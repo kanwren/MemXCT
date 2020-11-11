@@ -21,9 +21,11 @@ recommend opening these in google colab, as that will ensure all dependencies
 are setup and ready. Additionally, if you wish to generate the memory bandwidth
 bar charts, use the code found in `memoryBandwidth_plots.ipynb`. The data inside
 these files is populated by hand, but we calculated the numbers by manually
-looking at our log files (getting them into csv using vim) and parsing what we
-needed from the CSVs. These final CSVs can also be found in our figures/scripts
-directory.
+looking at our log files (getting them into CSVs using Vim) and parsing what we
+needed into the CSVs. These final CSVs can also be found in our figures/scripts
+directory. For convenience, we also provide scripts that can automatically
+extract the `avGFLOPS` or memory bandwidth utilization from a log file argument,
+as `extract-avgflops.sh` and `exract-mbw.sh` respectively.
 
 ## Visualizing
 
