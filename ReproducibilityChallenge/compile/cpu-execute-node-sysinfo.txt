@@ -1,25 +1,123 @@
-XDG_SESSION_ID=c1
-HOSTNAME=ip-0A000008
-SHELL=/bin/bash
+SLURM_NODELIST=hpc-pg0-1
+MANPATH=/opt/rh/devtoolset-9/USER/usr/share/man:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/share/man:/usr/share/man:/usr/local/share/man
+SLURM_JOB_NAME=bash
+XDG_SESSION_ID=5
+SHMEM_HOME=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+HOSTNAME=ip-0A000011
+SLURM_TOPOLOGY_ADDR=hpc-Standard_HB120rs_v2-pg0.hpc-pg0-1
+SLURMD_NODENAME=hpc-pg0-1
+SELINUX_ROLE_REQUESTED=
+HPCX_MPI_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+SLURM_PRIO_PROCESS=0
+SLURM_NODE_ALIASES=hpc-pg0-1:10.0.0.10:10.0.0.10
+SLURM_SRUN_COMM_PORT=45971
 TERM=screen
+SHELL=/bin/bash
 HISTSIZE=1000
+SLURM_PTY_WIN_ROW=61
+SSH_CLIENT=71.59.9.252 45584 22
+SLURM_TOPOLOGY_ADDR_PATTERN=switch.node
+LIBRARY_PATH=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/nccl_rdma_sharp_plugin/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hmc/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib
+SELINUX_USE_CURRENT_RANGE=
+SLURM_CPU_BIND_VERBOSE=quiet
+X_SCLS=devtoolset-9 
+SSH_TTY=/dev/pts/0
+CYCLECLOUD_BOOTSTRAP=/opt/cycle/jetpack/system/bootstrap
+SLURM_CPU_BIND_LIST=0x000000000000000000000000000001
+HPCX_NCCL_RDMA_SHARP_PLUGIN_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/nccl_rdma_sharp_plugin
 USER=USER
+PMIX_INSTALL_PREFIX=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+PCP_DIR=/opt/rh/devtoolset-9/USER
+OPAL_PREFIX=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+HPCX_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64
+SLURM_NNODES=1
+LD_LIBRARY_PATH=/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/nccl_rdma_sharp_plugin/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hmc/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib/ucx:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
 SUDO_USER=ccuser
 SUDO_UID=20002
+SLURM_STEP_NUM_NODES=1
+CPATH=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/include:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hmc/include:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/include:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp/include:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/include
+SRUN_DEBUG=3
+SLURM_JOBID=2
 USERNAME=USER
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+SLURM_NTASKS=1
+HPCX_HOME=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64
+SLURM_LAUNCH_NODE_IPADDR=10.0.0.17
+TMUX=/tmp/tmux-20002/default,5871,0
+HPCX_CLUSTERKIT_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/clusterkit
+SLURM_STEP_ID=0
+HPCX_OSU_CUDA_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/osu-micro-benchmarks-5.6.2-cuda
+HPCX_SHARP_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp
+HPCX_IPM_LIB=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/ipm-2.0.6/lib/libipm.so
+PATH=/opt/rh/devtoolset-9/USER/usr/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/clusterkit/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/imb:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin
 MAIL=/var/spool/mail/ccuser
-PWD=/shared/home/ccuser/Author-Kit
+SLURM_TASKS_PER_NODE=1
+SLURM_STEP_LAUNCHER_PORT=45971
+HPCX_HCOLL_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll
+SLURM_WORKING_CLUSTER=cluster:ip-0A000011:6817:8704:101
+_=/usr/bin/env
+SLURM_JOB_ID=2
+PWD=/mnt/exports/shared/home/ccuser/Author-Kit
+OSHMEM_HOME=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+SLURM_STEPID=0
+SLURM_JOB_USER=ccuser
+_LMFILES_=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/modulefiles/hpcx:/usr/share/Modules/modulefiles/mpi/hpcx
+SLURM_SRUN_COMM_HOST=10.0.0.17
+SLURM_CPU_BIND_TYPE=mask_cpu:
 LANG=en_US.UTF-8
-SHLVL=1
-SUDO_COMMAND=./collect_environment.sh
+HPCX_UCX_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx
+HPCX_IPM_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/ipm-2.0.6
+HPCX_HMC_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hmc
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+SLURM_UMASK=0002
+SLURM_PTY_WIN_COL=234
+LOADEDMODULES=hpcx:mpi/hpcx
+SLURM_JOB_UID=20002
+TMUX_PANE=%0
+SLURM_NODEID=0
+SELINUX_LEVEL_REQUESTED=
+SLURM_SUBMIT_DIR=/mnt/exports/shared/home/ccuser
+OMPI_HOME=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+SLURM_NPROCS=1
+SLURM_TASK_PID=10435
+SLURM_CPUS_ON_NODE=1
+HPCX_OSU_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/osu-micro-benchmarks-5.6.2
+HISTCONTROL=ignoredups
+SLURM_PROCID=0
+SLURM_JOB_NODELIST=hpc-pg0-1
+SUDO_COMMAND=/bin/env LD_LIBRARY_PATH=/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/rh/devtoolset-9/USER/usr/lib64/dyninst:/opt/rh/devtoolset-9/USER/usr/lib/dyninst:/opt/rh/devtoolset-9/USER/usr/lib64:/opt/rh/devtoolset-9/USER/usr/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/nccl_rdma_sharp_plugin/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hmc/lib:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib/ucx:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib PATH=/opt/rh/devtoolset-9/USER/usr/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/clusterkit/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests/imb:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/bin:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin:/mnt/exports/shared/home/ccuser/.local/bin:/mnt/exports/shared/home/ccuser/bin:/opt/cycle/jetpack/bin:/opt/cycle/jetpack/bin scl enable devtoolset-9  './collect_environment.sh'
+SHLVL=12
+HPCX_OSHMEM_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
 HOME=/USER
+SLURM_PTY_PORT=43028
+SLURM_LOCALID=0
+SLURM_CLUSTER_NAME=cluster
+SLURM_JOB_CPUS_PER_NODE=1
+SLURM_JOB_GID=20002
+SLURM_SUBMIT_HOST=ip-0A000011
+SLURM_GTIDS=0
+SLURM_JOB_PARTITION=hpc
 LOGNAME=USER
-XDG_RUNTIME_DIR=/run/user/0
+SLURM_STEP_NUM_TASKS=1
+SSH_CONNECTION=71.59.9.252 45584 10.0.0.17 22
+MPI_HOME=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi
+MODULESHOME=/usr/share/Modules
+SLURM_JOB_NUM_NODES=1
+PKG_CONFIG_PATH=/opt/rh/devtoolset-9/USER/usr/lib64/pkgconfig:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/lib/pkgconfig:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ucx/lib/pkgconfig:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/sharp/lib/pkgconfig:/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/hcoll/lib/pkgconfig
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+SLURM_STEP_TASKS_PER_NODE=1
+INFOPATH=/opt/rh/devtoolset-9/USER/usr/share/info
+CYCLECLOUD_HOME=/opt/cycle/jetpack
+SLURM_STEP_NODELIST=hpc-pg0-1
 SUDO_GID=20002
-_=/bin/env
+XDG_RUNTIME_DIR=/run/user/20002
+HPCX_MPI_TESTS_DIR=/opt/hpcx-v2.7.0-gcc-MLNX_OFED_LINUX-5.1-0.6.6.0-redhat7.7-x86_64/ompi/tests
+SLURM_CPU_BIND=quiet,mask_cpu:0x000000000000000000000000000001
++ lsb_release -a
+./collect_environment.sh: line 10: lsb_release: command not found
++ uname -a
 Linux ip-0A00000A 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
++ lscpu
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
 Byte Order:            Little Endian
@@ -34,8 +132,8 @@ CPU family:            23
 Model:                 49
 Model name:            AMD EPYC 7V12 64-Core Processor
 Stepping:              0
-CPU MHz:               2445.406
-BogoMIPS:              4890.81
+CPU MHz:               2445.417
+BogoMIPS:              4890.83
 Hypervisor vendor:     Microsoft
 Virtualization type:   full
 L1d cache:             32K
@@ -73,43 +171,44 @@ NUMA node27 CPU(s):    108-111
 NUMA node28 CPU(s):    112-115
 NUMA node29 CPU(s):    116-119
 Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext retpoline_amd ssbd vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaveerptr arat umip
-MemTotal:       470570608 kB
-MemFree:        458313988 kB
-MemAvailable:   457648424 kB
-Buffers:            5364 kB
-Cached:           832580 kB
++ cat /proc/meminfo
+MemTotal:       470570604 kB
+MemFree:        458097856 kB
+MemAvailable:   457578288 kB
+Buffers:            5356 kB
+Cached:          1118664 kB
 SwapCached:            0 kB
-Active:           682584 kB
-Inactive:         327416 kB
-Active(anon):     172336 kB
-Inactive(anon):     9028 kB
-Active(file):     510248 kB
-Inactive(file):   318388 kB
+Active:           718564 kB
+Inactive:         583900 kB
+Active(anon):     178676 kB
+Inactive(anon):     9016 kB
+Active(file):     539888 kB
+Inactive(file):   574884 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2097148 kB
 SwapFree:        2097148 kB
 Dirty:                12 kB
 Writeback:             0 kB
-AnonPages:        171784 kB
+AnonPages:        178360 kB
 Mapped:            37552 kB
-Shmem:              9328 kB
-Slab:             558660 kB
-SReclaimable:     148700 kB
-SUnreclaim:       409960 kB
-KernelStack:       20608 kB
-PageTables:         7104 kB
+Shmem:              9272 kB
+Slab:             556096 kB
+SReclaimable:     154408 kB
+SUnreclaim:       401688 kB
+KernelStack:       20480 kB
+PageTables:         7236 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:    237382452 kB
-Committed_AS:     512856 kB
+CommitLimit:    237382448 kB
+Committed_AS:     514912 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:     1492856 kB
-VmallocChunk:   33895303168 kB
+VmallocChunk:   33895306240 kB
 Percpu:            24000 kB
 HardwareCorrupted:     0 kB
-AnonHugePages:     47104 kB
+AnonHugePages:     53248 kB
 CmaTotal:              0 kB
 CmaFree:               0 kB
 HugePages_Total:       0
@@ -117,9 +216,12 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:      686016 kB
-DirectMap2M:    59082752 kB
-DirectMap1G:    418381824 kB
+DirectMap4k:      653248 kB
+DirectMap2M:    58066944 kB
+DirectMap1G:    419430400 kB
++ inxi -F -c0
+./collect_environment.sh: line 14: inxi: command not found
++ lsblk -a
 NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda       8:0    0    30G  0 disk 
 ├─sda1    8:1    0   500M  0 part /boot
@@ -130,9 +232,16 @@ sdb       8:16   0   480G  0 disk
 └─sdb1    8:17   0   480G  0 part /mnt/resource
 sr0      11:0    1   628K  0 rom  
 nvme0n1 259:0    0 894.3G  0 disk 
++ lsscsi -s
 [1:0:0:0]    cd/dvd  Msft     Virtual CD/ROM   1.0   /dev/sr0        -
 [2:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sda   32.2GB
 [3:0:1:0]    disk    Msft     Virtual Disk     1.0   /dev/sdb    515GB
++ module list
+./collect_environment.sh: line 17: module: command not found
++ nvidia-smi
+./collect_environment.sh: line 18: nvidia-smi: command not found
++ cat
++ lshw -short -quiet -sanitize
 H/W path          Device      Class          Description
 ========================================================
                               system         Virtual Machine
