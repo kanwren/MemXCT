@@ -3,7 +3,7 @@ mpirun (Open MPI) 4.0.4rc3
 
 Report bugs to http://www.open-mpi.org/community/help/
 Using hosts: hpc-pg0-1:120,hpc-pg0-2:120,hpc-pg0-3:120,hpc-pg0-4:120
-PKEY: 0x0054
+PKEY: 0x001b
 NUM. THETA             : 750
 NUM. RHO               : 512
 NUM. X PIXELS          : 512
@@ -33,12 +33,12 @@ NUM. OF RHOS (EXT)     : 512
 NUM. OF PIXELS (EXT)   : 262144
 NUM. OF RAYS (EXT)     : 393216
 
-NUMBER OF PROCESSES    : 4
-NUMBER OF THRD./PROC.  : 120
+NUMBER OF PROCESSES    : 8
+NUMBER OF THRD./PROC.  : 60
 
 INTEGER: 4, FLOAT: 4, LONG: 8, SHORT: 2, POINTER: 8
 APPROX. MEMORY     TOTAL: 4.394531e+00 GB
-APPROX. MEMORY PER PROC.: 1.098633e+00 GB
+APPROX. MEMORY PER PROC.: 5.493164e-01 GB
 
 X START       : -2.560000e+02
 Y START       : -2.560000e+02
@@ -53,85 +53,89 @@ SPECTRAL INDEXING      : 5
  3: MORTON, NATURAL
  4: MORTON, TRANSPOSED
  5: HILBERT
-PROJECTION BLOCK SIZE      : 512
-BACKPROJECTION BLOCK SIZE  : 512
+PROJECTION BLOCK SIZE      : 32
+BACKPROJECTION BLOCK SIZE  : 32
 PROJECTION BUFFER SIZE      : 8 KB
 BACKPROJECTION BUFFER SIZE  : 8 KB
 
 SINOGRAM FILE : /shared/scratch/MemXCT/data/CDS1_sinogram.bin
    THETA FILE : /shared/scratch/MemXCT/data/CDS1_theta.bin
-  OUTPUT FILE : /shared/scratch/MemXCT/recon_CDS1-4.bin
+  OUTPUT FILE : /shared/scratch/MemXCT/recon_CDS1-1.bin
 
 
 PLACE TILES
 lspat 16 lspatdim 16
 lspec 24 lspecdim 32
 MPI PARTITIONING
-proc: 0 numspats: 64 numpixs: 65536 numspecs: 96 numrays: 98304
-proc: 1 numspats: 64 numpixs: 65536 numspecs: 96 numrays: 98304
-proc: 2 numspats: 64 numpixs: 65536 numspecs: 96 numrays: 98304
-proc: 3 numspats: 64 numpixs: 65536 numspecs: 96 numrays: 98304
-maxnumpix: 65536 maxnumray: 98304
+proc: 0 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 1 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 2 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 3 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 4 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 5 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 6 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+proc: 7 numspats: 32 numpixs: 32768 numspecs: 48 numrays: 49152
+maxnumpix: 32768 maxnumray: 49152
 FILL PIXELS AND RAYS
 INPUT THETA DATA
 DOMAIN PARTITIONING
 
 CONSTRUCT PROJECTION MATRIX
-CSR STORAGE: 235011239 (1.750970 GB) rownzmax 511
-RAY-TRACING TIME: 8.366087e-02
+CSR STORAGE: 235011243 (1.750970 GB) rownzmax 383
+RAY-TRACING TIME: 7.114889e-02
 CONSTRUCT BACKPROJECTION MATRIX
-CSR STORAGE: 235011239 (1.750970 GB) rownzmax 1092
-TRANSPOSITION TIME: 1.592004e-01
+CSR STORAGE: 235011243 (1.750970 GB) rownzmax 1042
+TRANSPOSITION TIME: 7.108289e-02
 
 BLOCKING PROJECTION MATRIX
-NUMBER OF BLOCKS: 427 BUFFSIZE: 2048
-NUMBER OF BUFFERS: 1762 AVERAGE BUFF/BLOCK: 4.126464 MAX BUFF/BLOCK: 9
-BUFFER MAP: 13563317 (0.050527 GB)
-CSR STORAGE: 235011239 (1.313228 GB) buffnzmax: 334 STORAGE EFFICIENCY: 0.374999 DATA REUSE: 18.369751
-BLOCKING TIME: 2.240218e-01
+NUMBER OF BLOCKS: 4910 BUFFSIZE: 2048
+NUMBER OF BUFFERS: 5712 AVERAGE BUFF/BLOCK: 1.163340 MAX BUFF/BLOCK: 2
+BUFFER MAP: 54037732 (0.201306 GB)
+CSR STORAGE: 235011243 (1.313228 GB) buffnzmax: 381 STORAGE EFFICIENCY: 0.176621 DATA REUSE: 4.141162
+BLOCKING TIME: 9.378766e-02
 BLOCKING BACKPROJECTION MATRIX
-NUMBER OF BLOCKS: 128 BUFFSIZE: 2048
-NUMBER OF BUFFERS: 1440 AVERAGE BUFF/BLOCK: 11.250000 MAX BUFF/BLOCK: 12
-BUFFER MAP: 11012397 (0.041024 GB)
-CSR STORAGE: 235011239 (1.313228 GB) buffnzmax: 286 STORAGE EFFICIENCY: 0.374999 DATA REUSE: 21.340940
-BLOCKING TIME: 2.813581e-01
+NUMBER OF BLOCKS: 1024 BUFFSIZE: 2048
+NUMBER OF BUFFERS: 2844 AVERAGE BUFF/BLOCK: 2.777344 MAX BUFF/BLOCK: 3
+BUFFER MAP: 44064181 (0.164152 GB)
+CSR STORAGE: 235011243 (1.313228 GB) buffnzmax: 461 STORAGE EFFICIENCY: 0.176621 DATA REUSE: 5.331449
+BLOCKING TIME: 1.394445e-01
 
 FILL PROJECTION MATRIX
-TIME: 3.879603e-01
+TIME: 9.012597e-02
 FILL BACKPROJECTION MATRIX
-TIME: 4.838283e-01
+TIME: 2.021605e-02
 REDUCTION MAPPINGS
-PREPROCESSING TIME: 2.354362e+00
+PREPROCESSING TIME: 5.805135e-01
 INPUT MEASUREMENT DATA
 INPUT ENDS
 GRADIENT-DESCENT OPTIMIZATION
 iter: 0 error: 4.959038e+04 gradnorm: 1.560967e+10
-iter: 1 error: 5.316521e+03 gradnorm: 4.760839e+08
-iter: 2 error: 5.074598e+02 gradnorm: 1.604488e+07
-iter: 3 error: 2.940097e+02 gradnorm: 8.082408e+06
-iter: 4 error: 1.716273e+02 gradnorm: 1.353848e+06
-iter: 5 error: 1.154533e+02 gradnorm: 6.254382e+05
-iter: 6 error: 8.905097e+01 gradnorm: 6.585688e+05
-iter: 7 error: 7.673572e+01 gradnorm: 1.036329e+06
-iter: 8 error: 7.126480e+01 gradnorm: 5.217563e+05
-iter: 9 error: 5.778376e+01 gradnorm: 2.258673e+05
-iter: 10 error: 4.873891e+01 gradnorm: 1.924527e+05
-iter: 11 error: 4.171450e+01 gradnorm: 1.086322e+05
-iter: 12 error: 3.749631e+01 gradnorm: 1.864405e+05
-iter: 13 error: 3.463585e+01 gradnorm: 1.064515e+05
-iter: 14 error: 3.156471e+01 gradnorm: 9.104039e+04
-iter: 15 error: 3.088113e+01 gradnorm: 1.280353e+05
-iter: 16 error: 2.842453e+01 gradnorm: 5.495780e+04
-iter: 17 error: 2.682886e+01 gradnorm: 4.562878e+04
-iter: 18 error: 2.524191e+01 gradnorm: 2.666366e+04
-iter: 19 error: 2.394850e+01 gradnorm: 2.563773e+04
-iter: 20 error: 2.288850e+01 gradnorm: 1.513645e+04
-iter: 21 error: 2.208584e+01 gradnorm: 4.923612e+04
-iter: 22 error: 2.188160e+01 gradnorm: 1.432669e+04
-iter: 23 error: 2.120657e+01 gradnorm: 9.406917e+03
-iter: 24 error: 2.068548e+01 gradnorm: 8.892823e+03
-recon: 1.201554e+01 proj: 4.096455e+00 (1.923187e+00 8.965791e-02 2.083586e+00) backproj: 3.700591e+00 (2.369768e+00 3.889904e-02 1.291896e+00) ctime: 4.175980e+00 wtime: 3.057962e-02
+iter: 1 error: 5.316521e+03 gradnorm: 4.760838e+08
+iter: 2 error: 5.074598e+02 gradnorm: 1.604489e+07
+iter: 3 error: 2.940097e+02 gradnorm: 8.082407e+06
+iter: 4 error: 1.716274e+02 gradnorm: 1.353846e+06
+iter: 5 error: 1.154530e+02 gradnorm: 6.253280e+05
+iter: 6 error: 8.898770e+01 gradnorm: 6.386601e+05
+iter: 7 error: 7.443199e+01 gradnorm: 5.132021e+05
+iter: 8 error: 6.881737e+01 gradnorm: 1.068948e+06
+iter: 9 error: 5.777556e+01 gradnorm: 2.284371e+05
+iter: 10 error: 4.873887e+01 gradnorm: 1.924639e+05
+iter: 11 error: 4.171447e+01 gradnorm: 1.086289e+05
+iter: 12 error: 3.749574e+01 gradnorm: 1.863964e+05
+iter: 13 error: 3.463438e+01 gradnorm: 1.060915e+05
+iter: 14 error: 3.146967e+01 gradnorm: 6.134679e+04
+iter: 15 error: 2.915139e+01 gradnorm: 1.631067e+05
+iter: 16 error: 2.837621e+01 gradnorm: 6.854515e+04
+iter: 17 error: 2.682842e+01 gradnorm: 4.576091e+04
+iter: 18 error: 2.524191e+01 gradnorm: 2.666402e+04
+iter: 19 error: 2.394850e+01 gradnorm: 2.563709e+04
+iter: 20 error: 2.288815e+01 gradnorm: 1.501923e+04
+iter: 21 error: 2.195790e+01 gradnorm: 1.230460e+04
+iter: 22 error: 2.126348e+01 gradnorm: 1.058947e+04
+iter: 23 error: 2.105190e+01 gradnorm: 4.385430e+04
+iter: 24 error: 2.067821e+01 gradnorm: 8.280348e+03
+recon: 5.471865e+00 proj: 2.669662e+00 (1.616280e+00 1.267132e-01 9.266397e-01) backproj: 1.614366e+00 (1.009068e+00 3.664000e-02 5.686397e-01) ctime: 1.164879e+00 wtime: 7.333849e-03
 numproj: 49 numback: 25
-proj: 7.685688e+00 s (2.996622 GFLOPS) backproj: 5.173357e+00 s (2.271361 GFLOPS) avGFLOPS: 2.704840 totGFLOPS: 10.819361
-proj: 9.335757 GB/s back: 7.026950 GB/s av: 8.406895 GB/s tot: 33.627579 GB/s
-Total Time: 1.539952e+01
+proj: 1.294150e+01 s (1.779632 GFLOPS) backproj: 4.546986e+00 s (2.584253 GFLOPS) avGFLOPS: 1.988833 totGFLOPS: 15.910662
+proj: 6.157302 GB/s back: 8.721844 GB/s av: 6.824081 GB/s tot: 54.592644 GB/s
+Total Time: 6.987728e+00
