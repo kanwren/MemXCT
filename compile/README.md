@@ -1,7 +1,11 @@
 # compile
 
 There are two different directories, `cpu/` and `gpu/`, for compiling the CPU
-and GPU versions of the code, respectively.
+and GPU versions of the code, respectively. CPU and GPU code are taken from
+[https://github.com/merthidayetoglu/MemXCT-CPU](https://github.com/merthidayetoglu/MemXCT-CPU)
+and
+[https://github.com/merthidayetoglu/MemXCT-GPU](https://github.com/merthidayetoglu/MemXCT-GPU)
+respectively.
 
 This directory also contains:
 
